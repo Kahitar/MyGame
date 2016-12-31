@@ -62,13 +62,16 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add option="-std=c++11" />
 			<Add option="-fexceptions" />
 			<Add option="-DSFML_STATIC" />
 			<Add directory="E:/OneDrive/c++/SFML-2.4.1/include" />
 			<Add directory="include" />
+			<Add directory="C:/Users/Niklas/OneDrive/c++/SFML-2.4.1/include" />
 		</Compiler>
 		<Linker>
 			<Add directory="E:/OneDrive/c++/SFML-2.4.1/lib" />
+			<Add directory="C:/Users/Niklas/OneDrive/c++/SFML-2.4.1/lib" />
 		</Linker>
 		<Unit filename="include/Button.hpp" />
 		<Unit filename="include/Framework.hpp" />

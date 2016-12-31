@@ -22,9 +22,9 @@ void MainMenu::update(Framework &frmwrk)
 
 void MainMenu::handle(Framework &frmwrk)
 {
-    pNewGameButton->handle(frmwrk.spMainEvent);
-    pSettingsButton->handle(frmwrk.spMainEvent);
-    pExitButton->handle(frmwrk.spMainEvent);
+    pNewGameButton->handle(frmwrk);
+    pSettingsButton->handle(frmwrk);
+    pExitButton->handle(frmwrk);
 
     if(frmwrk.spMainEvent->type == sf::Event::MouseButtonPressed && frmwrk.spMainEvent->mouseButton.button == sf::Mouse::Left){
         if(pNewGameButton->getMouseOnButton()){

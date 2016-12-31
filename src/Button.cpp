@@ -1,4 +1,6 @@
 #include "Button.hpp"
+#include "Framework.hpp"
+#include "ResourceManager.hpp"
 
 Button::Button(sf::Vector2f pos, sf::Vector2f Size, std::string text)
     :mMouseOnButton(false),mClicked(false)
@@ -15,7 +17,7 @@ Button::Button(sf::Vector2f pos, sf::Vector2f Size, std::string text)
     upSpriteHovered      = std::unique_ptr<sf::Sprite> (new sf::Sprite);
 
     sf::Image subImage;
-    subImage.loadFromFile("assets\\textures\\Button.png");
+    subImage.loadFromFile("assets\\textures\\Button.png"); //TODO: Load from resource Manager
     subImage.createMaskFromColor(sf::Color::White);
 
     upTexture->loadFromImage(subImage);
@@ -82,23 +84,27 @@ void Button::update()
 
 }
 
-void Button::handle(std::shared_ptr<sf::Event> event)
+void Button::handle(Framework &frmwrk)
 {
-    if (event->type == sf::Event::MouseMoved)
-    {
-        if(    event->mouseMove.x > mPos.x
-            && event->mouseMove.y > mPos.y
-            && event->mouseMove.x < mPos.x + mSize.x
-            && event->mouseMove.y < mPos.y + mSize.y)
-        {
-            mMouseOnButton = true;
-        } else {
-            mMouseOnButton = false;
-        }
-    }
+    std::shared_ptr<sf::Event> event = frmwrk.spMainEvent;
+    std::shared_ptr<sf::RenderWindow> window = frmwrk.spRenderWindow;
+
+    // ------- Dealing with a resized Window ------- //
+    // get the current mouse position in the window
+    sf::Vector2i MousePixelPos = sf::Mouse::getPosition(*window);
+    // convert it to world coordinates
+    sf::Vector2f MouseWorldPos = window->mapPixelToCoords(MousePixelPos);
+
+    if(MouseWorldPos.x > mPos.x
+        && MouseWorldPos.y > mPos.y
+        && MouseWorldPos.x < mPos.x + mSize.x
+        && MouseWorldPos.y < mPos.y + mSize.y)
+        mMouseOnButton = true;
+    else
+        mMouseOnButton = false;
+
     if(event->type == sf::Event::MouseButtonReleased && mMouseOnButton)
         mClicked = !mClicked;
-
 }
 
 void Button::render(std::shared_ptr<sf::RenderWindow> rw)
