@@ -47,7 +47,18 @@ void Framework::ChangeState(gameStates newstate)
     case gameStates::MAINMENU:
         CurrentState = std::move(std::unique_ptr<MainMenu>(new MainMenu));
     break;
+    case gameStates::SETTINGS:
+        CurrentState = std::move(std::unique_ptr<SettingsMenu>(new SettingsMenu));
+    break;
     }
+}
+
+sf::Vector2f Framework::getTransformedMousePosition()
+{
+    // get the current mouse position in the window
+    sf::Vector2i MousePixelPos = sf::Mouse::getPosition(*spRenderWindow);
+    // convert it to world coordinates
+    return spRenderWindow->mapPixelToCoords(MousePixelPos);
 }
 
 void Framework::quit()

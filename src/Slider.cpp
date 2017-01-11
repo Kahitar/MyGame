@@ -2,13 +2,11 @@
 #include "Framework.hpp"
 
 #include <string>
+#include <sstream>
 
 Slider::Slider(sf::Vector2f pos, sf::Vector2f Size)
     :mMouseOnSlider(false),mClicked(false),mNumberOfPositions(10),mSliderValue(0)
 {
-//    upTexture   = std::move(std::unique_ptr<sf::Texture>(new sf::Texture));
-//    upSprite    = std::move(std::unique_ptr<sf::Sprite>(new sf::Sprite));
-
     mSliderBar.setFillColor(sf::Color(128, 128, 200));
     mSliderBar.setOutlineThickness(1);
     mSliderBar.setOutlineColor(sf::Color::Black);
@@ -29,27 +27,17 @@ Slider::~Slider()
 
 void Slider::update(Framework &frmwrk)
 {
-    sf::RenderWindow *window = frmwrk.pRenderWindow;
-
-    // get the current mouse position in the window
-    sf::Vector2i MousePixelPos = sf::Mouse::getPosition(*window);
-    // convert it to world coordinates
-    sf::Vector2f MouseWorldPos = window->mapPixelToCoords(MousePixelPos);
-
     if(mClicked){
-        ChangeSliderPosition(MouseWorldPos.x);
+        ChangeSliderPosition(frmwrk.getTransformedMousePosition().x);
     }
 }
 
 void Slider::handle(Framework &frmwrk)
 {
-    sf::Event *event = frmwrk.pMainEvent;
-    sf::RenderWindow *window = frmwrk.pRenderWindow;
+    std::shared_ptr<sf::Event> event = frmwrk.spMainEvent;
+    std::shared_ptr<sf::RenderWindow> window = frmwrk.spRenderWindow;
 
-    // get the current mouse position in the window
-    sf::Vector2i MousePixelPos = sf::Mouse::getPosition(*window);
-    // convert it to world coordinates
-    sf::Vector2f MouseWorldPos = window->mapPixelToCoords(MousePixelPos);
+    sf::Vector2f MouseWorldPos = frmwrk.getTransformedMousePosition();
 
     if(MouseWorldPos.x > mPos.x
         && MouseWorldPos.y > mPos.y
@@ -67,15 +55,16 @@ void Slider::handle(Framework &frmwrk)
         mClicked = false;
 }
 
-void Slider::render(sf::RenderWindow *rw)
+void Slider::render(Framework &frmwrk)
 {
+    std::shared_ptr<sf::RenderWindow> rw = frmwrk.spRenderWindow;
     rw->draw(mSliderBar);
     rw->draw(mSliderRect);
 
     sf::Text SliderValueText;
     sf::Font Font;
 
-    Font.loadFromFile("Resources\\PAPYRUS.TTF");
+    Font.loadFromFile("assets\\fonts\\PAPYRUS.TTF");
     SliderValueText.setFont(Font);
     SliderValueText.setFillColor(sf::Color::Black);
     SliderValueText.setStyle(sf::Text::Bold);

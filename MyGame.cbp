@@ -80,6 +80,8 @@
 		<Unit filename="include/ResourceCache.hpp" />
 		<Unit filename="include/ResourceManager.hpp" />
 		<Unit filename="include/SettingsCache.hpp" />
+		<Unit filename="include/SettingsMenu.hpp" />
+		<Unit filename="include/Slider.hpp" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Button.cpp" />
 		<Unit filename="src/Framework.cpp" />
@@ -87,6 +89,8 @@
 		<Unit filename="src/ResourceCache.cpp" />
 		<Unit filename="src/ResourceManager.cpp" />
 		<Unit filename="src/SettingsCache.cpp" />
+		<Unit filename="src/SettingsMenu.cpp" />
+		<Unit filename="src/Slider.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

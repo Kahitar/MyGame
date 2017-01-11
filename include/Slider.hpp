@@ -14,7 +14,7 @@ class Slider
 
         void update(Framework &frmwrk);
         void handle(Framework &frmwrk);
-        void render(sf::RenderWindow *rw);
+        void render(Framework &frmwrk);
 
         ///////////Setter///////////
         void setPosition(sf::Vector2f pos);
@@ -37,9 +37,6 @@ class Slider
 
         sf::RectangleShape  mSliderRect;
         sf::RectangleShape  mSliderBar;
-
-//        std::unique_ptr<sf::Texture> upTexture;
-//        std::unique_ptr<sf::Sprite>  upSprite;
 
         float           mBarWidth;
 

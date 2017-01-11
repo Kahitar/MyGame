@@ -7,6 +7,7 @@
 
 #include "Gamestate.hpp"
 #include "MainMenu.hpp"
+#include "SettingsMenu.hpp"
 
 class Framework
 {
@@ -19,6 +20,8 @@ public:
     void run();
     void quit();
     void ChangeState(gameStates newstate);
+
+    sf::Vector2f getTransformedMousePosition();
 
     std::shared_ptr<sf::RenderWindow> spRenderWindow;
     std::shared_ptr<sf::Event>        spMainEvent;
