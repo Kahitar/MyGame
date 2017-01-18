@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add library="sfml-window-s-d" />
@@ -39,6 +40,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -77,6 +79,7 @@
 		<Unit filename="include/Framework.hpp" />
 		<Unit filename="include/Gamestate.hpp" />
 		<Unit filename="include/MainMenu.hpp" />
+		<Unit filename="include/Playstate.hpp" />
 		<Unit filename="include/ResourceCache.hpp" />
 		<Unit filename="include/ResourceManager.hpp" />
 		<Unit filename="include/SettingsCache.hpp" />
@@ -86,6 +89,7 @@
 		<Unit filename="src/Button.cpp" />
 		<Unit filename="src/Framework.cpp" />
 		<Unit filename="src/MainMenu.cpp" />
+		<Unit filename="src/Playstate.cpp" />
 		<Unit filename="src/ResourceCache.cpp" />
 		<Unit filename="src/ResourceManager.cpp" />
 		<Unit filename="src/SettingsCache.cpp" />

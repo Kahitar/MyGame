@@ -8,6 +8,7 @@
 #include "Gamestate.hpp"
 #include "MainMenu.hpp"
 #include "SettingsMenu.hpp"
+#include "Playstate.hpp"
 
 class Framework
 {

@@ -44,6 +44,9 @@ void Framework::ChangeState(gameStates newstate)
 {
     switch(newstate)
     {
+    case gameStates::PLAY:
+        CurrentState = std::move(std::unique_ptr<Playstate>(new Playstate));
+    break;
     case gameStates::MAINMENU:
         CurrentState = std::move(std::unique_ptr<MainMenu>(new MainMenu));
     break;

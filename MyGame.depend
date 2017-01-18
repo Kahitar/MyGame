@@ -449,13 +449,14 @@
 	<iostream>
 	"Framework.hpp"
 
-1484155140 c:\users\niklas\onedrive\c++\mygame\include\framework.hpp
+1484750613 c:\users\niklas\onedrive\c++\mygame\include\framework.hpp
 	<iostream>
 	<SFML\Graphics.hpp>
 	<memory>
 	"Gamestate.hpp"
 	"MainMenu.hpp"
 	"SettingsMenu.hpp"
+	"Playstate.hpp"
 
 1481038047 c:\users\niklas\onedrive\c++\mygame\include\gamestate.hpp
 	<iostream>
@@ -470,7 +471,7 @@
 	<SFML/Graphics.hpp>
 	<memory>
 
-1484155090 source:c:\users\niklas\onedrive\c++\mygame\src\framework.cpp
+1484750592 source:c:\users\niklas\onedrive\c++\mygame\src\framework.cpp
 	"Framework.hpp"
 	"ResourceManager.hpp"
 
@@ -903,9 +904,25 @@
 	<iostream>
 	<SFML/Graphics.hpp>
 
-1484155691 source:c:\users\niklas\onedrive\c++\mygame\src\settingsmenu.cpp
+1484155949 source:c:\users\niklas\onedrive\c++\mygame\src\settingsmenu.cpp
 	"SettingsMenu.hpp"
 	"Framework.hpp"
 	"ResourceManager.hpp"
 	<string>
+
+1484155874 source:c:\users\niklas\onedrive\c++\mygame\src\slider.cpp
+	"Slider.hpp"
+	"Framework.hpp"
+	<string>
+	<sstream>
+
+1484751588 source:c:\users\niklas\onedrive\c++\mygame\src\playstate.cpp
+	"Playstate.hpp"
+	"Framework.hpp"
+
+1484751554 c:\users\niklas\onedrive\c++\mygame\include\playstate.hpp
+	<Gamestate.hpp>
+	<SFML/Graphics.hpp>
+	"ResourceManager.hpp"
+	"Button.hpp"
 
