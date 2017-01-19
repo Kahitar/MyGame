@@ -14,6 +14,7 @@
 				<Compiler>
 					<Add option="-g" />
 					<Add directory="include" />
+					<Add directory="include/TileWorld" />
 				</Compiler>
 				<Linker>
 					<Add library="sfml-window-s-d" />
@@ -41,6 +42,7 @@
 				<Compiler>
 					<Add option="-O2" />
 					<Add directory="include" />
+					<Add directory="include/TileWorld" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -85,6 +87,7 @@
 		<Unit filename="include/SettingsCache.hpp" />
 		<Unit filename="include/SettingsMenu.hpp" />
 		<Unit filename="include/Slider.hpp" />
+		<Unit filename="include/TileWorld/Tileworld.hpp" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Button.cpp" />
 		<Unit filename="src/Framework.cpp" />
@@ -95,6 +98,7 @@
 		<Unit filename="src/SettingsCache.cpp" />
 		<Unit filename="src/SettingsMenu.cpp" />
 		<Unit filename="src/Slider.cpp" />
+		<Unit filename="src/TileWorld/Tileworld.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
