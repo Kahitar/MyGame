@@ -23,6 +23,7 @@ public:
     void ChangeState(gameStates newstate);
 
     sf::Vector2f getTransformedMousePosition();
+    float        getFrameTime();
 
     std::shared_ptr<sf::RenderWindow> spRenderWindow;
     std::shared_ptr<sf::Event>        spMainEvent;
@@ -36,10 +37,7 @@ private:
     //void CalculateScale(); //Not implemented yet
 
     std::unique_ptr<Gamestate>   CurrentState;
-
     std::unique_ptr<sf::Clock>   upClock;
-    std::unique_ptr<sf::Texture> upBackTexture;
-    std::unique_ptr<sf::Sprite>  upBackSprite;
 
     float   mFrameTime;
     bool    mRunning;

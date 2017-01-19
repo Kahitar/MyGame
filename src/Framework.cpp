@@ -6,16 +6,11 @@ using namespace std;
 Framework::Framework()
     :mRunning(true)
 {
-    spRenderWindow  = std::move(std::unique_ptr<sf::RenderWindow>(new sf::RenderWindow(sf::VideoMode(1280,720,32),"NewGame")));
+    spRenderWindow  = std::move(std::unique_ptr<sf::RenderWindow>(new sf::RenderWindow(sf::VideoMode(720,720,32),"NewGame")));
     spMainEvent     = std::move(std::unique_ptr<sf::Event>(new sf::Event));
     upClock         = std::move(std::unique_ptr<sf::Clock>(new sf::Clock));
 
-    upBackTexture   = std::move(std::unique_ptr<sf::Texture>(new sf::Texture));
-    upBackSprite    = std::move(std::unique_ptr<sf::Sprite>(new sf::Sprite));
-
     spRenderWindow->setPosition(sf::Vector2i(50,50));
-    *upBackTexture = ResourceManager::getTexture("assets\\textures\\pillarsofcreation.png");
-    upBackSprite->setTexture(*upBackTexture);
 
     // Set Gamestate to MAINMENU, in case it is not changed in main
     CurrentState = std::move(std::unique_ptr<MainMenu>(new MainMenu));
@@ -42,6 +37,8 @@ void Framework::run()
 
 void Framework::ChangeState(gameStates newstate)
 {
+    spRenderWindow->setView(spRenderWindow->getDefaultView());
+
     switch(newstate)
     {
     case gameStates::PLAY:
@@ -64,6 +61,11 @@ sf::Vector2f Framework::getTransformedMousePosition()
     return spRenderWindow->mapPixelToCoords(MousePixelPos);
 }
 
+float Framework::getFrameTime()
+{
+    return mFrameTime;
+}
+
 void Framework::quit()
 {
     spRenderWindow->close();
@@ -83,11 +85,22 @@ void Framework::handleEvents()
     {
         CurrentState->handle(*this);
 
+        // catch Mouse Button events
         if(spMainEvent->type == sf::Event::MouseButtonPressed){
             if(spMainEvent->mouseButton.button == sf::Mouse::Left){
-
+                //Currently the Framework itself handles no pressed buttons
             }
         }
+
+//        // catch the resize events
+//        if (spMainEvent->type == sf::Event::Resized)
+//        {
+//            // update the view to the new size of the window
+//            sf::FloatRect visibleArea(0, 0, spMainEvent->size.width, spMainEvent->size.height);
+//            spRenderWindow->setView(sf::View(visibleArea));
+//        }
+
+        // catch the close event
         if(spMainEvent->type == sf::Event::Closed)
             mRunning = false;
     }
@@ -97,7 +110,6 @@ void Framework::render()
 {
     spRenderWindow->clear();
 
-    spRenderWindow->draw(*upBackSprite);
     CurrentState->render(*this);
 
     spRenderWindow->display();

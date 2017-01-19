@@ -20,6 +20,9 @@ private:
     std::unique_ptr<Button> pNewGameButton;
     std::unique_ptr<Button> pSettingsButton;
     std::unique_ptr<Button> pExitButton;
+
+    std::unique_ptr<sf::Texture> upBackTexture;
+    std::unique_ptr<sf::Sprite>  upBackSprite;
 };
 
 #endif // MAINMENU_HPP

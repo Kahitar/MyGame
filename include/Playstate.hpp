@@ -6,6 +6,7 @@
 
 #include "ResourceManager.hpp"
 #include "Button.hpp"
+#include "Tileworld.hpp"
 
 
 class Playstate : public Gamestate
@@ -19,13 +20,13 @@ class Playstate : public Gamestate
         void render(Framework &frmwrk);
 
     private:
-//        sf::View playerView(sf::FloatRect(200,200,200,200));
-
-        sf::RectangleShape mRect;
-        sf::Texture texture;
-        sf::Sprite sprite;
+        sf::View playerView;
 
         std::unique_ptr<Button> upMainMenuButton;
+
+        float mMoveSpeed;
+
+        Tileworld world1;
 
 };
 

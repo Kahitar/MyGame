@@ -3,12 +3,14 @@
 	<iostream>
 	"Framework.hpp"
 
-1481471068 e:\onedrive\c++\mygame\include\framework.hpp
+1484818138 e:\onedrive\c++\mygame\include\framework.hpp
 	<iostream>
 	<SFML\Graphics.hpp>
 	<memory>
 	"Gamestate.hpp"
 	"MainMenu.hpp"
+	"SettingsMenu.hpp"
+	"Playstate.hpp"
 
 1470642834 e:\onedrive\c++\sfml-2.4.1\include\sfml\graphics.hpp
 	<SFML/Window.hpp>
@@ -402,19 +404,21 @@
 	<iostream>
 	<memory>
 
-1481127427 e:\onedrive\c++\mygame\include\mainmenu.hpp
+1484818138 e:\onedrive\c++\mygame\include\mainmenu.hpp
 	"Gamestate.hpp"
 	"Button.hpp"
 
-1481486464 e:\onedrive\c++\mygame\include\button.hpp
+1483177526 e:\onedrive\c++\mygame\include\button.hpp
 	<iostream>
 	<SFML/Graphics.hpp>
 	<memory>
 
-1481486464 source:e:\onedrive\c++\mygame\src\button.cpp
+1483177721 source:e:\onedrive\c++\mygame\src\button.cpp
 	"Button.hpp"
+	"Framework.hpp"
+	"ResourceManager.hpp"
 
-1481475054 source:e:\onedrive\c++\mygame\src\framework.cpp
+1484827161 source:e:\onedrive\c++\mygame\src\framework.cpp
 	"Framework.hpp"
 	"ResourceManager.hpp"
 
@@ -432,7 +436,7 @@
 
 1481458800 e:\onedrive\c++\mygame\include\settingscache.hpp
 
-1481475168 source:e:\onedrive\c++\mygame\src\mainmenu.cpp
+1484818241 source:e:\onedrive\c++\mygame\src\mainmenu.cpp
 	"MainMenu.hpp"
 	"Framework.hpp"
 
@@ -925,4 +929,45 @@
 	<SFML/Graphics.hpp>
 	"ResourceManager.hpp"
 	"Button.hpp"
+
+1484155314 e:\onedrive\c++\mygame\include\settingsmenu.hpp
+	"Gamestate.hpp"
+	"Button.hpp"
+	"Slider.hpp"
+
+1484155700 e:\onedrive\c++\mygame\include\slider.hpp
+	<iostream>
+	<SFML/Graphics.hpp>
+
+1484826687 e:\onedrive\c++\mygame\include\playstate.hpp
+	<Gamestate.hpp>
+	<SFML/Graphics.hpp>
+	"ResourceManager.hpp"
+	"Button.hpp"
+	"Tileworld.hpp"
+
+1484827128 source:e:\onedrive\c++\mygame\src\playstate.cpp
+	"Playstate.hpp"
+	"Framework.hpp"
+
+1484155949 source:e:\onedrive\c++\mygame\src\settingsmenu.cpp
+	"SettingsMenu.hpp"
+	"Framework.hpp"
+	"ResourceManager.hpp"
+	<string>
+
+1484155874 source:e:\onedrive\c++\mygame\src\slider.cpp
+	"Slider.hpp"
+	"Framework.hpp"
+	<string>
+	<sstream>
+
+1484826784 source:e:\onedrive\c++\mygame\src\tileworld\tileworld.cpp
+	"Tileworld.hpp"
+	"Framework.hpp"
+
+1484825904 e:\onedrive\c++\mygame\include\tileworld\tileworld.hpp
+	<iostream>
+	<SFML/Graphics.hpp>
+	"ResourceManager.hpp"
 
