@@ -10,12 +10,13 @@ class Framework;
 class Button
 {
     public:
+        Button(){};
         Button(sf::Vector2f pos = sf::Vector2f(0, 0), sf::Vector2f Size = sf::Vector2f(200, 50), std::string text = "Button");
         ~Button();
 
         void update();
         void handle(Framework &frmwrk);
-        void render(std::shared_ptr<sf::RenderWindow> rw);
+        void render(std::shared_ptr<sf::RenderWindow> window);
 
         ///////////Setter///////////
         void setText(std::string text);
@@ -38,9 +39,9 @@ class Button
         sf::Vector2f    mPos;
         sf::Vector2f    mSize;
 
-        std::unique_ptr<sf::Texture> upTexture;
-        std::unique_ptr<sf::Sprite>  upSpriteNotHovered;
-        std::unique_ptr<sf::Sprite>  upSpriteHovered;
+        std::shared_ptr<sf::Texture> upTexture;
+        std::shared_ptr<sf::Sprite>  upSpriteNotHovered;
+        std::shared_ptr<sf::Sprite>  upSpriteHovered;
 
         float           TextureHeight;
         float           TextureWidth;

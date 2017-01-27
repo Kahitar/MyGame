@@ -1,0 +1,7 @@
+Engine:
+ ☐ Replace all Buttons with ButtonManager-Buttons
+ ☐ Make the Size of the Window global
+   Do I want to scale everything accordingly or just reduce the window size?
+ ☐ Integrate the transformation of the mouse from global to local into framework class and change it everywhere to call the framework function
+ 
+ 

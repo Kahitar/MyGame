@@ -404,21 +404,22 @@
 	<iostream>
 	<memory>
 
-1484818138 e:\onedrive\c++\mygame\include\mainmenu.hpp
+1485550021 e:\onedrive\c++\mygame\include\mainmenu.hpp
 	"Gamestate.hpp"
 	"Button.hpp"
+	"ButtonManager.hpp"
 
-1483177526 e:\onedrive\c++\mygame\include\button.hpp
+1485546680 e:\onedrive\c++\mygame\include\button.hpp
 	<iostream>
 	<SFML/Graphics.hpp>
 	<memory>
 
-1483177721 source:e:\onedrive\c++\mygame\src\button.cpp
+1485546680 source:e:\onedrive\c++\mygame\src\button.cpp
 	"Button.hpp"
 	"Framework.hpp"
 	"ResourceManager.hpp"
 
-1484827161 source:e:\onedrive\c++\mygame\src\framework.cpp
+1485549051 source:e:\onedrive\c++\mygame\src\framework.cpp
 	"Framework.hpp"
 	"ResourceManager.hpp"
 
@@ -436,9 +437,10 @@
 
 1481458800 e:\onedrive\c++\mygame\include\settingscache.hpp
 
-1484818241 source:e:\onedrive\c++\mygame\src\mainmenu.cpp
+1485549382 source:e:\onedrive\c++\mygame\src\mainmenu.cpp
 	"MainMenu.hpp"
 	"Framework.hpp"
+	"ButtonManager.hpp"
 
 1481299518 source:e:\onedrive\c++\mygame\src\resourcecache.cpp
 	"ResourceCache.hpp"
@@ -930,9 +932,10 @@
 	"ResourceManager.hpp"
 	"Button.hpp"
 
-1484155314 e:\onedrive\c++\mygame\include\settingsmenu.hpp
+1485550277 e:\onedrive\c++\mygame\include\settingsmenu.hpp
 	"Gamestate.hpp"
 	"Button.hpp"
+	"ButtonManager.hpp"
 	"Slider.hpp"
 
 1484155700 e:\onedrive\c++\mygame\include\slider.hpp
@@ -950,7 +953,7 @@
 	"Playstate.hpp"
 	"Framework.hpp"
 
-1484155949 source:e:\onedrive\c++\mygame\src\settingsmenu.cpp
+1485550358 source:e:\onedrive\c++\mygame\src\settingsmenu.cpp
 	"SettingsMenu.hpp"
 	"Framework.hpp"
 	"ResourceManager.hpp"
@@ -970,4 +973,15 @@
 	<iostream>
 	<SFML/Graphics.hpp>
 	"ResourceManager.hpp"
+
+1485548316 e:\onedrive\c++\mygame\include\buttonmanager.hpp
+	<iostream>
+	<map>
+	<SFML/Graphics.hpp>
+	"Button.hpp"
+
+1485548859 source:e:\onedrive\c++\mygame\src\buttonmanager.cpp
+	"Framework.hpp"
+	"ButtonManager.hpp"
+	<algorithm>
 

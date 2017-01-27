@@ -3,6 +3,7 @@
 
 #include "Gamestate.hpp"
 #include "Button.hpp"
+#include "ButtonManager.hpp"
 
 class Framework;
 
@@ -17,9 +18,7 @@ public:
     void render(Framework &frmwrk);
 
 private:
-    std::unique_ptr<Button> pNewGameButton;
-    std::unique_ptr<Button> pSettingsButton;
-    std::unique_ptr<Button> pExitButton;
+    ButtonManager Buttons;
 
     std::unique_ptr<sf::Texture> upBackTexture;
     std::unique_ptr<sf::Sprite>  upBackSprite;

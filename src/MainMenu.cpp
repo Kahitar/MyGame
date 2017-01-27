@@ -1,12 +1,12 @@
 #include "MainMenu.hpp"
 #include "Framework.hpp"
-
+#include "ButtonManager.hpp"
 
 MainMenu::MainMenu()
 {
-    pNewGameButton = std::move(std::unique_ptr<Button>(new Button(sf::Vector2f(540,300),sf::Vector2f(200,50),"New Game")));
-    pSettingsButton = std::move(std::unique_ptr<Button>(new Button(sf::Vector2f(540,400),sf::Vector2f(200,50),"Settings")));
-    pExitButton = std::move(std::unique_ptr<Button>(new Button(sf::Vector2f(540,500),sf::Vector2f(200,50),"Exit Game")));
+    Buttons.addButton(sf::Vector2f(540,300),sf::Vector2f(200,50),"NewGameButton","New Game");
+    Buttons.addButton(sf::Vector2f(540,400),sf::Vector2f(200,50),"SettingsButton","Settings");
+    Buttons.addButton(sf::Vector2f(540,500),sf::Vector2f(200,50),"ExitButton","Exit Game");
 
     upBackTexture   = std::move(std::unique_ptr<sf::Texture>(new sf::Texture));
     upBackSprite    = std::move(std::unique_ptr<sf::Sprite>(new sf::Sprite));
@@ -21,23 +21,20 @@ MainMenu::~MainMenu()
 
 void MainMenu::update(Framework &frmwrk)
 {
-    pNewGameButton->update();
-    pSettingsButton->update();
-    pExitButton->update();
+    Buttons.update(frmwrk);
 }
 
 void MainMenu::handle(Framework &frmwrk)
 {
-    pNewGameButton->handle(frmwrk);
-    pSettingsButton->handle(frmwrk);
-    pExitButton->handle(frmwrk);
+    Buttons.handle(frmwrk);
 
-    if(frmwrk.spMainEvent->type == sf::Event::MouseButtonPressed && frmwrk.spMainEvent->mouseButton.button == sf::Mouse::Left){
-        if(pNewGameButton->getMouseOnButton()){
+    if(frmwrk.spMainEvent->type == sf::Event::MouseButtonPressed && frmwrk.spMainEvent->mouseButton.button == sf::Mouse::Left)
+    {
+        if(Buttons.getButton("NewGameButton").getMouseOnButton()){
             frmwrk.ChangeState(Framework::gameStates::PLAY);
-        } else if (pSettingsButton->getMouseOnButton()){
+        } else if (Buttons.getButton("SettingsButton").getMouseOnButton()){
             frmwrk.ChangeState(Framework::gameStates::SETTINGS);
-        } else if (pExitButton->getMouseOnButton()){
+        } else if (Buttons.getButton("ExitButton").getMouseOnButton()){
             frmwrk.quit();
         }
     }
@@ -45,11 +42,7 @@ void MainMenu::handle(Framework &frmwrk)
 
 void MainMenu::render(Framework &frmwrk)
 {
-    //Main Menu Background
-    frmwrk.spRenderWindow->draw(*upBackSprite);
 
-    //Buttons
-    pNewGameButton->render(frmwrk.spRenderWindow);
-    pSettingsButton->render(frmwrk.spRenderWindow);
-    pExitButton->render(frmwrk.spRenderWindow);
+    frmwrk.spRenderWindow->draw(*upBackSprite);     //Main Menu Background
+    Buttons.render(frmwrk);
 }

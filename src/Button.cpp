@@ -12,9 +12,9 @@ Button::Button(sf::Vector2f pos, sf::Vector2f Size, std::string text)
     mText.setFillColor(sf::Color::Black);
     mText.setStyle(sf::Text::Bold);
 
-    upTexture            = std::unique_ptr<sf::Texture>(new sf::Texture);
-    upSpriteNotHovered   = std::unique_ptr<sf::Sprite> (new sf::Sprite);
-    upSpriteHovered      = std::unique_ptr<sf::Sprite> (new sf::Sprite);
+    upTexture            = std::shared_ptr<sf::Texture>(new sf::Texture);
+    upSpriteNotHovered   = std::shared_ptr<sf::Sprite> (new sf::Sprite);
+    upSpriteHovered      = std::shared_ptr<sf::Sprite> (new sf::Sprite);
 
     sf::Image subImage;
     subImage.loadFromFile("assets\\textures\\Button.png"); //TODO: Load from resource Manager
@@ -107,12 +107,15 @@ void Button::handle(Framework &frmwrk)
         mClicked = !mClicked;
 }
 
-void Button::render(std::shared_ptr<sf::RenderWindow> rw)
+void Button::render(std::shared_ptr<sf::RenderWindow> window)
 {
+    //TODO: Call this function with frmwrk as argument as well!
+//    std::shared_ptr<sf::RenderWindow> window = frmwrk.spRenderWindow;
+
     if(mMouseOnButton){
-        rw->draw(*upSpriteHovered);
+        window->draw(*upSpriteHovered);
     } else {
-        rw->draw(*upSpriteNotHovered);
+        window->draw(*upSpriteNotHovered);
     }
-    rw->draw(mText);
+    window->draw(mText);
 }

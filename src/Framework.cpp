@@ -6,7 +6,7 @@ using namespace std;
 Framework::Framework()
     :mRunning(true)
 {
-    spRenderWindow  = std::move(std::unique_ptr<sf::RenderWindow>(new sf::RenderWindow(sf::VideoMode(720,720,32),"NewGame")));
+    spRenderWindow  = std::move(std::unique_ptr<sf::RenderWindow>(new sf::RenderWindow(sf::VideoMode(1280,720,32),"NewGame")));
     spMainEvent     = std::move(std::unique_ptr<sf::Event>(new sf::Event));
     upClock         = std::move(std::unique_ptr<sf::Clock>(new sf::Clock));
 
@@ -108,7 +108,7 @@ void Framework::handleEvents()
 
 void Framework::render()
 {
-    spRenderWindow->clear();
+    spRenderWindow->clear(sf::Color::Green);
 
     CurrentState->render(*this);
 
