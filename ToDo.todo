@@ -3,5 +3,11 @@ Engine:
  ☐ Make the Size of the Window global
    Do I want to scale everything accordingly or just reduce the window size?
  ☐ Integrate the transformation of the mouse from global to local into framework class and change it everywhere to call the framework function
- 
- 
+ ☐ Make a SpriteManager
+   This should automatically generate a texture and load it into a sprite, so that I don't have to do that manually all the time
+ ☐ Make spRenderWindow and spMainEvent private in Framework
+
+
+ Bugs:
+   ☐ Error on "Main Menu"-Button Click
+      Only Sometimes: When clicking "Main Menu" ingame after creating a New Game from ingame ("New Game"-Button) the game crashes (Most likely SEGMENTATION-Error)
