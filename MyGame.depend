@@ -404,9 +404,9 @@
 	<iostream>
 	<memory>
 
-1491589643 e:\onedrive\c++\mygame\include\mainmenu.hpp
+1491591173 e:\onedrive\c++\mygame\include\mainmenu.hpp
 	"Gamestate.hpp"
-	"ButtonManager.hpp"
+	"UIElement.hpp"
 
 1485550280 e:\onedrive\c++\mygame\include\button.hpp
 	<iostream>
@@ -436,7 +436,7 @@
 
 1481462400 e:\onedrive\c++\mygame\include\settingscache.hpp
 
-1491590109 source:e:\onedrive\c++\mygame\src\mainmenu.cpp
+1491590281 source:e:\onedrive\c++\mygame\src\mainmenu.cpp
 	"MainMenu.hpp"
 	"Framework.hpp"
 
@@ -930,28 +930,28 @@
 	"ResourceManager.hpp"
 	"Button.hpp"
 
-1485553877 e:\onedrive\c++\mygame\include\settingsmenu.hpp
+1491593154 e:\onedrive\c++\mygame\include\settingsmenu.hpp
 	"Gamestate.hpp"
 	"Button.hpp"
-	"ButtonManager.hpp"
+	"UIElement.hpp"
 	"Slider.hpp"
 
 1484159300 e:\onedrive\c++\mygame\include\slider.hpp
 	<iostream>
 	<SFML/Graphics.hpp>
 
-1491589476 e:\onedrive\c++\mygame\include\playstate.hpp
+1491591173 e:\onedrive\c++\mygame\include\playstate.hpp
 	<Gamestate.hpp>
 	<SFML/Graphics.hpp>
 	"ResourceManager.hpp"
-	"ButtonManager.hpp"
+	"UIElement.hpp"
 	"Tileworld.hpp"
 
 1491589473 source:e:\onedrive\c++\mygame\src\playstate.cpp
 	"Playstate.hpp"
 	"Framework.hpp"
 
-1485553958 source:e:\onedrive\c++\mygame\src\settingsmenu.cpp
+1491592913 source:e:\onedrive\c++\mygame\src\settingsmenu.cpp
 	"SettingsMenu.hpp"
 	"Framework.hpp"
 	"ResourceManager.hpp"
@@ -972,14 +972,27 @@
 	<SFML/Graphics.hpp>
 	"ResourceManager.hpp"
 
-1485551916 e:\onedrive\c++\mygame\include\buttonmanager.hpp
+1491590968 e:\onedrive\c++\mygame\include\buttonmanager.hpp
 	<iostream>
 	<map>
 	<SFML/Graphics.hpp>
 	"Button.hpp"
+	"Slider.hpp"
 
 1491590246 source:e:\onedrive\c++\mygame\src\buttonmanager.cpp
 	"Framework.hpp"
 	"ButtonManager.hpp"
+	<algorithm>
+
+1491590968 e:\onedrive\c++\mygame\include\uielement.hpp
+	<iostream>
+	<map>
+	<SFML/Graphics.hpp>
+	"Button.hpp"
+	"Slider.hpp"
+
+1491593062 source:e:\onedrive\c++\mygame\src\uielement.cpp
+	"Framework.hpp"
+	"UIElement.hpp"
 	<algorithm>
 

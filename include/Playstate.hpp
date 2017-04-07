@@ -5,7 +5,7 @@
 #include <SFML/Graphics.hpp>
 
 #include "ResourceManager.hpp"
-#include "ButtonManager.hpp"
+#include "UIElement.hpp"
 #include "Tileworld.hpp"
 
 
@@ -22,7 +22,7 @@ class Playstate : public Gamestate
     private:
         sf::View playerView;
 
-        ButtonManager Buttons;
+        UIElement Buttons;
 
         float mMoveSpeed;
 

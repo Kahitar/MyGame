@@ -8,8 +8,8 @@ SettingsMenu::SettingsMenu()
     Buttons.addButton(sf::Vector2f(500,300),sf::Vector2f(200,50),"SliderHeadline","Slider:");
     Buttons.addButton(sf::Vector2f(700,500),sf::Vector2f(200,50),"BackButton","Back");
 
-    upSlider            = std::move(std::unique_ptr<Slider>(new Slider(sf::Vector2f(750,300),sf::Vector2f(200,50))));
-    upSlider->setValue(3);
+    Sliders.addSlider(sf::Vector2f(750,300),sf::Vector2f(200,50),"TestSlider","This is a slider:");
+    Sliders.getSlider("TestSlider").setValue(3);
 }
 
 SettingsMenu::~SettingsMenu()
@@ -20,15 +20,13 @@ SettingsMenu::~SettingsMenu()
 void SettingsMenu::update(Framework &frmwrk)
 {
     Buttons.update(frmwrk);
-    upSlider->update(frmwrk);
-
-    int anExampleNumber = upSlider->getSliderValue();
+    Sliders.update(frmwrk);
 }
 
 void SettingsMenu::handle(Framework &frmwrk)
 {
     Buttons.handle(frmwrk);
-    upSlider->handle(frmwrk);
+    Sliders.handle(frmwrk);
 
     if(frmwrk.spMainEvent->type == sf::Event::MouseButtonPressed
        && frmwrk.spMainEvent->mouseButton.button == sf::Mouse::Left)
@@ -42,5 +40,5 @@ void SettingsMenu::handle(Framework &frmwrk)
 void SettingsMenu::render(Framework &frmwrk)
 {
     Buttons.render(frmwrk);
-    upSlider->render(frmwrk);
+    Sliders.render(frmwrk);
 }

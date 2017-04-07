@@ -3,7 +3,7 @@
 
 #include "Gamestate.hpp"
 #include "Button.hpp"
-#include "ButtonManager.hpp"
+#include "UIElement.hpp"
 #include "Slider.hpp"
 
 class Framework;
@@ -19,8 +19,8 @@ class SettingsMenu : public Gamestate
         void render(Framework &frmwrk);
 
     private:
-        ButtonManager Buttons;
-        std::unique_ptr<Slider> upSlider;
+        UIElement Buttons;
+        UIElement Sliders;
 };
 
 #endif // SETTINGSMENU_HPP
