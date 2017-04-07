@@ -2,7 +2,6 @@
 #define MAINMENU_HPP
 
 #include "Gamestate.hpp"
-#include "Button.hpp"
 #include "ButtonManager.hpp"
 
 class Framework;

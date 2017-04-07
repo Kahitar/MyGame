@@ -14,11 +14,21 @@ ButtonManager::~ButtonManager()
 
 void ButtonManager::addButton(sf::Vector2f pos, sf::Vector2f Size, std::string Name, std::string Text)
 {
-    //Load the button
-    std::shared_ptr<Button> newButton(new Button(pos,Size,Text));
+    //check if Button doesn't already exists
+    if(Buttons.find(Name) == Buttons.end()){
+    //add Button if it doesn't already exist
+        //Load the button
+        std::shared_ptr<Button> newButton(new Button(pos,Size,Text));
 
-    //Insert it into the map
-    Buttons.insert(make_pair(Name, newButton));
+        //Insert it into the map
+        Buttons.insert(make_pair(Name, newButton));
+    }
+    else{
+    //"error" if it already exists
+        std::cout << "ERROR: A UI-element with the name \"";
+        std::cout << Name;
+        std::cout << "\" already exists!";
+    }
 }
 
 Button ButtonManager::getButton(std::string ButtonName)

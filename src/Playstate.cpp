@@ -4,7 +4,7 @@
 Playstate::Playstate()
     :mMoveSpeed(500)
 {
-    upMainMenuButton = std::move(std::unique_ptr<Button>(new Button(sf::Vector2f(540,300),sf::Vector2f(200,50),"Main Menu")));
+    Buttons.addButton(sf::Vector2f(540,300),sf::Vector2f(200,50),"MainMenuButton","Main Menu");
 
     playerView.reset(sf::FloatRect(200,200,400,400));
 //    playerView.setViewport(sf::FloatRect(0.25,0.25,0.5,0.5));
@@ -17,7 +17,7 @@ Playstate::~Playstate()
 
 void Playstate::update(Framework &frmwrk)
 {
-    upMainMenuButton->update();
+    Buttons.update(frmwrk);
     world1.update(frmwrk);
 
     frmwrk.spRenderWindow->setView(playerView);
@@ -43,12 +43,12 @@ void Playstate::update(Framework &frmwrk)
 
 void Playstate::handle(Framework &frmwrk)
 {
-    upMainMenuButton->handle(frmwrk);
+    Buttons.handle(frmwrk);
     world1.handle(frmwrk);
 
     //Mouse Button pressed
     if(frmwrk.spMainEvent->type == sf::Event::MouseButtonPressed && frmwrk.spMainEvent->mouseButton.button == sf::Mouse::Left){
-        if(upMainMenuButton->getMouseOnButton()){
+        if(Buttons.getButton("MainMenuButton").getMouseOnButton()){
             frmwrk.ChangeState(Framework::gameStates::MAINMENU);
         }
     }
@@ -65,6 +65,6 @@ void Playstate::handle(Framework &frmwrk)
 
 void Playstate::render(Framework &frmwrk)
 {
-    upMainMenuButton->render(frmwrk.spRenderWindow);
+    Buttons.render(frmwrk);
     world1.render(frmwrk);
 }
