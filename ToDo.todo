@@ -1,13 +1,24 @@
 Engine:
- ☐ Replace all Buttons with ButtonManager-Buttons
  ☐ Make the Size of the Window global
    Do I want to scale everything accordingly or just reduce the window size?
+ ☐ Fix Views in general
+   Understand how it works...
  ☐ Integrate the transformation of the mouse from global to local into framework class and change it everywhere to call the framework function
- ☐ Make a SpriteManager
-   This should automatically generate a texture and load it into a sprite, so that I don't have to do that manually all the time
  ☐ Make spRenderWindow and spMainEvent private in Framework
-
+ ☐ UIElement: Check if the Button/Slider alerady exists when adding one
+   What to do if it does?
+ ☐ Add a class for texts
+   e.g. a description or headline (like "Number of KIs:")
 
  Bugs:
    ☐ Error on "Main Menu"-Button Click
       Only Sometimes: When clicking "Main Menu" ingame after creating a New Game from ingame ("New Game"-Button) the game crashes (Most likely SEGMENTATION-Error)
+   ☐ FOV changes when window is resized for the first time
+
+ Archive:
+ ✔ Replace all Buttons with ButtonManager-Buttons @done (17-04-07 20:27)
+ ✔ Include Sliders in the ButtonManager @done (17-04-07 20:27)
+   and maybe renaim it UIelement
+ ✘ Make a SpriteManager @cancelled (17-04-07 23:13)
+   This should automatically generate a texture and load it into a sprite, so that I don't have to do that manually all the time
+     Don't do this. That's not worth it nor is it practical!

@@ -951,7 +951,7 @@
 	"Playstate.hpp"
 	"Framework.hpp"
 
-1491592913 source:e:\onedrive\c++\mygame\src\settingsmenu.cpp
+1491593155 source:e:\onedrive\c++\mygame\src\settingsmenu.cpp
 	"SettingsMenu.hpp"
 	"Framework.hpp"
 	"ResourceManager.hpp"
@@ -995,4 +995,116 @@
 	"Framework.hpp"
 	"UIElement.hpp"
 	<algorithm>
+
+1485550280 source:e:\onedrive\c++\mygame\gamefiles\engine\button.cpp
+	"Button.hpp"
+	"Framework.hpp"
+	"ResourceManager.hpp"
+
+1485550280 e:\onedrive\c++\mygame\gamefiles\engine\button.hpp
+	<iostream>
+	<SFML/Graphics.hpp>
+	<memory>
+
+1484821738 e:\onedrive\c++\mygame\gamefiles\engine\framework.hpp
+	<iostream>
+	<SFML\Graphics.hpp>
+	<memory>
+	"Gamestate.hpp"
+	"MainMenu.hpp"
+	"SettingsMenu.hpp"
+	"Playstate.hpp"
+
+1481041647 e:\onedrive\c++\mygame\gamefiles\engine\gamestate.hpp
+	<iostream>
+	<memory>
+
+1491591173 e:\onedrive\c++\mygame\gamefiles\spacefuture\mainmenu.hpp
+	"Gamestate.hpp"
+	"UIElement.hpp"
+
+1491590968 e:\onedrive\c++\mygame\gamefiles\engine\uielement.hpp
+	<iostream>
+	<map>
+	<SFML/Graphics.hpp>
+	"Button.hpp"
+	"Slider.hpp"
+
+1484159300 e:\onedrive\c++\mygame\gamefiles\engine\slider.hpp
+	<iostream>
+	<SFML/Graphics.hpp>
+
+1491593154 e:\onedrive\c++\mygame\gamefiles\engine\settingsmenu.hpp
+	"Gamestate.hpp"
+	"Button.hpp"
+	"UIElement.hpp"
+	"Slider.hpp"
+
+1491591173 e:\onedrive\c++\mygame\gamefiles\engine\playstate.hpp
+	<Gamestate.hpp>
+	<SFML/Graphics.hpp>
+	"ResourceManager.hpp"
+	"UIElement.hpp"
+	"Tileworld.hpp"
+
+1481462369 e:\onedrive\c++\mygame\gamefiles\engine\resourcemanager.hpp
+	<string>
+	<memory>
+	"ResourceCache.hpp"
+	"SettingsCache.hpp"
+
+1481111743 e:\onedrive\c++\mygame\gamefiles\engine\resourcecache.hpp
+	<iostream>
+	<map>
+	<string>
+	"SFML/Graphics.hpp"
+
+1481462400 e:\onedrive\c++\mygame\gamefiles\engine\settingscache.hpp
+
+1484829504 e:\onedrive\c++\mygame\gamefiles\tileworld\tileworld.hpp
+	<iostream>
+	<SFML/Graphics.hpp>
+	"ResourceManager.hpp"
+
+1491589473 source:e:\onedrive\c++\mygame\gamefiles\engine\playstate.cpp
+	"Playstate.hpp"
+	"Framework.hpp"
+
+1481303118 source:e:\onedrive\c++\mygame\gamefiles\engine\resourcecache.cpp
+	"ResourceCache.hpp"
+
+1481462369 source:e:\onedrive\c++\mygame\gamefiles\engine\resourcemanager.cpp
+	"ResourceManager.hpp"
+
+1481462400 source:e:\onedrive\c++\mygame\gamefiles\engine\settingscache.cpp
+	"SettingsCache.hpp"
+
+1491593155 source:e:\onedrive\c++\mygame\gamefiles\engine\settingsmenu.cpp
+	"SettingsMenu.hpp"
+	"Framework.hpp"
+	"ResourceManager.hpp"
+	<string>
+
+1484159474 source:e:\onedrive\c++\mygame\gamefiles\engine\slider.cpp
+	"Slider.hpp"
+	"Framework.hpp"
+	<string>
+	<sstream>
+
+1491593062 source:e:\onedrive\c++\mygame\gamefiles\engine\uielement.cpp
+	"Framework.hpp"
+	"UIElement.hpp"
+	<algorithm>
+
+1491854867 source:e:\onedrive\c++\mygame\gamefiles\main.cpp
+	<iostream>
+	"Framework.hpp"
+
+1491590281 source:e:\onedrive\c++\mygame\gamefiles\spacefuture\mainmenu.cpp
+	"MainMenu.hpp"
+	"Framework.hpp"
+
+1484830384 source:e:\onedrive\c++\mygame\gamefiles\tileworld\tileworld.cpp
+	"Tileworld.hpp"
+	"Framework.hpp"
 
