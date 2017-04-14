@@ -35,7 +35,6 @@ void Slider::update(Framework &frmwrk)
 void Slider::handle(Framework &frmwrk)
 {
     std::shared_ptr<sf::Event> event = frmwrk.spMainEvent;
-    std::shared_ptr<sf::RenderWindow> window = frmwrk.spRenderWindow;
 
     sf::Vector2f MouseWorldPos = frmwrk.getTransformedMousePosition();
 

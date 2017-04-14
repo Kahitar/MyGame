@@ -53,12 +53,39 @@ void Framework::ChangeState(gameStates newstate)
     }
 }
 
+void Framework::setViewToWindowSize()
+{
+    // update the view to the new size of the window
+    sf::View ResizedView;
+    int oldViewX = spRenderWindow->getView().getCenter().x - spRenderWindow->getView().getSize().x/2;
+    int oldViewY = spRenderWindow->getView().getCenter().y - spRenderWindow->getView().getSize().y/2;
+    sf::FloatRect visibleArea(oldViewX, oldViewY, spRenderWindow->getSize().x, spRenderWindow->getSize().y);
+    ResizedView.reset(visibleArea);
+    spRenderWindow->setView(ResizedView);
+}
+
+void Framework::setView(sf::View newView)
+{
+    spRenderWindow->setView(newView);
+}
+
+void Framework::setView(sf::FloatRect visibleArea)
+{
+    sf::View newView(visibleArea);
+    spRenderWindow->setView(newView);
+}
+
 sf::Vector2f Framework::getTransformedMousePosition()
 {
     // get the current mouse position in the window
     sf::Vector2i MousePixelPos = sf::Mouse::getPosition(*spRenderWindow);
     // convert it to world coordinates
     return spRenderWindow->mapPixelToCoords(MousePixelPos);
+}
+
+sf::View Framework::getView()
+{
+    return spRenderWindow->getView();
 }
 
 float Framework::getFrameTime()
@@ -91,14 +118,6 @@ void Framework::handleEvents()
                 //Currently the Framework itself handles no pressed buttons
             }
         }
-
-//        // catch the resize events
-//        if (spMainEvent->type == sf::Event::Resized)
-//        {
-//            // update the view to the new size of the window
-//            sf::FloatRect visibleArea(0, 0, spMainEvent->size.width, spMainEvent->size.height);
-//            spRenderWindow->setView(sf::View(visibleArea));
-//        }
 
         // catch the close event
         if(spMainEvent->type == sf::Event::Closed)

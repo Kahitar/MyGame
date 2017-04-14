@@ -1,19 +1,25 @@
 Engine:
  ☐ Make the Size of the Window global
    Do I want to scale everything accordingly or just reduce the window size?
- ☐ Fix Views in general
-   Understand how it works...
- ☐ Integrate the transformation of the mouse from global to local into framework class and change it everywhere to call the framework function
+
+   Maybe in a config file!
  ☐ Make spRenderWindow and spMainEvent private in Framework
  ☐ UIElement: Check if the Button/Slider alerady exists when adding one
    What to do if it does?
  ☐ Add a class for texts
    e.g. a description or headline (like "Number of KIs:")
+ ☐ Why does MainMenu switch to the default view?
+    When i come from another gamestate (e.g. Playstate) and the window was resized, MainMenu doesn't use the view which was set in framwork
+    Only after I resized the window again it switches to that view
 
  Bugs:
-   ☐ Error on "Main Menu"-Button Click
-      Only Sometimes: When clicking "Main Menu" ingame after creating a New Game from ingame ("New Game"-Button) the game crashes (Most likely SEGMENTATION-Error)
    ☐ FOV changes when window is resized for the first time
+      ☐ make it right!
+         Fix: in the constructor of Playstate: set the view with the actual window size
+         
+         Need to make the WindowSize a global variable for that!
+      ✔ make it "cheated" @done (17-04-14 19:13)
+         I just set it manually. Need to change that.
 
  Archive:
  ✔ Replace all Buttons with ButtonManager-Buttons @done (17-04-07 20:27)
@@ -21,4 +27,10 @@ Engine:
    and maybe renaim it UIelement
  ✘ Make a SpriteManager @cancelled (17-04-07 23:13)
    This should automatically generate a texture and load it into a sprite, so that I don't have to do that manually all the time
-     Don't do this. That's not worth it nor is it practical!
+     
+   Don't do this. That's not worth it nor is it practical!
+ ✔ Fix Views in general @done (17-04-14 18:22)
+   Understand how it works...
+
+   Views need to be set by every state itself. It's nonsense to control them all from Framework because every state has different requirements for them.
+ ✔ Integrate the transformation from global to local of the mouse into framework class and change i t everywhere to call the framework function @done (17-04-14 17:05)

@@ -87,13 +87,9 @@ void Button::update()
 void Button::handle(Framework &frmwrk)
 {
     std::shared_ptr<sf::Event> event = frmwrk.spMainEvent;
-    std::shared_ptr<sf::RenderWindow> window = frmwrk.spRenderWindow;
 
-    // ------- Dealing with a resized Window ------- //
-    // get the current mouse position in the window
-    sf::Vector2i MousePixelPos = sf::Mouse::getPosition(*window);
-    // convert it to world coordinates
-    sf::Vector2f MouseWorldPos = window->mapPixelToCoords(MousePixelPos);
+    // Dealing with a resized Window
+    sf::Vector2f MouseWorldPos = frmwrk.getTransformedMousePosition();
 
     if(MouseWorldPos.x > mPos.x
         && MouseWorldPos.y > mPos.y
@@ -109,7 +105,7 @@ void Button::handle(Framework &frmwrk)
 
 void Button::render(std::shared_ptr<sf::RenderWindow> window)
 {
-    //TODO: Call this function with frmwrk as argument as well!
+    //TODO: Call this function with frmwrk as argument as well! (Consistency with the other render functions)
 //    std::shared_ptr<sf::RenderWindow> window = frmwrk.spRenderWindow;
 
     if(mMouseOnButton){

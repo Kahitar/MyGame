@@ -6,8 +6,8 @@ Playstate::Playstate()
 {
     Buttons.addButton(sf::Vector2f(540,300),sf::Vector2f(200,50),"MainMenuButton","Main Menu");
 
-    playerView.reset(sf::FloatRect(200,200,400,400));
-//    playerView.setViewport(sf::FloatRect(0.25,0.25,0.5,0.5));
+    // TODO: (Re)set the view with the actual window size
+    playerView.reset(sf::FloatRect(0,0,1280,720));
 }
 
 Playstate::~Playstate()
@@ -20,25 +20,9 @@ void Playstate::update(Framework &frmwrk)
     Buttons.update(frmwrk);
     world1.update(frmwrk);
 
-    frmwrk.spRenderWindow->setView(playerView);
+    frmwrk.setView(playerView);
 
-    //Keyboard Key pressed
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-    {
-        playerView.move(0,-mMoveSpeed*frmwrk.getFrameTime());
-    }
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-    {
-        playerView.move(-mMoveSpeed*frmwrk.getFrameTime(),0);
-    }
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-    {
-        playerView.move(0,mMoveSpeed*frmwrk.getFrameTime());
-    }
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-    {
-        playerView.move(mMoveSpeed*frmwrk.getFrameTime(),0);
-    }
+    EvaluatePressedKeys(frmwrk);
 }
 
 void Playstate::handle(Framework &frmwrk)
@@ -57,9 +41,12 @@ void Playstate::handle(Framework &frmwrk)
     if (frmwrk.spMainEvent->type == sf::Event::Resized)
     {
         // update the view to the new size of the window
-        sf::FloatRect visibleArea(0, 0, frmwrk.spMainEvent->size.width, frmwrk.spMainEvent->size.height);
+        int oldViewX = frmwrk.spRenderWindow->getView().getCenter().x - frmwrk.spRenderWindow->getView().getSize().x/2;
+        int oldViewY = frmwrk.spRenderWindow->getView().getCenter().y - frmwrk.spRenderWindow->getView().getSize().y/2;
+        sf::FloatRect visibleArea(oldViewX, oldViewY, frmwrk.spRenderWindow->getSize().x, frmwrk.spRenderWindow->getSize().y);
+
         playerView.reset(visibleArea);
-        frmwrk.spRenderWindow->setView(playerView);
+        frmwrk.setView(playerView);
     }
 }
 
@@ -67,4 +54,25 @@ void Playstate::render(Framework &frmwrk)
 {
     Buttons.render(frmwrk);
     world1.render(frmwrk);
+}
+
+void Playstate::EvaluatePressedKeys(Framework &frmwrk)
+{
+    //Keyboard Key pressed
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+    {
+        playerView.move(0,-mMoveSpeed*frmwrk.getFrameTime());
+    }
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+    {
+        playerView.move(-mMoveSpeed*frmwrk.getFrameTime(),0);
+    }
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+    {
+        playerView.move(0,mMoveSpeed*frmwrk.getFrameTime());
+    }
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+    {
+        playerView.move(mMoveSpeed*frmwrk.getFrameTime(),0);
+    }
 }

@@ -20,14 +20,14 @@ class Playstate : public Gamestate
         void render(Framework &frmwrk);
 
     private:
+        void EvaluatePressedKeys(Framework &frmwrk);
+
         sf::View playerView;
 
         UIElement Buttons;
-
-        float mMoveSpeed;
-
         Tileworld world1;
 
+        float mMoveSpeed;
 };
 
 #endif // PLAYSTATE_HPP

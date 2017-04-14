@@ -996,7 +996,7 @@
 	"UIElement.hpp"
 	<algorithm>
 
-1485550280 source:e:\onedrive\c++\mygame\gamefiles\engine\button.cpp
+1492185866 source:e:\onedrive\c++\mygame\gamefiles\engine\button.cpp
 	"Button.hpp"
 	"Framework.hpp"
 	"ResourceManager.hpp"
@@ -1006,7 +1006,7 @@
 	<SFML/Graphics.hpp>
 	<memory>
 
-1484821738 e:\onedrive\c++\mygame\gamefiles\engine\framework.hpp
+1492192370 e:\onedrive\c++\mygame\gamefiles\engine\framework.hpp
 	<iostream>
 	<SFML\Graphics.hpp>
 	<memory>
@@ -1019,7 +1019,7 @@
 	<iostream>
 	<memory>
 
-1491591173 e:\onedrive\c++\mygame\gamefiles\spacefuture\mainmenu.hpp
+1492186420 e:\onedrive\c++\mygame\gamefiles\spacefuture\mainmenu.hpp
 	"Gamestate.hpp"
 	"UIElement.hpp"
 
@@ -1040,7 +1040,7 @@
 	"UIElement.hpp"
 	"Slider.hpp"
 
-1491591173 e:\onedrive\c++\mygame\gamefiles\engine\playstate.hpp
+1492190982 e:\onedrive\c++\mygame\gamefiles\engine\playstate.hpp
 	<Gamestate.hpp>
 	<SFML/Graphics.hpp>
 	"ResourceManager.hpp"
@@ -1066,7 +1066,7 @@
 	<SFML/Graphics.hpp>
 	"ResourceManager.hpp"
 
-1491589473 source:e:\onedrive\c++\mygame\gamefiles\engine\playstate.cpp
+1492193443 source:e:\onedrive\c++\mygame\gamefiles\engine\playstate.cpp
 	"Playstate.hpp"
 	"Framework.hpp"
 
@@ -1085,7 +1085,7 @@
 	"ResourceManager.hpp"
 	<string>
 
-1484159474 source:e:\onedrive\c++\mygame\gamefiles\engine\slider.cpp
+1492185982 source:e:\onedrive\c++\mygame\gamefiles\engine\slider.cpp
 	"Slider.hpp"
 	"Framework.hpp"
 	<string>
@@ -1100,11 +1100,15 @@
 	<iostream>
 	"Framework.hpp"
 
-1491590281 source:e:\onedrive\c++\mygame\gamefiles\spacefuture\mainmenu.cpp
+1492191531 source:e:\onedrive\c++\mygame\gamefiles\spacefuture\mainmenu.cpp
 	"MainMenu.hpp"
 	"Framework.hpp"
 
-1484830384 source:e:\onedrive\c++\mygame\gamefiles\tileworld\tileworld.cpp
+1492187015 source:e:\onedrive\c++\mygame\gamefiles\tileworld\tileworld.cpp
 	"Tileworld.hpp"
 	"Framework.hpp"
+
+1492192627 source:e:\onedrive\c++\mygame\gamefiles\engine\framework.cpp
+	"Framework.hpp"
+	"ResourceManager.hpp"
 

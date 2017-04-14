@@ -20,6 +20,7 @@ MainMenu::~MainMenu()
 
 void MainMenu::update(Framework &frmwrk)
 {
+    frmwrk.setViewToWindowSize();
     Buttons.update(frmwrk);
 }
 
@@ -27,6 +28,7 @@ void MainMenu::handle(Framework &frmwrk)
 {
     Buttons.handle(frmwrk);
 
+    // handle buttons
     if(frmwrk.spMainEvent->type == sf::Event::MouseButtonPressed && frmwrk.spMainEvent->mouseButton.button == sf::Mouse::Left)
     {
         if(Buttons.getButton("NewGameButton").getMouseOnButton()){
@@ -36,6 +38,12 @@ void MainMenu::handle(Framework &frmwrk)
         } else if (Buttons.getButton("ExitButton").getMouseOnButton()){
             frmwrk.quit();
         }
+    }
+
+    // catch the resize events
+    if (frmwrk.spMainEvent->type == sf::Event::Resized)
+    {
+
     }
 }
 

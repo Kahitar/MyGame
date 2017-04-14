@@ -56,6 +56,7 @@ void Tileworld::setWorldSize(sf::Vector2i WorldSize)
     mWorldSize = WorldSize;
 }
 
+// TODO: Write a function to control where the map is drawn (position) instead of starting at (x,y) = (0,0)
 void Tileworld::drawTiles(Framework &frmwrk)
 {
     for(int y = 0;y < mWorldSize.y; ++y){

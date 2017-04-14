@@ -22,7 +22,13 @@ public:
     void quit();
     void ChangeState(gameStates newstate);
 
+    void    setViewToWindowSize();
+    void    setView(sf::View newView);
+    void    setView(sf::FloatRect visibleArea);
+
     sf::Vector2f getTransformedMousePosition();
+
+    sf::View     getView();
     float        getFrameTime();
 
     std::shared_ptr<sf::RenderWindow> spRenderWindow;
@@ -34,7 +40,7 @@ private:
     void render();
 
     void CalculateFrameTime();
-    //void CalculateScale(); //Not implemented yet
+    //void CalculateScale(); //Not implemented yet (TODO)
 
     std::unique_ptr<Gamestate>   CurrentState;
     std::unique_ptr<sf::Clock>   upClock;
