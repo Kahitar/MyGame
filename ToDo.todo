@@ -1,3 +1,9 @@
+SpaceFuture:
+ ☐ outsorce constants to extra file (e.g. pi, c, ...)
+ ☐ set playerView on ship
+ ☐ integrate scale
+   ☐ only position at first.
+
 Engine:
  ☐ Make the Size of the Window global
    Do I want to scale everything accordingly or just reduce the window size?
@@ -6,11 +12,12 @@ Engine:
  ☐ Make spRenderWindow and spMainEvent private in Framework
  ☐ UIElement: Check if the Button/Slider alerady exists when adding one
    What to do if it does?
- ☐ Add a class for texts
+ ☐ Add a class for texts or add texts to UIElement
    e.g. a description or headline (like "Number of KIs:")
  ☐ Why does MainMenu switch to the default view?
-    When i come from another gamestate (e.g. Playstate) and the window was resized, MainMenu doesn't use the view which was set in framwork
+    When i come from another gamestate (e.g. Playstate) and the window was resized, MainMenu doesn't use the view which was set in framework
     Only after I resized the window again it switches to that view
+ ☐ Load all Textures from the ResourceManager
 
  Bugs:
    ☐ FOV changes when window is resized for the first time

@@ -6,7 +6,8 @@
 #include "Gamestate.hpp"
 
 #include "Spaceship.hpp"
-//#include "Spielerschiff"
+#include "Playership.hpp"
+
 //#inlcude "planet"
 //#inlcude "scale"
 
@@ -22,7 +23,7 @@ class FlyShipState : public Gamestate
 
     private:
         Spaceship  ship;
-        Spaceship  ship2;
+        Playership playership;
 //        planet      earth;
 //        scale       xscale;
 

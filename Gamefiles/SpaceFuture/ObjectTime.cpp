@@ -6,17 +6,14 @@
 #include "Framework.hpp"
 #include "ObjectTime.hpp"
 
-ObjectTime::ObjectTime(int y)
-    :mTime(0),mNextTimeStep(0)
+ObjectTime::ObjectTime()
+    :mTime(0),mNextTimeStep(0),mPosition(0,0)
 {
     font.loadFromFile("assets\\fonts\\PAPYRUS.TTF");
     mClockText.setFont(font);
     mClockText.setString("Hallo Welt");
 
-    mClockText.setFillColor(sf::Color::Red);
-    mClockText.setStyle(sf::Text::Bold);
-    mClockText.setPosition(300,y);
-
+    mClockText.setFillColor(sf::Color::Black);
     mClockText.setCharacterSize(24);
     mClockText.setStyle(sf::Text::Bold | sf::Text::Underlined);
 
@@ -31,6 +28,7 @@ ObjectTime::~ObjectTime()
 void ObjectTime::update(Framework &frmwrk, float velocity)
 {
     updateTime(velocity);
+    mClockText.setPosition(mPosition.x,mPosition.y);
 
     std::stringstream ssTime;
     ssTime << mTime;

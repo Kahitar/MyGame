@@ -11,37 +11,42 @@ class Framework;
 class Spaceship
 {
     public:
-        Spaceship(int y);
+        Spaceship();
         ~Spaceship();
 
         // Setter //
         void setName(std::string name)      {mName = name;};
         void setVelocity(float velocity)    {mVelocity = velocity;};
-        void setPosition(float position)    {mPosition = position;};
         void setMass(float mass)            {mMass = mass;};
+        void setPosition(sf::Vector2f position)    {mPosition = position;};
 
         // Getter //
         std::string getName() {return mName;};
         float getVelovity()   {return mVelocity;};
-        float getPosition()   {return mPosition;};
         float getMass()       {return mMass;};
+        sf::Vector2f getPosition()   {return mPosition;};
 
-        void update(Framework &frmwrk, float force);
+        void update(Framework &frmwrk);
         void handle(Framework &frmwrk);
         void render(Framework &frmwrk);
 
-    private:
+    protected:
         void CalculateNewVelocity(float force);
+
+        void WriteStateVariables();
 
         std::string mName;
         float mVelocity;
-        float mPosition;
         float mMass;
+        int mForce;
+
+        sf::Vector2f mPosition;
 
         ObjectTime mClock;
 
         sf::Font font;
         sf::Text mVelocityText;
+        sf::Text mPositionText;
 
         sf::Image ShipImage;
         sf::Texture ShipTexture;
