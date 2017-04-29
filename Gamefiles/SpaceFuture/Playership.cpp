@@ -45,7 +45,7 @@ void Playership::EvaluatePressedKeys(Framework &frmwrk)
     }
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::A))
     {
-        mForce = -1000;
+        mForce = -10000000;
     }
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::S))
     {
@@ -53,7 +53,7 @@ void Playership::EvaluatePressedKeys(Framework &frmwrk)
     }
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::D))
     {
-        mForce = 1000;
+        mForce = 10000000;
     }
     if(!sf::Keyboard::isKeyPressed(sf::Keyboard::W)&&
        !sf::Keyboard::isKeyPressed(sf::Keyboard::A)&&
@@ -61,5 +61,11 @@ void Playership::EvaluatePressedKeys(Framework &frmwrk)
        !sf::Keyboard::isKeyPressed(sf::Keyboard::D))
     {
         mForce = 0;
+    }
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+    {
+        mForce = 0;
+        setPosition(sf::Vector2f(500,300));
+        setVelocity(0);
     }
 }

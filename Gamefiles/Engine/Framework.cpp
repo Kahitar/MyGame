@@ -105,9 +105,9 @@ void Framework::quit()
 
 void Framework::update(float FrameTime)
 {
-    CurrentState->update(*this);
-
     this->CalculateFrameTime();
+
+    CurrentState->update(*this);
 }
 
 void Framework::handleEvents()
@@ -131,7 +131,7 @@ void Framework::handleEvents()
 
 void Framework::render()
 {
-    spRenderWindow->clear(sf::Color::Green);
+    spRenderWindow->clear(sf::Color::Black);
 
     CurrentState->render(*this);
 

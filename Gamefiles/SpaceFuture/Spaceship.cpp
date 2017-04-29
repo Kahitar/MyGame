@@ -9,18 +9,18 @@ Spaceship::Spaceship()
 {
     font.loadFromFile("assets\\fonts\\PAPYRUS.TTF");
     mVelocityText.setFont(font);
-    mVelocityText.setFillColor(sf::Color::Black);
+    mVelocityText.setFillColor(sf::Color::Red);
     mVelocityText.setStyle(sf::Text::Bold);
     mVelocityText.setPosition(50,150);
     mVelocityText.setCharacterSize(24);
-    mVelocityText.setStyle(sf::Text::Bold | sf::Text::Underlined);
+    mVelocityText.setStyle(sf::Text::Bold);
 
     mPositionText.setFont(font);
-    mPositionText.setFillColor(sf::Color::Black);
+    mPositionText.setFillColor(sf::Color::Red);
     mPositionText.setStyle(sf::Text::Bold);
     mPositionText.setPosition(20,150);
     mPositionText.setCharacterSize(24);
-    mPositionText.setStyle(sf::Text::Bold | sf::Text::Underlined);
+    mPositionText.setStyle(sf::Text::Bold);
 
     //TODO: Load these from the ResourceManager
     ShipImage.loadFromFile("assets\\textures\\star_trek_enterprise_botship.png");
@@ -38,13 +38,13 @@ Spaceship::~Spaceship()
 
 void Spaceship::update(Framework &frmwrk)
 {
-    mClock.update(frmwrk, mVelocity);
-    WriteStateVariables();
     CalculateNewVelocity(mForce);
-
     ShipSprite.move(mVelocity*frmwrk.getFrameTime(),0);
     mPosition = ShipSprite.getPosition();
+
     mClock.setPosition(sf::Vector2f(mPosition.x,mPosition.y - 100));
+    mClock.update(frmwrk, mVelocity);
+    WriteStateVariables();
 }
 
 void Spaceship::handle(Framework &frmwrk)

@@ -18,7 +18,7 @@ class Spaceship
         void setName(std::string name)      {mName = name;};
         void setVelocity(float velocity)    {mVelocity = velocity;};
         void setMass(float mass)            {mMass = mass;};
-        void setPosition(sf::Vector2f position)    {mPosition = position;};
+        void setPosition(sf::Vector2f position)    {mPosition = position;ShipSprite.setPosition(position);};
 
         // Getter //
         std::string getName() {return mName;};

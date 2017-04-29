@@ -13,7 +13,7 @@ ObjectTime::ObjectTime()
     mClockText.setFont(font);
     mClockText.setString("Hallo Welt");
 
-    mClockText.setFillColor(sf::Color::Black);
+    mClockText.setFillColor(sf::Color::Red);
     mClockText.setCharacterSize(24);
     mClockText.setStyle(sf::Text::Bold | sf::Text::Underlined);
 
@@ -31,7 +31,7 @@ void ObjectTime::update(Framework &frmwrk, float velocity)
     mClockText.setPosition(mPosition.x,mPosition.y);
 
     std::stringstream ssTime;
-    ssTime << mTime;
+    ssTime << "t = " << mTime << " s";
     std::string sTime = ssTime.str();
 
     mClockText.setString(sTime);

@@ -7,9 +7,7 @@
 
 #include "Spaceship.hpp"
 #include "Playership.hpp"
-
-//#inlcude "planet"
-//#inlcude "scale"
+#include "planet.hpp"
 
 class FlyShipState : public Gamestate
 {
@@ -24,12 +22,12 @@ class FlyShipState : public Gamestate
     private:
         Spaceship  ship;
         Playership playership;
-//        planet      earth;
+        planet     earth;
 //        scale       xscale;
 
         UIElement Buttons;
 
-//        sf::View    playerView;
+        sf::View    playerView;
 };
 
 #endif // FLYSHIPSTATE_HPP

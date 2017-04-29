@@ -105,8 +105,12 @@
 		<Unit filename="Gamefiles/SpaceFuture/MainMenu.hpp" />
 		<Unit filename="Gamefiles/SpaceFuture/ObjectTime.cpp" />
 		<Unit filename="Gamefiles/SpaceFuture/ObjectTime.hpp" />
+		<Unit filename="Gamefiles/SpaceFuture/Playership.cpp" />
+		<Unit filename="Gamefiles/SpaceFuture/Playership.hpp" />
 		<Unit filename="Gamefiles/SpaceFuture/Spaceship.cpp" />
 		<Unit filename="Gamefiles/SpaceFuture/Spaceship.hpp" />
+		<Unit filename="Gamefiles/SpaceFuture/planet.cpp" />
+		<Unit filename="Gamefiles/SpaceFuture/planet.hpp" />
 		<Unit filename="Gamefiles/Tileworld/Tileworld.cpp" />
 		<Unit filename="Gamefiles/Tileworld/Tileworld.hpp" />
 		<Unit filename="Gamefiles/main.cpp" />
