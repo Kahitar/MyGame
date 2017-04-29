@@ -3,6 +3,8 @@
 
 using namespace std;
 
+float Framework::mFrameTime;
+
 Framework::Framework()
     :mRunning(true)
 {
@@ -18,7 +20,6 @@ Framework::Framework()
 
 Framework::~Framework()
 {
-
 }
 
 void Framework::run()
@@ -41,6 +42,9 @@ void Framework::ChangeState(gameStates newstate)
 
     switch(newstate)
     {
+    case gameStates::FLYSHIP:
+        CurrentState = std::move(std::unique_ptr<FlyShipState>(new FlyShipState));
+    break;
     case gameStates::PLAY:
         CurrentState = std::move(std::unique_ptr<Playstate>(new Playstate));
     break;

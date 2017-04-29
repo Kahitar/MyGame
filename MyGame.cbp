@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="Gamefiles/SpaceFuture" />
 				</Compiler>
 				<Linker>
 					<Add library="sfml-window-s-d" />
@@ -39,6 +40,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="Gamefiles/SpaceFuture" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -97,8 +99,14 @@
 		<Unit filename="Gamefiles/Engine/Slider.hpp" />
 		<Unit filename="Gamefiles/Engine/UIElement.cpp" />
 		<Unit filename="Gamefiles/Engine/UIElement.hpp" />
+		<Unit filename="Gamefiles/SpaceFuture/FlyShipState.cpp" />
+		<Unit filename="Gamefiles/SpaceFuture/FlyShipState.hpp" />
 		<Unit filename="Gamefiles/SpaceFuture/MainMenu.cpp" />
 		<Unit filename="Gamefiles/SpaceFuture/MainMenu.hpp" />
+		<Unit filename="Gamefiles/SpaceFuture/ObjectTime.cpp" />
+		<Unit filename="Gamefiles/SpaceFuture/ObjectTime.hpp" />
+		<Unit filename="Gamefiles/SpaceFuture/Spaceship.cpp" />
+		<Unit filename="Gamefiles/SpaceFuture/Spaceship.hpp" />
 		<Unit filename="Gamefiles/Tileworld/Tileworld.cpp" />
 		<Unit filename="Gamefiles/Tileworld/Tileworld.hpp" />
 		<Unit filename="Gamefiles/main.cpp" />
