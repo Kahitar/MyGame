@@ -2,7 +2,7 @@ SpaceFuture:
  ☐ outsorce constants to extra file (e.g. pi, c, ...)
  ☐ set playerView on ship
  ☐ integrate scale
-   ☐ only position at first.
+   ✔ only position at first. @done (17-04-29 22:59)
 
 Engine:
  ☐ Make the Size of the Window global

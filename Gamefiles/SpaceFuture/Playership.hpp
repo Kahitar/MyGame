@@ -6,23 +6,22 @@
 #include <string>
 #include <SFML/Graphics.hpp>
 #include "ObjectTime.hpp"
+#include "UIElement.hpp"
 
 class Playership : public Spaceship
 {
     public:
-        Playership();
+        Playership(std::string texturePath, sf::Vector2f position);
         ~Playership();
 
+        void update(Framework &frmwrk);
         void handle(Framework &frmwrk);
+        void render(Framework &frmwrk);
 
     private:
         void EvaluatePressedKeys(Framework &frmwrk);
 
-//        ObjectTime mClock;
-//
-//        sf::Image ShipImage;
-//        sf::Texture ShipTexture;
-//        sf::Sprite ShipSprite;
+        UIElement Buttons;
 };
 
 #endif // PLAYERSHIP_HPP

@@ -11,7 +11,7 @@ class Framework;
 class Spaceship
 {
     public:
-        Spaceship();
+        Spaceship(std::string texturePath, sf::Vector2f position);
         ~Spaceship();
 
         // Setter //
@@ -39,6 +39,7 @@ class Spaceship
         float mVelocity;
         float mMass;
         int mForce;
+        int mAcceleratingInDirection; // -1 = left; 1 = right; 0 = not accelerating
 
         sf::Vector2f mPosition;
 

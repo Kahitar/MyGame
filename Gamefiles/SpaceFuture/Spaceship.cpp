@@ -4,9 +4,17 @@
 #include "Spaceship.hpp"
 #include "Framework.hpp"
 
-Spaceship::Spaceship()
-    :mName("Of course I still love you"),mVelocity(0),mMass(10),mForce(0),mPosition(sf::Vector2f(0,0))
+Spaceship::Spaceship(std::string texturePath, sf::Vector2f position)
+    :mName("Of course I still love you"),mVelocity(0),mMass(10),mForce(1000),mAcceleratingInDirection(0),mPosition(sf::Vector2f(0,0))
 {
+    //TODO: Load these from the ResourceManager
+    ShipImage.loadFromFile(texturePath);
+    ShipImage.createMaskFromColor(sf::Color::White);
+    ShipTexture.loadFromImage(ShipImage);
+    ShipSprite.setTexture(ShipTexture);
+    ShipSprite.setPosition(position);
+    ShipSprite.setScale(0.3,0.3);
+
     font.loadFromFile("assets\\fonts\\PAPYRUS.TTF");
     mVelocityText.setFont(font);
     mVelocityText.setFillColor(sf::Color::Red);
@@ -21,14 +29,6 @@ Spaceship::Spaceship()
     mPositionText.setPosition(20,150);
     mPositionText.setCharacterSize(24);
     mPositionText.setStyle(sf::Text::Bold);
-
-    //TODO: Load these from the ResourceManager
-    ShipImage.loadFromFile("assets\\textures\\star_trek_enterprise_botship.png");
-    ShipImage.createMaskFromColor(sf::Color::White);
-    ShipTexture.loadFromImage(ShipImage);
-    ShipSprite.setTexture(ShipTexture);
-    ShipSprite.setPosition(500,500);
-    ShipSprite.setScale(0.3,0.3);
 }
 
 Spaceship::~Spaceship()
@@ -38,7 +38,8 @@ Spaceship::~Spaceship()
 
 void Spaceship::update(Framework &frmwrk)
 {
-    CalculateNewVelocity(mForce);
+    CalculateNewVelocity(mAcceleratingInDirection*mForce);
+
     ShipSprite.move(mVelocity*frmwrk.getFrameTime(),0);
     mPosition = ShipSprite.getPosition();
 

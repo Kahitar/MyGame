@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.2">
-  <zoom_level>10</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1120</x>
-      <y>150</y>
-      <w>250</w>
-      <h>320</h>
+      <x>920</x>
+      <y>88</y>
+      <w>200</w>
+      <h>256</h>
     </coordinates>
     <panel_attributes>Raumschiff
 --
@@ -34,10 +34,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1040</x>
-      <y>690</y>
-      <w>230</w>
-      <h>110</h>
+      <x>856</x>
+      <y>520</y>
+      <w>184</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>Spielerschiff
 --
@@ -49,10 +49,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1140</x>
-      <y>460</y>
-      <w>130</w>
-      <h>250</h>
+      <x>936</x>
+      <y>336</y>
+      <w>104</w>
+      <h>200</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>110.0;10.0;10.0;230.0</additional_attributes>
@@ -60,10 +60,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>340</x>
-      <y>690</y>
-      <w>320</w>
-      <h>330</h>
+      <x>296</x>
+      <y>520</y>
+      <w>256</w>
+      <h>264</h>
     </coordinates>
     <panel_attributes>FlyShipState
 --
@@ -79,10 +79,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>650</x>
-      <y>690</y>
-      <w>410</w>
-      <h>30</h>
+      <x>544</x>
+      <y>520</y>
+      <w>328</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;390.0;10.0</additional_attributes>
@@ -90,10 +90,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>450</x>
-      <y>510</y>
-      <w>180</w>
-      <h>80</h>
+      <x>384</x>
+      <y>376</y>
+      <w>144</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>Erde
 --
@@ -105,10 +105,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>470</x>
-      <y>580</y>
-      <w>30</w>
-      <h>130</h>
+      <x>400</x>
+      <y>432</y>
+      <w>24</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
@@ -116,10 +116,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>450</x>
-      <y>170</y>
-      <w>250</w>
-      <h>170</h>
+      <x>384</x>
+      <y>104</y>
+      <w>200</w>
+      <h>136</h>
     </coordinates>
     <panel_attributes>Planet
 --
@@ -136,10 +136,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>490</x>
-      <y>330</y>
-      <w>40</w>
-      <h>200</h>
+      <x>416</x>
+      <y>232</y>
+      <w>32</w>
+      <h>160</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;20.0;180.0</additional_attributes>
@@ -147,10 +147,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>740</x>
-      <y>260</y>
-      <w>310</w>
-      <h>210</h>
+      <x>616</x>
+      <y>176</y>
+      <w>248</w>
+      <h>168</h>
     </coordinates>
     <panel_attributes>ObjectTime
 --
@@ -166,10 +166,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>690</x>
-      <y>170</y>
-      <w>100</w>
-      <h>110</h>
+      <x>576</x>
+      <y>104</y>
+      <w>80</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;80.0;90.0</additional_attributes>
@@ -177,10 +177,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>940</x>
-      <y>160</y>
-      <w>200</w>
-      <h>120</h>
+      <x>776</x>
+      <y>96</y>
+      <w>160</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>180.0;10.0;10.0;100.0</additional_attributes>
@@ -188,10 +188,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>810</y>
-      <w>280</w>
-      <h>140</h>
+      <x>24</x>
+      <y>616</y>
+      <w>224</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>scale
 --
@@ -203,10 +203,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>250</x>
-      <y>760</y>
-      <w>110</w>
-      <h>70</h>
+      <x>224</x>
+      <y>576</y>
+      <w>88</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>90.0;10.0;10.0;50.0</additional_attributes>
@@ -215,9 +215,9 @@
     <id>UMLClass</id>
     <coordinates>
       <x>120</x>
-      <y>260</y>
-      <w>290</w>
-      <h>190</h>
+      <y>176</y>
+      <w>232</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>Gamestate
 --
@@ -231,10 +231,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>330</x>
-      <y>440</y>
-      <w>80</w>
-      <h>270</h>
+      <x>288</x>
+      <y>320</y>
+      <w>64</w>
+      <h>216</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;60.0;250.0</additional_attributes>
@@ -242,10 +242,10 @@
   <element>
     <id>Text</id>
     <coordinates>
-      <x>740</x>
-      <y>170</y>
-      <w>270</w>
-      <h>50</h>
+      <x>616</x>
+      <y>104</y>
+      <w>216</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>Klassendiagramm Tutorial: 
 http://www.codeadventurer.de/?p=2428
@@ -255,10 +255,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>690</x>
-      <y>540</y>
-      <w>270</w>
-      <h>120</h>
+      <x>576</x>
+      <y>400</y>
+      <w>216</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>Laser
 --
@@ -272,10 +272,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>620</x>
-      <y>510</y>
-      <w>90</w>
-      <h>60</h>
+      <x>520</x>
+      <y>376</y>
+      <w>72</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;70.0;40.0</additional_attributes>

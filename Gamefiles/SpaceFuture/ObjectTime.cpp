@@ -25,13 +25,20 @@ ObjectTime::~ObjectTime()
     //dtor
 }
 
+void ObjectTime::reset(int newTime)
+{
+    mTime = newTime;
+}
+
 void ObjectTime::update(Framework &frmwrk, float velocity)
 {
     updateTime(velocity);
     mClockText.setPosition(mPosition.x,mPosition.y);
 
+    float mTimeRounded = roundf(mTime * 100) / 100;
+
     std::stringstream ssTime;
-    ssTime << "t = " << mTime << " s";
+    ssTime << "t = " << mTimeRounded << " s";
     std::string sTime = ssTime.str();
 
     mClockText.setString(sTime);

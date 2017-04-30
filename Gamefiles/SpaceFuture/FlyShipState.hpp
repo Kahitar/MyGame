@@ -5,7 +5,7 @@
 #include "UIElement.hpp"
 #include "Gamestate.hpp"
 
-#include "Spaceship.hpp"
+#include "NPCShip.hpp"
 #include "Playership.hpp"
 #include "planet.hpp"
 
@@ -20,7 +20,7 @@ class FlyShipState : public Gamestate
         void render(Framework &frmwrk);
 
     private:
-        Spaceship  ship;
+        NPCShip    NPCShip;
         Playership playership;
         planet     earth;
 //        scale       xscale;

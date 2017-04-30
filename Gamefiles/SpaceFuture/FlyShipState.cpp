@@ -2,8 +2,10 @@
 #include "Framework.hpp"
 
 FlyShipState::FlyShipState()
+    :NPCShip("assets\\textures\\star_trek_enterprise_botship.png", sf::Vector2f(500,500)),
+     playership("assets\\textures\\star_trek_xi_enterprise_v1.png", sf::Vector2f(500,300))
 {
-   Buttons.addButton(sf::Vector2f(540,50),sf::Vector2f(200,50),"MainMenuButton","Main menu");
+    Buttons.addButton(sf::Vector2f(540,50),sf::Vector2f(200,50),"MainMenuButton","Main menu");
 
     // TODO: (Re)set the view with the actual window size
     playerView.reset(sf::FloatRect(0,0,1280,720));
@@ -16,7 +18,7 @@ FlyShipState::~FlyShipState()
 
 void FlyShipState::update(Framework &frmwrk)
 {
-    ship.update(frmwrk);
+    NPCShip.update(frmwrk);
     playership.update(frmwrk);
 
     playerView.setCenter(playership.getPosition());
@@ -37,14 +39,14 @@ void FlyShipState::handle(Framework &frmwrk)
         }
     }
 
-    ship.handle(frmwrk);
+    NPCShip.handle(frmwrk);
     playership.handle(frmwrk);
 }
 
 void FlyShipState::render(Framework &frmwrk)
 {
     earth.render(frmwrk);
-    ship.render(frmwrk);
+    NPCShip.render(frmwrk);
     playership.render(frmwrk);
     Buttons.render(frmwrk);
 }

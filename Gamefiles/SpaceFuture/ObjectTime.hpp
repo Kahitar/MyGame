@@ -22,6 +22,8 @@ class ObjectTime
         float getGlobalTimeStep()    {return mGlobalTimeStep;};
         sf::Vector2f getPosition()   {return mPosition;};
 
+        void reset(int newTime = 0);
+
         void update(Framework &frmwrk, float velocity);
         void render(Framework &frmwrk);
     private:
