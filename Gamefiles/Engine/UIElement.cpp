@@ -50,7 +50,7 @@ void UIElement::addSlider(sf::Vector2f pos, sf::Vector2f Size, std::string Name,
     }
 }
 
-Button UIElement::getButton(std::string ButtonName)
+Button& UIElement::getButton(std::string ButtonName)
 {
     //lookup the Button name and see if its in the map
     auto it = Buttons.find(ButtonName);
@@ -60,7 +60,7 @@ Button UIElement::getButton(std::string ButtonName)
     return *it->second;
 }
 
-Slider UIElement::getSlider(std::string SliderName)
+Slider& UIElement::getSlider(std::string SliderName)
 {
     //lookup the Slider name and see if its in the map
     auto it = Sliders.find(SliderName);

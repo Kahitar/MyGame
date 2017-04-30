@@ -18,8 +18,8 @@ class UIElement
         void addButton(sf::Vector2f pos, sf::Vector2f Size, std::string Name, std::string Text);
         void addSlider(sf::Vector2f pos, sf::Vector2f Size, std::string Name, std::string Text);
 
-        Button getButton(std::string ButtonName);
-        Slider getSlider(std::string SliderName);
+        Button& getButton(std::string ButtonName);
+        Slider& getSlider(std::string SliderName);
 
         void update(Framework &frmwrk);
         void handle(Framework &frmwrk);

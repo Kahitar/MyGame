@@ -13,6 +13,8 @@ Framework::Framework()
     upClock         = std::move(std::unique_ptr<sf::Clock>(new sf::Clock));
 
     spRenderWindow->setPosition(sf::Vector2i(50,50));
+    spRenderWindow->setVerticalSyncEnabled(true);
+    spRenderWindow->setFramerateLimit(60);
 
     // Set Gamestate to MAINMENU, in case it is not changed in main
     CurrentState = std::move(std::unique_ptr<MainMenu>(new MainMenu));

@@ -1112,12 +1112,12 @@
 	"Framework.hpp"
 	"ResourceManager.hpp"
 
-1493562565 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\button.cpp
+1493568416 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\button.cpp
 	"Button.hpp"
 	"Framework.hpp"
 	"ResourceManager.hpp"
 
-1493562552 c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\button.hpp
+1493568427 c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\button.hpp
 	<iostream>
 	<SFML/Graphics.hpp>
 	<memory>
@@ -1132,7 +1132,7 @@
 	"Playstate.hpp"
 	"FlyShipState.hpp"
 
-1481041647 c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\gamestate.hpp
+1493573516 c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\gamestate.hpp
 	<iostream>
 	<memory>
 
@@ -1140,7 +1140,7 @@
 	"Gamestate.hpp"
 	"UIElement.hpp"
 
-1491590968 c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\uielement.hpp
+1493568940 c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\uielement.hpp
 	<iostream>
 	<map>
 	<SFML/Graphics.hpp>
@@ -1183,7 +1183,7 @@
 	<SFML/Graphics.hpp>
 	"ResourceManager.hpp"
 
-1493505639 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\framework.cpp
+1493576198 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\framework.cpp
 	"Framework.hpp"
 	"ResourceManager.hpp"
 
@@ -1212,7 +1212,7 @@
 	<string>
 	<sstream>
 
-1493562552 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\uielement.cpp
+1493568940 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\uielement.cpp
 	"Framework.hpp"
 	"UIElement.hpp"
 	<algorithm>
@@ -1229,7 +1229,7 @@
 	"MainMenu.hpp"
 	"Framework.hpp"
 
-1493559144 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\spacefuture\flyshipstate.cpp
+1493574112 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\spacefuture\flyshipstate.cpp
 	"FlyShipState.hpp"
 	"Framework.hpp"
 
@@ -1258,26 +1258,27 @@
 	<SFML/Graphics.hpp>
 	"ObjectTime.hpp"
 
-1493559028 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\spacefuture\spaceship.cpp
+1493569487 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\spacefuture\spaceship.cpp
 	<sstream>
 	<string>
 	"Spaceship.hpp"
 	"Framework.hpp"
 
-1493562159 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\spacefuture\playership.cpp
+1493576546 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\spacefuture\playership.cpp
 	<sstream>
 	<string>
 	"Playership.hpp"
 	"Spaceship.hpp"
 	"Framework.hpp"
 
-1493558342 c:\users\niklas\onedrive\c++\mygame\gamefiles\spacefuture\playership.hpp
+1493569424 c:\users\niklas\onedrive\c++\mygame\gamefiles\spacefuture\playership.hpp
 	<Spaceship.hpp>
 	<iostream>
 	<string>
 	<SFML/Graphics.hpp>
 	"ObjectTime.hpp"
 	"UIElement.hpp"
+	"Button.hpp"
 
 1493503129 c:\users\niklas\onedrive\c++\mygame\gamefiles\spacefuture\planet.hpp
 	<iostream>

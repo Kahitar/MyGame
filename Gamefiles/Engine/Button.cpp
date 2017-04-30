@@ -47,8 +47,8 @@ void Button::setPosition(sf::Vector2f pos)
 {
     mPos = pos;
 
-    upSpriteNotHovered->setPosition(pos);
-    upSpriteHovered->setPosition(pos);
+    upSpriteNotHovered->setPosition(mPos);
+    upSpriteHovered->setPosition(mPos);
 
     mText.setOrigin(mText.getGlobalBounds().width/2, mText.getGlobalBounds().height/2);
     mText.setPosition(mPos.x + upSpriteNotHovered->getGlobalBounds().width/2, mPos.y + upSpriteNotHovered->getGlobalBounds().height/2);
@@ -66,7 +66,6 @@ void Button::setSize(sf::Vector2f Size)
 
     mText.setCharacterSize(Size.y*0.5);
 
-    //TODO: x-Position for the KI-Number-Select-Buttons is wrong, why? This seems to have something to do with calling setPos() after the constructor
     mText.setPosition(mPos.x + upSpriteNotHovered->getGlobalBounds().width*1.4, mPos.y + upSpriteNotHovered->getGlobalBounds().height/2);
 }
 
