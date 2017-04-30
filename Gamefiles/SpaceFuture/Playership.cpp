@@ -12,8 +12,8 @@ Playership::Playership(std::string texturePath, sf::Vector2f position)
 
     mClock.setPosition(sf::Vector2f(300,100));
 
-    Buttons.addButton(sf::Vector2f(250,100),sf::Vector2f(60,28),"TimeResetButton","Reset");
     Buttons.addButton(sf::Vector2f(250,130),sf::Vector2f(60,28),"VelocityResetButton","Reset");
+    Buttons.addButton(sf::Vector2f(250,160),sf::Vector2f(60,28),"PosResetButton","Reset");
 }
 
 Playership::~Playership()
@@ -26,8 +26,8 @@ void Playership::update(Framework &frmwrk)
     Spaceship::update(frmwrk);
 
     Buttons.update(frmwrk);
-    Buttons.getButton("TimeResetButton").setPosition(sf::Vector2f(mPosition.x-70,mPosition.y-100));
     Buttons.getButton("VelocityResetButton").setPosition(sf::Vector2f(mPosition.x-70,mPosition.y-70));
+    Buttons.getButton("PosResetButton").setPosition(sf::Vector2f(mPosition.x-70,mPosition.y-40));
 }
 
 void Playership::handle(Framework &frmwrk)
@@ -37,10 +37,14 @@ void Playership::handle(Framework &frmwrk)
     Buttons.handle(frmwrk);
     if(frmwrk.spMainEvent->type == sf::Event::MouseButtonPressed && frmwrk.spMainEvent->mouseButton.button == sf::Mouse::Left)
     {
-        if(Buttons.getButton("TimeResetButton").getMouseOnButton()){
-            mClock.reset();
+        if(Buttons.getButton("PosResetButton").getMouseOnButton()){
+//            mClock.reset();
+            setPosition(sf::Vector2f(500,300));
+            setVelocity(0);
+            mAcceleratingInDirection = 0;
         }else if(Buttons.getButton("VelocityResetButton").getMouseOnButton()){
             mVelocity = 0;
+            mAcceleratingInDirection = 0;
         }
     }
 
@@ -49,9 +53,8 @@ void Playership::handle(Framework &frmwrk)
 
 void Playership::render(Framework &frmwrk)
 {
-    Spaceship::render(frmwrk);
-
     Buttons.render(frmwrk);
+    Spaceship::render(frmwrk);
 }
 
 void Playership::EvaluatePressedKeys(Framework &frmwrk)
@@ -76,6 +79,6 @@ void Playership::EvaluatePressedKeys(Framework &frmwrk)
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::R))
     {
         setPosition(sf::Vector2f(500,300));
-        setVelocity(0);
+//        setVelocity(0);
     }
 }

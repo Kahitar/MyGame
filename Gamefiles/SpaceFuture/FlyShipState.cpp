@@ -31,6 +31,9 @@ void FlyShipState::handle(Framework &frmwrk)
 {
     Buttons.handle(frmwrk);
 
+    NPCShip.handle(frmwrk);
+    playership.handle(frmwrk);
+
     // handle buttons
     if(frmwrk.spMainEvent->type == sf::Event::MouseButtonPressed && frmwrk.spMainEvent->mouseButton.button == sf::Mouse::Left)
     {
@@ -38,9 +41,6 @@ void FlyShipState::handle(Framework &frmwrk)
             frmwrk.ChangeState(Framework::gameStates::MAINMENU);
         }
     }
-
-    NPCShip.handle(frmwrk);
-    playership.handle(frmwrk);
 }
 
 void FlyShipState::render(Framework &frmwrk)
