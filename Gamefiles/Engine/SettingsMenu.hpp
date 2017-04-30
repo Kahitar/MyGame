@@ -5,6 +5,7 @@
 #include "Button.hpp"
 #include "UIElement.hpp"
 #include "Slider.hpp"
+#include "SettingsCache.hpp"
 
 class Framework;
 
@@ -21,6 +22,8 @@ class SettingsMenu : public Gamestate
     private:
         UIElement Buttons;
         UIElement Sliders;
+
+        int ForceSliderMultiplicator;
 };
 
 #endif // SETTINGSMENU_HPP

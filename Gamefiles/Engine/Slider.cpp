@@ -17,7 +17,7 @@ Slider::Slider(sf::Vector2f pos, sf::Vector2f Size)
 
     setSize(Size);
     setPosition(pos);
-    setValue(3);
+    setValue(1);
 }
 
 Slider::~Slider()
@@ -65,7 +65,7 @@ void Slider::render(Framework &frmwrk)
 
     Font.loadFromFile("assets\\fonts\\PAPYRUS.TTF");
     SliderValueText.setFont(Font);
-    SliderValueText.setFillColor(sf::Color::Black);
+    SliderValueText.setFillColor(sf::Color::Red);
     SliderValueText.setStyle(sf::Text::Bold);
 
     std::stringstream ssSliderValue;

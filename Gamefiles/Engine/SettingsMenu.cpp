@@ -4,12 +4,14 @@
 #include <string>
 
 SettingsMenu::SettingsMenu()
+    :ForceSliderMultiplicator(1000)
 {
-    Buttons.addButton(sf::Vector2f(500,300),sf::Vector2f(200,50),"SliderHeadline","Slider:");
+    Buttons.addButton(sf::Vector2f(450,300),sf::Vector2f(280,50),"SliderHeadline","Accelerating Force:");
     Buttons.addButton(sf::Vector2f(700,500),sf::Vector2f(200,50),"BackButton","Back");
 
-    Sliders.addSlider(sf::Vector2f(750,300),sf::Vector2f(200,50),"TestSlider","This is a slider:");
-    Sliders.getSlider("TestSlider").setValue(3);
+    Sliders.addSlider(sf::Vector2f(800,300),sf::Vector2f(200,50),"ForceSlider","This is a slider:");
+    Sliders.getSlider("ForceSlider").setNumberOfPositions(100);
+    Sliders.getSlider("ForceSlider").setValue(ResourceManager::getAcceleratingForce()/ForceSliderMultiplicator);
 }
 
 SettingsMenu::~SettingsMenu()
@@ -21,6 +23,7 @@ void SettingsMenu::update(Framework &frmwrk)
 {
     Buttons.update(frmwrk);
     Sliders.update(frmwrk);
+    ResourceManager::setAcceleratingForce(Sliders.getSlider("ForceSlider").getSliderValue()*ForceSliderMultiplicator);
 }
 
 void SettingsMenu::handle(Framework &frmwrk)

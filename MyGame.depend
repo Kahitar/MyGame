@@ -1151,11 +1151,12 @@
 	<iostream>
 	<SFML/Graphics.hpp>
 
-1491593154 c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\settingsmenu.hpp
+1493580815 c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\settingsmenu.hpp
 	"Gamestate.hpp"
 	"Button.hpp"
 	"UIElement.hpp"
 	"Slider.hpp"
+	"SettingsCache.hpp"
 
 1492190982 c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\playstate.hpp
 	<Gamestate.hpp>
@@ -1164,7 +1165,7 @@
 	"UIElement.hpp"
 	"Tileworld.hpp"
 
-1481462369 c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\resourcemanager.hpp
+1493579676 c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\resourcemanager.hpp
 	<string>
 	<memory>
 	"ResourceCache.hpp"
@@ -1176,14 +1177,14 @@
 	<string>
 	"SFML/Graphics.hpp"
 
-1481462400 c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\settingscache.hpp
+1493578530 c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\settingscache.hpp
 
 1484829504 c:\users\niklas\onedrive\c++\mygame\gamefiles\tileworld\tileworld.hpp
 	<iostream>
 	<SFML/Graphics.hpp>
 	"ResourceManager.hpp"
 
-1493576198 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\framework.cpp
+1493577850 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\framework.cpp
 	"Framework.hpp"
 	"ResourceManager.hpp"
 
@@ -1194,19 +1195,19 @@
 1481303118 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\resourcecache.cpp
 	"ResourceCache.hpp"
 
-1481462369 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\resourcemanager.cpp
+1493579676 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\resourcemanager.cpp
 	"ResourceManager.hpp"
 
 1481462400 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\settingscache.cpp
 	"SettingsCache.hpp"
 
-1491593155 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\settingsmenu.cpp
+1493580815 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\settingsmenu.cpp
 	"SettingsMenu.hpp"
 	"Framework.hpp"
 	"ResourceManager.hpp"
 	<string>
 
-1492185982 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\slider.cpp
+1493581050 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\slider.cpp
 	"Slider.hpp"
 	"Framework.hpp"
 	<string>
@@ -1258,11 +1259,12 @@
 	<SFML/Graphics.hpp>
 	"ObjectTime.hpp"
 
-1493569487 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\spacefuture\spaceship.cpp
+1493580589 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\spacefuture\spaceship.cpp
 	<sstream>
 	<string>
 	"Spaceship.hpp"
 	"Framework.hpp"
+	"ResourceManager.hpp"
 
 1493576546 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\spacefuture\playership.cpp
 	<sstream>
@@ -1271,14 +1273,13 @@
 	"Spaceship.hpp"
 	"Framework.hpp"
 
-1493569424 c:\users\niklas\onedrive\c++\mygame\gamefiles\spacefuture\playership.hpp
+1493578172 c:\users\niklas\onedrive\c++\mygame\gamefiles\spacefuture\playership.hpp
 	<Spaceship.hpp>
 	<iostream>
 	<string>
 	<SFML/Graphics.hpp>
 	"ObjectTime.hpp"
 	"UIElement.hpp"
-	"Button.hpp"
 
 1493503129 c:\users\niklas\onedrive\c++\mygame\gamefiles\spacefuture\planet.hpp
 	<iostream>

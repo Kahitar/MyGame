@@ -17,10 +17,12 @@ class ResourceManager
         //ResourceCache
         static sf::Texture getTexture(std::string TexturePath);
         //SettingsCache
+        static int         getAcceleratingForce();
 
 
         //// SETTER ////
         //SettingsCache
+        static void setAcceleratingForce(int force);
 
     private:
         static ResourceCache mResourceCache;
