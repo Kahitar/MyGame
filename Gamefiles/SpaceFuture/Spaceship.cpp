@@ -3,9 +3,11 @@
 
 #include "Spaceship.hpp"
 #include "Framework.hpp"
+#include "ResourceManager.hpp"
 
 Spaceship::Spaceship(std::string texturePath, sf::Vector2f position)
-    :mName("Of course I still love you"),mVelocity(0),mMass(10),mForce(1000),mAcceleratingInDirection(0),mPosition(sf::Vector2f(0,0))
+    :mName("Of course I still love you"),mVelocity(0),mMass(10),mForce(ResourceManager::getAcceleratingForce()),
+    mAcceleratingInDirection(0),mPosition(sf::Vector2f(0,0))
 {
     //TODO: Load these from the ResourceManager
     ShipImage.loadFromFile(texturePath);
