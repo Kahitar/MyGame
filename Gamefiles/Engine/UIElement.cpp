@@ -100,7 +100,7 @@ void UIElement::render(Framework &frmwrk)
 {
     for(auto it : Buttons)
     {
-        it.second->render(frmwrk.spRenderWindow);
+        it.second->render(frmwrk);
     }
 
     for(auto it : Sliders)

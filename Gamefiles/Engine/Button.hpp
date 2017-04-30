@@ -16,7 +16,7 @@ class Button
 
         void update();
         void handle(Framework &frmwrk);
-        void render(std::shared_ptr<sf::RenderWindow> window);
+        void render(Framework &frmwrk);
 
         ///////////Setter///////////
         void setText(std::string text);

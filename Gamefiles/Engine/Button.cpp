@@ -29,9 +29,6 @@ Button::Button(sf::Vector2f pos, sf::Vector2f Size, std::string text)
     upSpriteNotHovered->setTexture(*upTexture);
     upSpriteNotHovered->setTextureRect(sf::IntRect(0, TextureHeight, TextureWidth, TextureHeight));
 
-    upSpriteHovered->setPosition(pos);
-    upSpriteNotHovered->setPosition(pos);
-
     setSize(Size);
     setPosition(pos);
 }
@@ -103,10 +100,9 @@ void Button::handle(Framework &frmwrk)
         mClicked = !mClicked;
 }
 
-void Button::render(std::shared_ptr<sf::RenderWindow> window)
+void Button::render(Framework &frmwrk)
 {
-    //TODO: Call this function with frmwrk as argument as well! (Consistency with the other render functions)
-//    std::shared_ptr<sf::RenderWindow> window = frmwrk.spRenderWindow;
+    std::shared_ptr<sf::RenderWindow> window = frmwrk.spRenderWindow;
 
     if(mMouseOnButton){
         window->draw(*upSpriteHovered);
