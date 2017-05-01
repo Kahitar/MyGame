@@ -5,6 +5,7 @@
 		<Option title="MyGame" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
+		<Option virtualFolders="Gamefiles\Engine\;" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/MyGame" prefix_auto="1" extension_auto="1" />
@@ -97,18 +98,27 @@
 		<Unit filename="Gamefiles/Engine/SettingsMenu.hpp" />
 		<Unit filename="Gamefiles/Engine/Slider.cpp" />
 		<Unit filename="Gamefiles/Engine/Slider.hpp" />
+		<Unit filename="Gamefiles/Engine/TextBox.cpp" />
+		<Unit filename="Gamefiles/Engine/TextBox.hpp" />
 		<Unit filename="Gamefiles/Engine/UIElement.cpp" />
 		<Unit filename="Gamefiles/Engine/UIElement.hpp" />
 		<Unit filename="Gamefiles/SpaceFuture/FlyShipState.cpp" />
 		<Unit filename="Gamefiles/SpaceFuture/FlyShipState.hpp" />
 		<Unit filename="Gamefiles/SpaceFuture/MainMenu.cpp" />
 		<Unit filename="Gamefiles/SpaceFuture/MainMenu.hpp" />
+		<Unit filename="Gamefiles/SpaceFuture/NPCShip.cpp" />
+		<Unit filename="Gamefiles/SpaceFuture/NPCShip.hpp" />
 		<Unit filename="Gamefiles/SpaceFuture/ObjectTime.cpp" />
 		<Unit filename="Gamefiles/SpaceFuture/ObjectTime.hpp" />
 		<Unit filename="Gamefiles/SpaceFuture/Playership.cpp" />
 		<Unit filename="Gamefiles/SpaceFuture/Playership.hpp" />
 		<Unit filename="Gamefiles/SpaceFuture/Spaceship.cpp" />
 		<Unit filename="Gamefiles/SpaceFuture/Spaceship.hpp" />
+		<Unit filename="Gamefiles/SpaceFuture/TextBox.cpp">
+			<Option virtualFolder="Gamefiles/Engine/" />
+		</Unit>
+		<Unit filename="Gamefiles/SpaceFuture/math.cpp" />
+		<Unit filename="Gamefiles/SpaceFuture/math.hpp" />
 		<Unit filename="Gamefiles/SpaceFuture/planet.cpp" />
 		<Unit filename="Gamefiles/SpaceFuture/planet.hpp" />
 		<Unit filename="Gamefiles/Tileworld/Tileworld.cpp" />
