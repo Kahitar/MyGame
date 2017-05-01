@@ -1,1 +1,5 @@
-v_0.1.001
+V_0.1.010
+V_ . .  ^-- Bugfixes
+V_ . .^^--- New Classes
+V_ .^------ New Functionality
+V_^-------- Major Overhaul

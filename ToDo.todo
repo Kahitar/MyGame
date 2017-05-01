@@ -5,19 +5,30 @@ SpaceFuture:
    ✔ only position at first. @done (17-04-29 22:59)
 
 Engine:
+ ☐ update Slider:
+   ☐ integrate a multiplicator into Slider or make min/max functions
+   ☐ Make it possible to change the color of the slider text (value)
+   ☐ add the possibility to add a text to the slider (e.g. name of the slider)
+   ☐ Bugfix: When starting on the left, I can't click the slider rectangle
+     because it isn't in the slider hitbox?
+
+     Also: use the same mechanic to place the slider rectangle for changing the position and loading the slider (constructor)
+ ☐ Textbox: Split lines for long passages of Text
+
  ☐ Make the Size of the Window global
    Do I want to scale everything accordingly or just reduce the window size?
 
    Maybe in a config file!
  ☐ Make spRenderWindow and spMainEvent private in Framework
- ☐ UIElement: Check if the Button/Slider alerady exists when adding one
+ ☐ UIElement: Check if the elements alerady exist when adding one
    What to do if it does?
- ☐ Add a class for texts or add texts to UIElement
+ ✔ Add a class for texts or add texts to UIElement @done (17-05-01 13:35)
    e.g. a description or headline (like "Number of KIs:")
  ☐ Why does MainMenu switch to the default view?
     When i come from another gamestate (e.g. Playstate) and the window was resized, MainMenu doesn't use the view which was set in framework
     Only after I resized the window again it switches to that view
  ☐ Load all Textures from the ResourceManager
+ ☐ Decide wether "MainMenu" and "SettingsMenu" belong to the engine or the game
 
  Bugs:
    ☐ FOV changes when window is resized for the first time

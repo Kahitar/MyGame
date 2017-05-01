@@ -2,6 +2,7 @@
 #define OBJECTTIME_HPP
 
 #include <SFML/Graphics.hpp>
+#include "UIElement.hpp"
 
 class Framework;
 
@@ -33,13 +34,13 @@ class ObjectTime
         float mTime; // time in seconds
         float mNextTimeStep;
 
-        sf::Font font;
-        sf::Text mClockText;
+//        sf::Font font;
+//        sf::Text mClockText;
+        UIElement ClockTextBox;
 
         float mGlobalTimeStep;
 
         sf::Vector2f mPosition;
-
 };
 
 #endif // OBJECTTIME_HPP

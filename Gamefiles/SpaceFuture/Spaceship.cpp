@@ -4,6 +4,7 @@
 #include "Spaceship.hpp"
 #include "Framework.hpp"
 #include "ResourceManager.hpp"
+#include "math.hpp"
 
 Spaceship::Spaceship(std::string texturePath, sf::Vector2f position)
     :mName("Of course I still love you"),mVelocity(0),mMass(10),mForce(ResourceManager::getAcceleratingForce()),
@@ -74,14 +75,13 @@ void Spaceship::WriteStateVariables()
 {
     // Velocity as function of c
     double c = 299792458;
-    double mVAsPercentegeOfC = mVelocity / c ;
+    float mVAsPercentegeOfC = math::round(mVelocity / c,4);
 
+    mVelocityText.setPosition(mPosition.x,mPosition.y-70);
     std::stringstream ssVelocity;
     ssVelocity << "v = " << mVAsPercentegeOfC << " * c ";
     std::string sVelocity = ssVelocity.str();
     mVelocityText.setString(sVelocity);
-
-    mVelocityText.setPosition(mPosition.x,mPosition.y-70);
 
     // Position from origin
     mPositionText.setPosition(mPosition.x,mPosition.y - 40);

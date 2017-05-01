@@ -50,6 +50,6 @@ void MainMenu::handle(Framework &frmwrk)
 void MainMenu::render(Framework &frmwrk)
 {
 
-    frmwrk.spRenderWindow->draw(*upBackSprite);     //Main Menu Background
+    frmwrk.spRenderWindow->draw(*upBackSprite);
     Buttons.render(frmwrk);
 }

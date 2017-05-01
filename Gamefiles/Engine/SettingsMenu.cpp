@@ -10,7 +10,7 @@ SettingsMenu::SettingsMenu()
     Buttons.addButton(sf::Vector2f(700,500),sf::Vector2f(200,50),"BackButton","Back");
 
     Sliders.addSlider(sf::Vector2f(800,300),sf::Vector2f(200,50),"ForceSlider","This is a slider:");
-    Sliders.getSlider("ForceSlider").setNumberOfPositions(100);
+    Sliders.getSlider("ForceSlider").setNumberOfPositions(1000);
     Sliders.getSlider("ForceSlider").setValue(ResourceManager::getAcceleratingForce()/ForceSliderMultiplicator);
 }
 
