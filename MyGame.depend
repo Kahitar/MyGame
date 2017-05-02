@@ -1140,7 +1140,7 @@
 	"Gamestate.hpp"
 	"UIElement.hpp"
 
-1493641241 c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\uielement.hpp
+1493654807 c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\uielement.hpp
 	<iostream>
 	<map>
 	<SFML/Graphics.hpp>
@@ -1148,11 +1148,11 @@
 	"Slider.hpp"
 	"TextBox.hpp"
 
-1484159300 c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\slider.hpp
+1493658689 c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\slider.hpp
 	<iostream>
 	<SFML/Graphics.hpp>
 
-1493580815 c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\settingsmenu.hpp
+1493660379 c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\settingsmenu.hpp
 	"Gamestate.hpp"
 	"Button.hpp"
 	"UIElement.hpp"
@@ -1199,41 +1199,45 @@
 1493579676 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\resourcemanager.cpp
 	"ResourceManager.hpp"
 
-1481462400 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\settingscache.cpp
+1493654638 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\settingscache.cpp
 	"SettingsCache.hpp"
 
-1493580815 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\settingsmenu.cpp
+1493665410 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\settingsmenu.cpp
 	"SettingsMenu.hpp"
 	"Framework.hpp"
 	"ResourceManager.hpp"
 	<string>
+	<sstream>
 
-1493581261 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\slider.cpp
+1493661287 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\slider.cpp
 	"Slider.hpp"
 	"Framework.hpp"
 	<string>
 	<sstream>
+	<cmath>
 
-1493641451 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\uielement.cpp
+1493654937 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\uielement.cpp
 	"Framework.hpp"
 	"UIElement.hpp"
 	<algorithm>
 
-1491854867 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\main.cpp
+1493674458 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\main.cpp
 	<iostream>
 	"Framework.hpp"
+	"math.hpp"
 
 1492187015 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\tileworld\tileworld.cpp
 	"Tileworld.hpp"
 	"Framework.hpp"
 
-1493640223 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\spacefuture\mainmenu.cpp
+1493660914 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\spacefuture\mainmenu.cpp
 	"MainMenu.hpp"
 	"Framework.hpp"
 
-1493574112 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\spacefuture\flyshipstate.cpp
+1493664187 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\spacefuture\flyshipstate.cpp
 	"FlyShipState.hpp"
 	"Framework.hpp"
+	<sstream>
 
 1493559158 c:\users\niklas\onedrive\c++\mygame\gamefiles\spacefuture\flyshipstate.hpp
 	<SFML/Graphics.hpp>
@@ -1243,7 +1247,7 @@
 	"Playership.hpp"
 	"planet.hpp"
 
-1493643287 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\spacefuture\objecttime.cpp
+1493653707 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\spacefuture\objecttime.cpp
 	<iostream>
 	<cmath>
 	<string>
@@ -1252,17 +1256,18 @@
 	"Framework.hpp"
 	"math.hpp"
 
-1493641899 c:\users\niklas\onedrive\c++\mygame\gamefiles\spacefuture\objecttime.hpp
+1493652565 c:\users\niklas\onedrive\c++\mygame\gamefiles\spacefuture\objecttime.hpp
 	<SFML/Graphics.hpp>
 	"UIElement.hpp"
 
-1493558274 c:\users\niklas\onedrive\c++\mygame\gamefiles\spacefuture\spaceship.hpp
+1493677125 c:\users\niklas\onedrive\c++\mygame\gamefiles\spacefuture\spaceship.hpp
 	<iostream>
 	<string>
 	<SFML/Graphics.hpp>
 	"ObjectTime.hpp"
+	"UIElement.hpp"
 
-1493644028 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\spacefuture\spaceship.cpp
+1493723892 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\spacefuture\spaceship.cpp
 	<sstream>
 	<string>
 	"Spaceship.hpp"
@@ -1300,17 +1305,24 @@
 1493559198 c:\users\niklas\onedrive\c++\mygame\gamefiles\spacefuture\npcship.hpp
 	<Spaceship.hpp>
 
-1493643211 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\spacefuture\math.cpp
+1493675552 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\spacefuture\math.cpp
 	"math.hpp"
 	<cmath>
 	<iostream>
 
-1493562917 c:\users\niklas\onedrive\c++\mygame\gamefiles\spacefuture\math.hpp
+1493674694 c:\users\niklas\onedrive\c++\mygame\gamefiles\spacefuture\math.hpp
 
 1493642421 c:\users\niklas\onedrive\c++\mygame\gamefiles\spacefuture\textbox.hpp
 	<SFML/Graphics.hpp>
 
 1493642555 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\spacefuture\textbox.cpp
+	"TextBox.hpp"
+	"Framework.hpp"
+
+1493654937 c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\textbox.hpp
+	<SFML/Graphics.hpp>
+
+1493654937 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\textbox.cpp
 	"TextBox.hpp"
 	"Framework.hpp"
 

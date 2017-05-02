@@ -50,14 +50,14 @@ void UIElement::addSlider(sf::Vector2f pos, sf::Vector2f Size, std::string Name,
     }
 }
 
-void UIElement::addTextBox(std::string Name, std::string text, std::string FontPath, sf::Vector2f position,
-                        int borderThickness, sf::Color fillColor, sf::Color outlineColor)
+void UIElement::addTextBox(std::string Name, std::string text, sf::Vector2f position, std::string FontPath,
+                           int borderThickness, sf::Color fillColor, sf::Color outlineColor)
 {
     //check if Elementname doesn't already exists
     if(TextBoxes.find(Name) == TextBoxes.end()){
     //add TextBoxes if it doesn't already exist
         //Load the TextBox
-        std::shared_ptr<TextBox> newTextBox(new TextBox(text, FontPath, position, borderThickness, fillColor, outlineColor));
+        std::shared_ptr<TextBox> newTextBox(new TextBox(text, position, FontPath, borderThickness, fillColor, outlineColor));
 
         //Insert it into the map
         TextBoxes.insert(make_pair(Name, newTextBox));
@@ -85,28 +85,40 @@ Button& UIElement::getButton(std::string ButtonName)
 
         return *it->second;
     }
-
-    //TODO: Check if the Button exists or not! What to do if it doesn't?
 }
 
 Slider& UIElement::getSlider(std::string SliderName)
 {
     //lookup the Slider name and see if its in the map
-    auto it = Sliders.find(SliderName);
+    if(Sliders.find(SliderName) == Sliders.end()){
+    //"error" if it doesn't exist
+        std::cout << "ERROR: There is no UIElement with the name \"";
+        std::cout << SliderName;
+        std::cout << "\" !";
 
-    //TODO: Check if the Slider exists or not! What to do if it does?
+        return *Sliders.end()->second;
+    }else {
+        auto it = Sliders.find(SliderName);
 
-    return *it->second;
+        return *it->second;
+    }
 }
 
 TextBox& UIElement::getTextBox(std::string TextBoxName)
 {
     //lookup the Textbox name and see if its in the map
-    auto it = TextBoxes.find(TextBoxName);
+    if(TextBoxes.find(TextBoxName) == TextBoxes.end()){
+    //"error" if it doesn't exist
+        std::cout << "ERROR: There is no UIElement with the name \"";
+        std::cout << TextBoxName;
+        std::cout << "\" !";
 
-    //TODO: Check if the TextBox exists or not! What to do if it doesn't?
+        return *TextBoxes.end()->second;
+    }else {
+        auto it = TextBoxes.find(TextBoxName);
 
-    return *it->second;
+        return *it->second;
+    }
 }
 
 void UIElement::update(Framework &frmwrk)

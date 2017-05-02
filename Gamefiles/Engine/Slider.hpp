@@ -19,15 +19,16 @@ class Slider
         ///////////Setter///////////
         void setPosition(sf::Vector2f pos);
         void setSize(sf::Vector2f Size);
-        void setValue(int newValue);
+        void setValue(int multiplicatedValue);
         void setNumberOfPositions(int newNumber);
+        void setMinMax(int min, int max);
 
         ///////////Getter///////////
         sf::Vector2f getPosition()  {return mPos;};
         sf::Vector2f getSize()      {return mSize;};
+        int getSliderValue();
 
         bool getMouseOnSlider()     {return mMouseOnSlider;};
-        int getSliderValue()        {return mSliderValue;};
 
     private:
         void ChangeSliderPosition(float newX);
@@ -45,6 +46,8 @@ class Slider
 
         int             mNumberOfPositions;
         int             mSliderValue;
+        int             mValueMultiplicator;
+        int             mMultiplicatedValue;
 };
 
 #endif // SLIDER_HPP

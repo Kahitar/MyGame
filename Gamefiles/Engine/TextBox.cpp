@@ -1,7 +1,7 @@
 #include "TextBox.hpp"
 #include "Framework.hpp"
 
-TextBox::TextBox(std::string text = "This is a Button", std::string FontPath, sf::Vector2f position,
+TextBox::TextBox(std::string text, sf::Vector2f position, std::string FontPath,
         int borderThickness, sf::Color fillColor, sf::Color outlineColor)
 {
     setFont(FontPath);

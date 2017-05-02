@@ -3,9 +3,10 @@
 
 #include <string>
 #include <sstream>
+#include <cmath>
 
 Slider::Slider(sf::Vector2f pos, sf::Vector2f Size)
-    :mMouseOnSlider(false),mClicked(false),mNumberOfPositions(10),mSliderValue(0)
+    :mMouseOnSlider(false),mClicked(false),mNumberOfPositions(10),mSliderValue(0),mValueMultiplicator(1)
 {
     mSliderBar.setFillColor(sf::Color(128, 128, 200));
     mSliderBar.setOutlineThickness(1);
@@ -17,7 +18,7 @@ Slider::Slider(sf::Vector2f pos, sf::Vector2f Size)
 
     setSize(Size);
     setPosition(pos);
-    setValue(1);
+    setValue(10);
 }
 
 Slider::~Slider()
@@ -65,15 +66,14 @@ void Slider::render(Framework &frmwrk)
 
     Font.loadFromFile("assets\\fonts\\PAPYRUS.TTF");
     SliderValueText.setFont(Font);
-    SliderValueText.setFillColor(sf::Color::Red);
-    SliderValueText.setStyle(sf::Text::Bold);
+    SliderValueText.setFillColor(sf::Color::White);
 
-    std::stringstream ssSliderValue;
-    ssSliderValue << mSliderValue;
-    std::string sSliderValue = ssSliderValue.str();
+    std::stringstream ssMultiplicatedValue;
+    ssMultiplicatedValue << mMultiplicatedValue;
+    std::string sMultiplicatedValue = ssMultiplicatedValue.str();
 
-    SliderValueText.setString(sSliderValue);
-    SliderValueText.setPosition(mPos.x - SliderValueText.getGlobalBounds().width - 10, mPos.y);
+    SliderValueText.setString(sMultiplicatedValue);
+    SliderValueText.setPosition(mPos.x - SliderValueText.getGlobalBounds().width - 0.15*mSliderBar.getGlobalBounds().width, mPos.y);
     rw->draw(SliderValueText);
 }
 
@@ -99,10 +99,11 @@ void Slider::ChangeSliderPosition(float MouseX)
         }
         else if (MouseX > mPos.x + mSize.x - mBarWidth){
             newX = mPos.x + mSize.x - mBarWidth;
-            mSliderValue = mNumberOfPositions-1;
+            mSliderValue = mNumberOfPositions - 1;
         }
     }
 
+    mMultiplicatedValue = mSliderValue * mValueMultiplicator;
     mSliderRect.setPosition(sf::Vector2f(newX, mPos.y));
 }
 
@@ -122,19 +123,35 @@ void Slider::setSize(sf::Vector2f Size)
     mSliderRect.setSize(sf::Vector2f(mBarWidth, mSize.y));
 }
 
-void Slider::setValue(int newValue)
+void Slider::setValue(int multiplicatedValue)
 {
+    mMultiplicatedValue = multiplicatedValue;
+    mSliderValue = mMultiplicatedValue / mValueMultiplicator;
+
     float PosWidth = mSize.x / (mNumberOfPositions-1);
-    float left = mPos.x + newValue*PosWidth;
-    float right = mPos.x + (newValue+1)*PosWidth;
+    float left = mPos.x + mSliderValue*PosWidth;
+    float right = mPos.x + (mSliderValue+1)*PosWidth;
     float middle = (right + left - mBarWidth) / 2;
 
     float newX = middle -  mBarWidth/2;
-    mSliderValue = newValue;
+
     mSliderRect.setPosition(sf::Vector2f(newX, mPos.y));
 }
 
 void Slider::setNumberOfPositions(int newNumber)
 {
     mNumberOfPositions = newNumber;
+}
+
+// Getter //
+int Slider::getSliderValue()
+{
+    return mMultiplicatedValue;
+}
+
+
+void Slider::setMinMax(int min, int max)
+{
+    mValueMultiplicator = round((max - min) / mNumberOfPositions);
+    mMultiplicatedValue = mSliderValue*mValueMultiplicator;
 }

@@ -20,10 +20,7 @@ class SettingsMenu : public Gamestate
         void render(Framework &frmwrk);
 
     private:
-        UIElement Buttons;
-        UIElement Sliders;
-
-        int ForceSliderMultiplicator;
+        UIElement uielements;
 };
 
 #endif // SETTINGSMENU_HPP

@@ -8,8 +8,8 @@ class Framework;
 class TextBox
 {
     public:
-        TextBox(std::string text, std::string FontPath = "assets\\fonts\\PAPYRUS.TTF", sf::Vector2f position = sf::Vector2f(0,0),
-                int borderThickness = 1, sf::Color fillColor = sf::Color::Black, sf::Color outlineColor = sf::Color::Black);
+        TextBox(std::string text = "I am a Textbox!", sf::Vector2f position = sf::Vector2f(0,0), std::string FontPath = "assets\\fonts\\PAPYRUS.TTF",
+                int borderThickness = 1, sf::Color fillColor = sf::Color::Black, sf::Color outlineColor = sf::Color::Transparent);
         ~TextBox();
 
         // Setter //

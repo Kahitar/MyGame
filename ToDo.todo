@@ -20,7 +20,7 @@ Engine:
 
    Maybe in a config file!
  ☐ Make spRenderWindow and spMainEvent private in Framework
- ☐ UIElement: Check if the elements alerady exist when adding one
+ ✔ UIElement: Check if the elements alerady exist when adding one @done (17-05-01 16:23)
    What to do if it does?
  ✔ Add a class for texts or add texts to UIElement @done (17-05-01 13:35)
    e.g. a description or headline (like "Number of KIs:")
@@ -29,8 +29,11 @@ Engine:
     Only after I resized the window again it switches to that view
  ☐ Load all Textures from the ResourceManager
  ☐ Decide wether "MainMenu" and "SettingsMenu" belong to the engine or the game
+ ☐ Think about creating a consistent way for UIElements to know where/how big their neighbour Elements are
+     e.g. make it possible to add a Button on a position RELATIVE to another button 
 
  Bugs:
+   ☐ velocity and accelerating are nan when first loading flyshipstate
    ☐ FOV changes when window is resized for the first time
       ☐ make it right!
          Fix: in the constructor of Playstate: set the view with the actual window size
