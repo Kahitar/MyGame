@@ -1267,7 +1267,7 @@
 	"ObjectTime.hpp"
 	"UIElement.hpp"
 
-1493723892 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\spacefuture\spaceship.cpp
+1493726978 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\spacefuture\spaceship.cpp
 	<sstream>
 	<string>
 	"Spaceship.hpp"
@@ -1325,4 +1325,11 @@
 1493654937 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\textbox.cpp
 	"TextBox.hpp"
 	"Framework.hpp"
+
+1493660379 c:\users\niklas\onedrive\c++\mygame\gamefiles\spacefuture\settingsmenu.hpp
+	"Gamestate.hpp"
+	"Button.hpp"
+	"UIElement.hpp"
+	"Slider.hpp"
+	"SettingsCache.hpp"
 

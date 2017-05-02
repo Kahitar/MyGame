@@ -13,9 +13,7 @@ SettingsMenu::SettingsMenu()
     uielements.getSlider("ForceSlider").setMinMax(0,100000000); //setMinMax must be BEFORE setValue on Sliders. Otherwise the Value gets changed
     uielements.getSlider("ForceSlider").setValue(ResourceManager::getAcceleratingForce());
 
-    uielements.addTextBox("SliderDescriptor", "Accelerating Force: ", sf::Vector2f(300,300));
-
-    uielements.addTextBox("ActualForceBox");
+    uielements.addTextBox("ForceSliderDescriptor", "Accelerating Force: ", sf::Vector2f(200,300));
 }
 
 SettingsMenu::~SettingsMenu()
@@ -25,11 +23,11 @@ SettingsMenu::~SettingsMenu()
 
 void SettingsMenu::update(Framework &frmwrk)
 {
-    int value = ResourceManager::getAcceleratingForce();
-    std::stringstream ssvalue;
-    ssvalue << value;
-    std::string svalue = ssvalue.str();
-    uielements.getTextBox("ActualForceBox").setText(svalue);
+//    long double SliderValue = uielements.getSlider("ForceSlider").getSliderValue();
+//    std::stringstream ssvalue;
+//    ssvalue << "Accelerating Force: " << SliderValue;
+//    std::string svalue = ssvalue.str();
+//    uielements.getTextBox("ForceSliderDescriptor").setText(svalue);
 
     uielements.update(frmwrk);
     ResourceManager::setAcceleratingForce(uielements.getSlider("ForceSlider").getSliderValue());

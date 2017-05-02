@@ -93,8 +93,6 @@
 		<Unit filename="Gamefiles/Engine/ResourceManager.hpp" />
 		<Unit filename="Gamefiles/Engine/SettingsCache.cpp" />
 		<Unit filename="Gamefiles/Engine/SettingsCache.hpp" />
-		<Unit filename="Gamefiles/Engine/SettingsMenu.cpp" />
-		<Unit filename="Gamefiles/Engine/SettingsMenu.hpp" />
 		<Unit filename="Gamefiles/Engine/Slider.cpp" />
 		<Unit filename="Gamefiles/Engine/Slider.hpp" />
 		<Unit filename="Gamefiles/Engine/TextBox.cpp" />
@@ -111,6 +109,8 @@
 		<Unit filename="Gamefiles/SpaceFuture/ObjectTime.hpp" />
 		<Unit filename="Gamefiles/SpaceFuture/Playership.cpp" />
 		<Unit filename="Gamefiles/SpaceFuture/Playership.hpp" />
+		<Unit filename="Gamefiles/SpaceFuture/SettingsMenu.cpp" />
+		<Unit filename="Gamefiles/SpaceFuture/SettingsMenu.hpp" />
 		<Unit filename="Gamefiles/SpaceFuture/Spaceship.cpp" />
 		<Unit filename="Gamefiles/SpaceFuture/Spaceship.hpp" />
 		<Unit filename="Gamefiles/SpaceFuture/math.cpp" />
