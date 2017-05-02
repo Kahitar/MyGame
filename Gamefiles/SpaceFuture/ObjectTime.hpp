@@ -30,8 +30,10 @@ class ObjectTime
     private:
         void updateTime(float velocity);
         void calculateNextTimeStep(double v_local);
+        void CalculateTimeInHours();
 
         float mTime; // time in seconds
+        sf::Vector3f mTimeInHours; // time in yy/mm hh:mm:ss
         float mNextTimeStep;
 
 //        sf::Font font;

@@ -7,7 +7,7 @@
 #include "math.hpp"
 
 Spaceship::Spaceship(std::string texturePath, sf::Vector2f position)
-    :mName("Of course I still love you"),mVelocity(0),mMass(10),mForce(ResourceManager::getAcceleratingForce()),
+    :mName("Of course I still love you"),mVelocity(0),mMass(10),mRelativisticMass(mMass),mForce(ResourceManager::getAcceleratingForce()),
     mAcceleratingInDirection(0),mPosition(sf::Vector2f(0,0))
 {
     //TODO: Load these from the ResourceManager
@@ -32,6 +32,8 @@ Spaceship::Spaceship(std::string texturePath, sf::Vector2f position)
     mPositionText.setPosition(20,150);
     mPositionText.setCharacterSize(24);
     mPositionText.setStyle(sf::Text::Bold);
+
+    uielements.addTextBox("ShipMass", "Relativistic Mass: ");
 }
 
 Spaceship::~Spaceship()
@@ -42,6 +44,7 @@ Spaceship::~Spaceship()
 void Spaceship::update(Framework &frmwrk)
 {
     CalculateNewVelocity(mAcceleratingInDirection*mForce);
+    CalculateRelativisticMass();
 
     ShipSprite.move(mVelocity*frmwrk.getFrameTime(),0);
     mPosition = ShipSprite.getPosition();
@@ -49,11 +52,20 @@ void Spaceship::update(Framework &frmwrk)
     mClock.setPosition(sf::Vector2f(mPosition.x,mPosition.y - 100));
     mClock.update(frmwrk, mVelocity);
     WriteStateVariables();
+
+    std::stringstream ssMass;
+    ssMass << "Relativistic Mass: " << mRelativisticMass;
+    std::string sMass = ssMass.str();
+
+    uielements.getTextBox("ShipMass").setText(sMass);
+    uielements.getTextBox("ShipMass").setPosition(sf::Vector2f(mPosition.x,mPosition.y-140));
+
+    uielements.update(frmwrk);
 }
 
 void Spaceship::handle(Framework &frmwrk)
 {
-
+    uielements.handle(frmwrk);
 }
 
 void Spaceship::render(Framework &frmwrk)
@@ -62,20 +74,22 @@ void Spaceship::render(Framework &frmwrk)
     frmwrk.spRenderWindow->draw(mVelocityText);
     frmwrk.spRenderWindow->draw(mPositionText);
     frmwrk.spRenderWindow->draw(ShipSprite);
+
+    uielements.render(frmwrk);
 }
 
-void Spaceship::CalculateNewVelocity(float force)
+void Spaceship::CalculateNewVelocity(double force)
 {
     float v_old = mVelocity;
-    float v_new = v_old + (force/mMass)*mClock.getNextTimeStep();
+    float v_new = v_old + (force/mRelativisticMass)*mClock.getNextTimeStep();
     mVelocity = v_new;
 }
 
 void Spaceship::WriteStateVariables()
 {
+    //TODO: Do this with the TextBox class
     // Velocity as function of c
-    double c = 299792458;
-    float mVAsPercentegeOfC = math::round(mVelocity / c,4);
+    float mVAsPercentegeOfC = math::round(mVelocity / math::c,4);
 
     mVelocityText.setPosition(mPosition.x,mPosition.y-70);
     std::stringstream ssVelocity;
@@ -86,7 +100,12 @@ void Spaceship::WriteStateVariables()
     // Position from origin
     mPositionText.setPosition(mPosition.x,mPosition.y - 40);
     std::stringstream ssPosition;
-    ssPosition << "x = " << mPosition.x << " pxls ";
+    ssPosition << "d = " << math::round(math::CalculateDistanceInLightMinutes(mPosition.x),5) << " lm ";
     std::string sPosition = ssPosition.str();
     mPositionText.setString(sPosition);
+}
+
+void Spaceship::CalculateRelativisticMass()
+{
+    mRelativisticMass = mMass * math::CalculateDilationFactor(mVelocity);
 }

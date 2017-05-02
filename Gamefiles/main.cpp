@@ -1,10 +1,12 @@
 #include <iostream>
 #include "Framework.hpp"
+#include "math.hpp"
 
 int main()
 {
-    Framework frmwrk;
+	Framework frmwrk;
+
 	frmwrk.run();
 
-    return 0;
+	return 0;
 }

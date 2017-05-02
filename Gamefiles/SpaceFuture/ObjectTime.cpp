@@ -10,7 +10,7 @@
 ObjectTime::ObjectTime()
     :mTime(0),mNextTimeStep(0),mPosition(0,0)
 {
-    ClockTextBox.addTextBox("ClockText","Hello World!");
+    ClockTextBox.addTextBox("ClockText");
     ClockTextBox.getTextBox("ClockText").setFillColor(sf::Color::Transparent);
     ClockTextBox.getTextBox("ClockText").setBorderThickness(0);
 
@@ -67,11 +67,15 @@ void ObjectTime::updateTime(float velocity)
 
 void ObjectTime::calculateNextTimeStep(double v_local)
 {
-	double c = 299792458;
     double dt_global = mGlobalTimeStep;
 
-    double dilationFactor = 1/sqrt(1 - v_local*v_local/(c*c));
+    double dilationFactor = math::CalculateDilationFactor(v_local);
     double dt_local = dt_global / dilationFactor;
 
     mNextTimeStep = dt_local;
+}
+
+void ObjectTime::CalculateTimeInHours()
+{
+
 }

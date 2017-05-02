@@ -5,6 +5,7 @@
 #include <string>
 #include <SFML/Graphics.hpp>
 #include "ObjectTime.hpp"
+#include "UIElement.hpp"
 
 class Framework;
 
@@ -31,14 +32,16 @@ class Spaceship
         void render(Framework &frmwrk);
 
     protected:
-        void CalculateNewVelocity(float force);
+        void CalculateNewVelocity(double force);
+        void CalculateRelativisticMass();
 
         void WriteStateVariables();
 
         std::string mName;
         float mVelocity;
-        float mMass;
-        int mForce;
+        float mMass; //inertial mass
+        float mRelativisticMass; //relativistic mass
+        long double mForce;
         int mAcceleratingInDirection; // -1 = left; 1 = right; 0 = not accelerating
 
         sf::Vector2f mPosition;
@@ -52,6 +55,8 @@ class Spaceship
         sf::Image ShipImage;
         sf::Texture ShipTexture;
         sf::Sprite ShipSprite;
+
+        UIElement uielements;
 };
 
 #endif // SPACESHIP_HPP

@@ -20,6 +20,7 @@ MainMenu::~MainMenu()
 
 void MainMenu::update(Framework &frmwrk)
 {
+
     frmwrk.setViewToWindowSize();
     Buttons.update(frmwrk);
 }
