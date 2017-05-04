@@ -10,8 +10,6 @@ FlyShipState::FlyShipState()
 
     // TODO: (Re)set the view with the actual window size
     playerView.reset(sf::FloatRect(0,0,1280,720));
-
-    Buttons.addTextBox("ActualForceBox");
 }
 
 FlyShipState::~FlyShipState()
@@ -21,13 +19,6 @@ FlyShipState::~FlyShipState()
 
 void FlyShipState::update(Framework &frmwrk)
 {
-    int value = ResourceManager::getAcceleratingForce();
-    std::stringstream ssvalue;
-    ssvalue << value;
-    std::string svalue = ssvalue.str();
-    Buttons.getTextBox("ActualForceBox").setText(svalue);
-
-
     NPCShip.update(frmwrk);
     playership.update(frmwrk);
 

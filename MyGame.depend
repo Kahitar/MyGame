@@ -1148,9 +1148,10 @@
 	"Slider.hpp"
 	"TextBox.hpp"
 
-1493658689 c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\slider.hpp
+1493906606 c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\slider.hpp
 	<iostream>
 	<SFML/Graphics.hpp>
+	"TextBox.hpp"
 
 1493660379 c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\settingsmenu.hpp
 	"Gamestate.hpp"
@@ -1209,7 +1210,7 @@
 	<string>
 	<sstream>
 
-1493661287 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\slider.cpp
+1493907638 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\engine\slider.cpp
 	"Slider.hpp"
 	"Framework.hpp"
 	<string>
@@ -1234,7 +1235,7 @@
 	"MainMenu.hpp"
 	"Framework.hpp"
 
-1493664187 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\spacefuture\flyshipstate.cpp
+1493907699 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\spacefuture\flyshipstate.cpp
 	"FlyShipState.hpp"
 	"Framework.hpp"
 	<sstream>
@@ -1332,4 +1333,11 @@
 	"UIElement.hpp"
 	"Slider.hpp"
 	"SettingsCache.hpp"
+
+1493907800 source:c:\users\niklas\onedrive\c++\mygame\gamefiles\spacefuture\settingsmenu.cpp
+	"SettingsMenu.hpp"
+	"Framework.hpp"
+	"ResourceManager.hpp"
+	<string>
+	<sstream>
 

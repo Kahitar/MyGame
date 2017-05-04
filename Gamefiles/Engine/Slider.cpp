@@ -57,24 +57,16 @@ void Slider::handle(Framework &frmwrk)
 
 void Slider::render(Framework &frmwrk)
 {
-    std::shared_ptr<sf::RenderWindow> rw = frmwrk.spRenderWindow;
-    rw->draw(mSliderBar);
-    rw->draw(mSliderRect);
+    std::stringstream ssSliderText;
+    ssSliderText << "Accelerating Force: " << mMultiplicatedValue;
 
-    sf::Text SliderValueText;
-    sf::Font Font;
+    mSliderText.setText(ssSliderText.str());
+    mSliderText.setPosition(sf::Vector2f(mPos.x - mSliderText.getGlobalBounds().width - 0.15*mSliderBar.getGlobalBounds().width, mPos.y));
 
-    Font.loadFromFile("assets\\fonts\\PAPYRUS.TTF");
-    SliderValueText.setFont(Font);
-    SliderValueText.setFillColor(sf::Color::White);
+    mSliderText.render(frmwrk);
 
-    std::stringstream ssMultiplicatedValue;
-    ssMultiplicatedValue << mMultiplicatedValue;
-    std::string sMultiplicatedValue = ssMultiplicatedValue.str();
-
-    SliderValueText.setString(sMultiplicatedValue);
-    SliderValueText.setPosition(mPos.x - SliderValueText.getGlobalBounds().width - 0.15*mSliderBar.getGlobalBounds().width, mPos.y);
-    rw->draw(SliderValueText);
+    frmwrk.spRenderWindow->draw(mSliderBar);
+    frmwrk.spRenderWindow->draw(mSliderRect);
 }
 
 void Slider::ChangeSliderPosition(float MouseX)

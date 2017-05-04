@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <SFML/Graphics.hpp>
+#include "TextBox.hpp"
 
 class Framework;
 
@@ -38,6 +39,8 @@ class Slider
 
         sf::RectangleShape  mSliderRect;
         sf::RectangleShape  mSliderBar;
+
+        TextBox         mSliderText;
 
         float           mBarWidth;
 
