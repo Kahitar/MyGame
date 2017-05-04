@@ -125,7 +125,7 @@ void Slider::setValue(int multiplicatedValue)
     float right = mPos.x + (mSliderValue+1)*PosWidth;
     float middle = (right + left - mBarWidth) / 2;
 
-    float newX = middle -  mBarWidth/2;
+    float newX = middle +  mBarWidth/2;
 
     mSliderRect.setPosition(sf::Vector2f(newX, mPos.y));
 }

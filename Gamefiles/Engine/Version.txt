@@ -1,4 +1,4 @@
-V_0.1.011
+V_0.1.012
 V_ . .  ^-- Bugfixes
 V_ . .^^--- New Classes
 V_ .^------ New Functionality

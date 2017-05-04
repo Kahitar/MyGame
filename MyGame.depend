@@ -996,17 +996,17 @@
 	"UIElement.hpp"
 	<algorithm>
 
-1492185866 source:e:\onedrive\c++\mygame\gamefiles\engine\button.cpp
+1493568416 source:e:\onedrive\c++\mygame\gamefiles\engine\button.cpp
 	"Button.hpp"
 	"Framework.hpp"
 	"ResourceManager.hpp"
 
-1485550280 e:\onedrive\c++\mygame\gamefiles\engine\button.hpp
+1493568427 e:\onedrive\c++\mygame\gamefiles\engine\button.hpp
 	<iostream>
 	<SFML/Graphics.hpp>
 	<memory>
 
-1492192370 e:\onedrive\c++\mygame\gamefiles\engine\framework.hpp
+1493489298 e:\onedrive\c++\mygame\gamefiles\engine\framework.hpp
 	<iostream>
 	<SFML\Graphics.hpp>
 	<memory>
@@ -1014,25 +1014,28 @@
 	"MainMenu.hpp"
 	"SettingsMenu.hpp"
 	"Playstate.hpp"
+	"FlyShipState.hpp"
 
-1481041647 e:\onedrive\c++\mygame\gamefiles\engine\gamestate.hpp
+1493573516 e:\onedrive\c++\mygame\gamefiles\engine\gamestate.hpp
 	<iostream>
 	<memory>
 
-1492186420 e:\onedrive\c++\mygame\gamefiles\spacefuture\mainmenu.hpp
+1493640231 e:\onedrive\c++\mygame\gamefiles\spacefuture\mainmenu.hpp
 	"Gamestate.hpp"
 	"UIElement.hpp"
 
-1491590968 e:\onedrive\c++\mygame\gamefiles\engine\uielement.hpp
+1493654807 e:\onedrive\c++\mygame\gamefiles\engine\uielement.hpp
 	<iostream>
 	<map>
 	<SFML/Graphics.hpp>
 	"Button.hpp"
 	"Slider.hpp"
+	"TextBox.hpp"
 
-1484159300 e:\onedrive\c++\mygame\gamefiles\engine\slider.hpp
+1493906606 e:\onedrive\c++\mygame\gamefiles\engine\slider.hpp
 	<iostream>
 	<SFML/Graphics.hpp>
+	"TextBox.hpp"
 
 1491593154 e:\onedrive\c++\mygame\gamefiles\engine\settingsmenu.hpp
 	"Gamestate.hpp"
@@ -1047,7 +1050,7 @@
 	"UIElement.hpp"
 	"Tileworld.hpp"
 
-1481462369 e:\onedrive\c++\mygame\gamefiles\engine\resourcemanager.hpp
+1493579676 e:\onedrive\c++\mygame\gamefiles\engine\resourcemanager.hpp
 	<string>
 	<memory>
 	"ResourceCache.hpp"
@@ -1059,7 +1062,7 @@
 	<string>
 	"SFML/Graphics.hpp"
 
-1481462400 e:\onedrive\c++\mygame\gamefiles\engine\settingscache.hpp
+1493578530 e:\onedrive\c++\mygame\gamefiles\engine\settingscache.hpp
 
 1484829504 e:\onedrive\c++\mygame\gamefiles\tileworld\tileworld.hpp
 	<iostream>
@@ -1073,10 +1076,10 @@
 1481303118 source:e:\onedrive\c++\mygame\gamefiles\engine\resourcecache.cpp
 	"ResourceCache.hpp"
 
-1481462369 source:e:\onedrive\c++\mygame\gamefiles\engine\resourcemanager.cpp
+1493579676 source:e:\onedrive\c++\mygame\gamefiles\engine\resourcemanager.cpp
 	"ResourceManager.hpp"
 
-1481462400 source:e:\onedrive\c++\mygame\gamefiles\engine\settingscache.cpp
+1493654638 source:e:\onedrive\c++\mygame\gamefiles\engine\settingscache.cpp
 	"SettingsCache.hpp"
 
 1491593155 source:e:\onedrive\c++\mygame\gamefiles\engine\settingsmenu.cpp
@@ -1091,16 +1094,17 @@
 	<string>
 	<sstream>
 
-1491593062 source:e:\onedrive\c++\mygame\gamefiles\engine\uielement.cpp
+1493654937 source:e:\onedrive\c++\mygame\gamefiles\engine\uielement.cpp
 	"Framework.hpp"
 	"UIElement.hpp"
 	<algorithm>
 
-1491854867 source:e:\onedrive\c++\mygame\gamefiles\main.cpp
+1493674458 source:e:\onedrive\c++\mygame\gamefiles\main.cpp
 	<iostream>
 	"Framework.hpp"
+	"math.hpp"
 
-1492191531 source:e:\onedrive\c++\mygame\gamefiles\spacefuture\mainmenu.cpp
+1493660914 source:e:\onedrive\c++\mygame\gamefiles\spacefuture\mainmenu.cpp
 	"MainMenu.hpp"
 	"Framework.hpp"
 
@@ -1108,7 +1112,7 @@
 	"Tileworld.hpp"
 	"Framework.hpp"
 
-1492192627 source:e:\onedrive\c++\mygame\gamefiles\engine\framework.cpp
+1493577850 source:e:\onedrive\c++\mygame\gamefiles\engine\framework.cpp
 	"Framework.hpp"
 	"ResourceManager.hpp"
 
@@ -1340,4 +1344,103 @@
 	"ResourceManager.hpp"
 	<string>
 	<sstream>
+
+1493654937 e:\onedrive\c++\mygame\gamefiles\engine\textbox.hpp
+	<SFML/Graphics.hpp>
+
+1493660379 e:\onedrive\c++\mygame\gamefiles\spacefuture\settingsmenu.hpp
+	"Gamestate.hpp"
+	"Button.hpp"
+	"UIElement.hpp"
+	"Slider.hpp"
+	"SettingsCache.hpp"
+
+1493559158 e:\onedrive\c++\mygame\gamefiles\spacefuture\flyshipstate.hpp
+	<SFML/Graphics.hpp>
+	"UIElement.hpp"
+	"Gamestate.hpp"
+	"NPCShip.hpp"
+	"Playership.hpp"
+	"planet.hpp"
+
+1493559198 e:\onedrive\c++\mygame\gamefiles\spacefuture\npcship.hpp
+	<Spaceship.hpp>
+
+1493677125 e:\onedrive\c++\mygame\gamefiles\spacefuture\spaceship.hpp
+	<iostream>
+	<string>
+	<SFML/Graphics.hpp>
+	"ObjectTime.hpp"
+	"UIElement.hpp"
+
+1493652565 e:\onedrive\c++\mygame\gamefiles\spacefuture\objecttime.hpp
+	<SFML/Graphics.hpp>
+	"UIElement.hpp"
+
+1493578172 e:\onedrive\c++\mygame\gamefiles\spacefuture\playership.hpp
+	<Spaceship.hpp>
+	<iostream>
+	<string>
+	<SFML/Graphics.hpp>
+	"ObjectTime.hpp"
+	"UIElement.hpp"
+
+1493503129 e:\onedrive\c++\mygame\gamefiles\spacefuture\planet.hpp
+	<iostream>
+	<SFML/Graphics.hpp>
+	"ObjectTime.hpp"
+
+1493654937 source:e:\onedrive\c++\mygame\gamefiles\engine\textbox.cpp
+	"TextBox.hpp"
+	"Framework.hpp"
+
+1493674694 e:\onedrive\c++\mygame\gamefiles\spacefuture\math.hpp
+
+1493907699 source:e:\onedrive\c++\mygame\gamefiles\spacefuture\flyshipstate.cpp
+	"FlyShipState.hpp"
+	"Framework.hpp"
+	<sstream>
+
+1493675552 source:e:\onedrive\c++\mygame\gamefiles\spacefuture\math.cpp
+	"math.hpp"
+	<cmath>
+	<iostream>
+
+1493558776 source:e:\onedrive\c++\mygame\gamefiles\spacefuture\npcship.cpp
+	"NPCShip.hpp"
+
+1493653707 source:e:\onedrive\c++\mygame\gamefiles\spacefuture\objecttime.cpp
+	<iostream>
+	<cmath>
+	<string>
+	<sstream>
+	"ObjectTime.hpp"
+	"Framework.hpp"
+	"math.hpp"
+
+1493504065 source:e:\onedrive\c++\mygame\gamefiles\spacefuture\planet.cpp
+	"planet.hpp"
+	"Framework.hpp"
+
+1493576546 source:e:\onedrive\c++\mygame\gamefiles\spacefuture\playership.cpp
+	<sstream>
+	<string>
+	"Playership.hpp"
+	"Spaceship.hpp"
+	"Framework.hpp"
+
+1493907800 source:e:\onedrive\c++\mygame\gamefiles\spacefuture\settingsmenu.cpp
+	"SettingsMenu.hpp"
+	"Framework.hpp"
+	"ResourceManager.hpp"
+	<string>
+	<sstream>
+
+1493726978 source:e:\onedrive\c++\mygame\gamefiles\spacefuture\spaceship.cpp
+	<sstream>
+	<string>
+	"Spaceship.hpp"
+	"Framework.hpp"
+	"ResourceManager.hpp"
+	"math.hpp"
 
