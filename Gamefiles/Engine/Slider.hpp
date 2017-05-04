@@ -10,7 +10,7 @@ class Framework;
 class Slider
 {
     public:
-        Slider(sf::Vector2f pos = sf::Vector2f(0, 0), sf::Vector2f Size = sf::Vector2f(200, 50));
+        Slider(sf::Vector2f pos = sf::Vector2f(0, 0), sf::Vector2f Size = sf::Vector2f(200, 50), std::string text = "This is a Slider");
         ~Slider();
 
         void update(Framework &frmwrk);
@@ -22,6 +22,7 @@ class Slider
         void setSize(sf::Vector2f Size);
         void setValue(int multiplicatedValue);
         void setNumberOfPositions(int newNumber);
+        void setSliderText(std::string text);
         void setMinMax(int min, int max);
 
         ///////////Getter///////////
@@ -40,6 +41,7 @@ class Slider
         sf::RectangleShape  mSliderRect;
         sf::RectangleShape  mSliderBar;
 
+        std::string     mSliderString;
         TextBox         mSliderText;
 
         float           mBarWidth;

@@ -1032,7 +1032,7 @@
 	"Slider.hpp"
 	"TextBox.hpp"
 
-1493906606 e:\onedrive\c++\mygame\gamefiles\engine\slider.hpp
+1493930634 e:\onedrive\c++\mygame\gamefiles\engine\slider.hpp
 	<iostream>
 	<SFML/Graphics.hpp>
 	"TextBox.hpp"
@@ -1088,13 +1088,14 @@
 	"ResourceManager.hpp"
 	<string>
 
-1492185982 source:e:\onedrive\c++\mygame\gamefiles\engine\slider.cpp
+1493930634 source:e:\onedrive\c++\mygame\gamefiles\engine\slider.cpp
 	"Slider.hpp"
 	"Framework.hpp"
 	<string>
 	<sstream>
+	<cmath>
 
-1493654937 source:e:\onedrive\c++\mygame\gamefiles\engine\uielement.cpp
+1493929361 source:e:\onedrive\c++\mygame\gamefiles\engine\uielement.cpp
 	"Framework.hpp"
 	"UIElement.hpp"
 	<algorithm>

@@ -13,18 +13,13 @@ SpaceFuture:
 
 Engine:
  ☐ update Slider:
-   ☐ make mMinMax() working correctly
+   ☐ make mMinMax() work correctly
      at the moment min has to be 0 or it won't be correct.
    ☐ Make it possible to change the color of the slider text (value)
-   ☐ add the possibility to add a text to the slider (e.g. name of the slider)
-     ☐ Find out how to integrate UIElements into Slider altough Slider is an UIElement itself
+   ✔ add the possibility to add a text to the slider (e.g. name of the slider) @done (17-05-04 21:52)
      ✔ (less preferred) Add Textbox to the slider class @done (17-05-04 15:24)
        Textbox works, but thats not the pretty solution
-         ☐ Make it possible to set the text for this
-   ☐ Bugfix: When starting on the left, I can't click the slider rectangle
-     because it isn't in the slider hitbox?
-
-     Also: use the same mechanic to place the slider rectangle for changing the position and loading the slider (constructor)
+         ✔ Make it possible to set the text for this @done (17-05-04 21:48)
 
  ☐ Make the Size of the Window global
    Do I want to scale everything accordingly or just reduce the window size?
@@ -50,8 +45,21 @@ Engine:
          I just set it manually. Need to change that.
 
 
+ Cancled (maybe later):
+ ✘ Textbox: Split lines for long passages of Text @cancelled (17-05-02 13:15)
+     Can do this with \n in the text 
+ ✘ Make a SpriteManager @cancelled (17-04-07 23:13)
+     This should automatically generate a texture and load it into a sprite, so that I don't have to do that manually all the time
+     Don't do this. That's not worth it nor is it practical!
+ ✘ add the possibility to add a text to the slider (e.g. name of the slider) @cancelled (17-05-04 21:49)
+   ✘ Find out how to integrate UIElements into Slider altough Slider is an UIElement itself @cancelled (17-05-04 21:49)
+       Currently this is implemented via the TextBox-class on its own
+
  Archive:
- ☐ Decide wether "MainMenu" and "SettingsMenu" belong to the engine or the game
+ ✔ Bugfix: When starting on the left, I can't click the slider rectangle @done (17-05-04 21:51)
+     because it isn't in the slider hitbox?
+     Also: use the same mechanic to place the slider rectangle for changing the position and loading the slider (constructor)
+ ✔ Decide wether "MainMenu" and "SettingsMenu" belong to the engine or the game @done (17-05-04 21:49)
    I outsorced them in the game folder.
    ✔ velocity and accelerating are nan when first loading flyshipstate @done (17-05-04 14:47)
      the problem was, that the SliderMultiplicator in the Slider-class was not initialized
@@ -59,8 +67,6 @@ Engine:
  ✔ outsorce constants to extra file (e.g. pi, c, ...) @done (17-05-04 14:46)
  ✔ set playerView on ship @done (17-05-04 14:46)
  ✔ integrate a multiplicator into Slider or make min/max functions @done (17-05-02 13:13)
- ✘ Textbox: Split lines for long passages of Text @cancelled (17-05-02 13:15)
-   Can do this with \n in the text
  ✔ UIElement: Check if the elements alerady exist when adding one @done (17-05-01 16:23)
    What to do if it does?
  ✔ Add a class for texts or add texts to UIElement @done (17-05-01 13:35)
@@ -68,12 +74,7 @@ Engine:
  ✔ Replace all Buttons with ButtonManager-Buttons @done (17-04-07 20:27)
  ✔ Include Sliders in the ButtonManager @done (17-04-07 20:27)
    and maybe renaim it UIelement
- ✘ Make a SpriteManager @cancelled (17-04-07 23:13)
-   This should automatically generate a texture and load it into a sprite, so that I don't have to do that manually all the time
-     
-   Don't do this. That's not worth it nor is it practical!
  ✔ Fix Views in general @done (17-04-14 18:22)
-   Understand how it works...
-
-   Views need to be set by every state itself. It's nonsense to control them all from Framework because every state has different requirements for them.
+     Understand how it works...
+     Views need to be set by every state itself. It's nonsense to control them all from Framework because every state has different requirements for them.
  ✔ Integrate the transformation from global to local of the mouse into framework class and change i t everywhere to call the framework function @done (17-04-14 17:05)

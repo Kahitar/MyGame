@@ -5,7 +5,7 @@
 #include <sstream>
 #include <cmath>
 
-Slider::Slider(sf::Vector2f pos, sf::Vector2f Size)
+Slider::Slider(sf::Vector2f pos, sf::Vector2f Size, std::string text)
     :mMouseOnSlider(false),mClicked(false),mNumberOfPositions(10),mSliderValue(0),mValueMultiplicator(1)
 {
     mSliderBar.setFillColor(sf::Color(128, 128, 200));
@@ -16,6 +16,7 @@ Slider::Slider(sf::Vector2f pos, sf::Vector2f Size)
     mSliderRect.setOutlineThickness(1);
     mSliderRect.setOutlineColor(sf::Color::Black);
 
+    setSliderText(text);
     setSize(Size);
     setPosition(pos);
     setValue(10);
@@ -57,12 +58,7 @@ void Slider::handle(Framework &frmwrk)
 
 void Slider::render(Framework &frmwrk)
 {
-    std::stringstream ssSliderText;
-    ssSliderText << "Accelerating Force: " << mMultiplicatedValue;
-
-    mSliderText.setText(ssSliderText.str());
-    mSliderText.setPosition(sf::Vector2f(mPos.x - mSliderText.getGlobalBounds().width - 0.15*mSliderBar.getGlobalBounds().width, mPos.y));
-
+    setSliderText(mSliderString);
     mSliderText.render(frmwrk);
 
     frmwrk.spRenderWindow->draw(mSliderBar);
@@ -97,6 +93,16 @@ void Slider::ChangeSliderPosition(float MouseX)
 
     mMultiplicatedValue = mSliderValue * mValueMultiplicator;
     mSliderRect.setPosition(sf::Vector2f(newX, mPos.y));
+}
+
+void Slider::setSliderText(std::string text)
+{
+    mSliderString = text;
+    std::stringstream ssSliderText;
+    ssSliderText << mSliderString << mMultiplicatedValue;
+
+    mSliderText.setText(ssSliderText.str());
+    mSliderText.setPosition(sf::Vector2f(mPos.x - mSliderText.getGlobalBounds().width - 0.15*mSliderBar.getGlobalBounds().width, mPos.y));
 }
 
 ///////////Setter///////////

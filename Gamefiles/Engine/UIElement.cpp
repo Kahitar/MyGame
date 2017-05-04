@@ -25,7 +25,7 @@ void UIElement::addButton(sf::Vector2f pos, sf::Vector2f Size, std::string Name,
     }
     else{
     //"error" if it already exists
-        std::cout << "ERROR: A UI-element with the name \"";
+        std::cout << "ERROR: A Button with the name \"";
         std::cout << Name;
         std::cout << "\" already exists!";
     }
@@ -37,14 +37,14 @@ void UIElement::addSlider(sf::Vector2f pos, sf::Vector2f Size, std::string Name,
     if(Sliders.find(Name) == Sliders.end()){
     //add Slider if element doesn't already exist
         //Load the Slider
-        std::shared_ptr<Slider> newSlider(new Slider(pos,Size));
+        std::shared_ptr<Slider> newSlider(new Slider(pos,Size,Text));
 
         //Insert it into the map
         Sliders.insert(make_pair(Name, newSlider));
     }
     else{
     //"error" if it already exists
-        std::cout << "ERROR: A UI-element with the name \"";
+        std::cout << "ERROR: A Slider with the name \"";
         std::cout << Name;
         std::cout << "\" already exists!";
     }
@@ -64,7 +64,7 @@ void UIElement::addTextBox(std::string Name, std::string text, sf::Vector2f posi
     }
     else{
     //"error" if it already exists
-        std::cout << "ERROR: A UI-element with the name \"";
+        std::cout << "ERROR: A Textbox with the name \"";
         std::cout << Name;
         std::cout << "\" already exists!";
     }
@@ -75,7 +75,7 @@ Button& UIElement::getButton(std::string ButtonName)
     //lookup the Button name and see if its in the map
     if(Buttons.find(ButtonName) == Buttons.end()){
     //"error" if it doesn't exist
-        std::cout << "ERROR: There is no UIElement with the name \"";
+        std::cout << "ERROR: There is no Button with the name \"";
         std::cout << ButtonName;
         std::cout << "\" !";
 
@@ -92,7 +92,7 @@ Slider& UIElement::getSlider(std::string SliderName)
     //lookup the Slider name and see if its in the map
     if(Sliders.find(SliderName) == Sliders.end()){
     //"error" if it doesn't exist
-        std::cout << "ERROR: There is no UIElement with the name \"";
+        std::cout << "ERROR: There is no Slider with the name \"";
         std::cout << SliderName;
         std::cout << "\" !";
 
@@ -109,7 +109,7 @@ TextBox& UIElement::getTextBox(std::string TextBoxName)
     //lookup the Textbox name and see if its in the map
     if(TextBoxes.find(TextBoxName) == TextBoxes.end()){
     //"error" if it doesn't exist
-        std::cout << "ERROR: There is no UIElement with the name \"";
+        std::cout << "ERROR: There is no Textbox with the name \"";
         std::cout << TextBoxName;
         std::cout << "\" !";
 
