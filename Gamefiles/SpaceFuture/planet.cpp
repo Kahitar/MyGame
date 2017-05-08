@@ -1,5 +1,5 @@
+#include "../Engine/Framework.hpp"
 #include "planet.hpp"
-#include "Framework.hpp"
 
 planet::planet()
     :mName("Planet XY")

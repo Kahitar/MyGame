@@ -3,8 +3,8 @@
 #include <string>
 #include <sstream>
 
+#include "../Engine/Framework.hpp"
 #include "ObjectTime.hpp"
-#include "Framework.hpp"
 #include "math.hpp"
 
 ObjectTime::ObjectTime()

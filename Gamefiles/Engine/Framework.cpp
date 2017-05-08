@@ -5,10 +5,10 @@ using namespace std;
 
 float Framework::mFrameTime;
 
-Framework::Framework()
+Framework::Framework(std::string WindowTitle)
     :mRunning(true)
 {
-    spRenderWindow  = std::move(std::unique_ptr<sf::RenderWindow>(new sf::RenderWindow(sf::VideoMode(1280,720,32),"SpaceFuture")));
+    spRenderWindow  = std::move(std::unique_ptr<sf::RenderWindow>(new sf::RenderWindow(sf::VideoMode(1280,720,32),WindowTitle)));
     spMainEvent     = std::move(std::unique_ptr<sf::Event>(new sf::Event));
     upClock         = std::move(std::unique_ptr<sf::Clock>(new sf::Clock));
 
@@ -22,6 +22,7 @@ Framework::Framework()
 
 Framework::~Framework()
 {
+    
 }
 
 void Framework::run()
@@ -46,9 +47,6 @@ void Framework::ChangeState(gameStates newstate)
     {
     case gameStates::FLYSHIP:
         CurrentState = std::move(std::unique_ptr<FlyShipState>(new FlyShipState));
-    break;
-    case gameStates::PLAY:
-        CurrentState = std::move(std::unique_ptr<Playstate>(new Playstate));
     break;
     case gameStates::MAINMENU:
         CurrentState = std::move(std::unique_ptr<MainMenu>(new MainMenu));

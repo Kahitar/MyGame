@@ -1,8 +1,8 @@
-#include "SettingsMenu.hpp"
-#include "Framework.hpp"
-#include "ResourceManager.hpp"
 #include <string>
 #include <sstream>
+#include "../Engine/Framework.hpp"
+#include "../Engine/ResourceManager.hpp"
+#include "SettingsMenu.hpp"
 
 SettingsMenu::SettingsMenu()
 {

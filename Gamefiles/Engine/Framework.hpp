@@ -6,18 +6,17 @@
 #include <memory>
 
 #include "Gamestate.hpp"
-#include "MainMenu.hpp"
-#include "SettingsMenu.hpp"
-#include "Playstate.hpp"
-#include "FlyShipState.hpp"
+#include "../SpaceFuture/MainMenu.hpp"
+#include "../SpaceFuture/SettingsMenu.hpp"
+#include "../SpaceFuture/FlyShipState.hpp"
 
 class Framework
 {
 public:
-     Framework();
+     Framework(std::string WindowTitle);
     ~Framework();
 
-    enum class gameStates {SETTINGS, MAINMENU, PLAY, FLYSHIP};
+    enum class gameStates {SETTINGS, MAINMENU, FLYSHIP};
 
     void run();
     void quit();

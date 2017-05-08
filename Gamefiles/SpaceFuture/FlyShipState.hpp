@@ -2,8 +2,8 @@
 #define FLYSHIPSTATE_HPP
 
 #include <SFML/Graphics.hpp>
-#include "UIElement.hpp"
-#include "Gamestate.hpp"
+#include "../Engine/UIElement.hpp"
+#include "../Engine/Gamestate.hpp"
 
 #include "NPCShip.hpp"
 #include "Playership.hpp"

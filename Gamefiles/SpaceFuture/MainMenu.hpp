@@ -1,8 +1,8 @@
 #ifndef MAINMENU_HPP
 #define MAINMENU_HPP
 
-#include "Gamestate.hpp"
-#include "UIElement.hpp"
+#include "../Engine/Gamestate.hpp"
+#include "../Engine/UIElement.hpp"
 
 class Framework;
 

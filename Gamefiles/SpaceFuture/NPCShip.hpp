@@ -1,7 +1,7 @@
 #ifndef NPCSHIP_HPP
 #define NPCSHIP_HPP
 
-#include <Spaceship.hpp>
+#include "Spaceship.hpp"
 
 
 class NPCShip : public Spaceship

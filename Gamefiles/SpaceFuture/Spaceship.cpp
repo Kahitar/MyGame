@@ -1,9 +1,9 @@
 #include <sstream>
 #include <string>
 
+#include "../Engine/Framework.hpp"
+#include "../Engine/ResourceManager.hpp"
 #include "Spaceship.hpp"
-#include "Framework.hpp"
-#include "ResourceManager.hpp"
 #include "math.hpp"
 
 Spaceship::Spaceship(std::string texturePath, sf::Vector2f position)

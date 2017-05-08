@@ -1,6 +1,6 @@
-#include "FlyShipState.hpp"
-#include "Framework.hpp"
 #include <sstream>
+#include "FlyShipState.hpp"
+#include "../Engine/Framework.hpp"
 
 FlyShipState::FlyShipState()
     :NPCShip("assets\\textures\\star_trek_enterprise_botship.png", sf::Vector2f(500,500)),

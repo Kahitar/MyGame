@@ -1,5 +1,6 @@
 #include "MainMenu.hpp"
-#include "Framework.hpp"
+#include "../Engine/Framework.hpp"
+#include "../Engine/ResourceManager.hpp"
 
 MainMenu::MainMenu()
 {

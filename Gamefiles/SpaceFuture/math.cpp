@@ -1,7 +1,6 @@
-#include "math.hpp"
-#include <cmath>
-
 #include <iostream>
+#include <cmath>
+#include "math.hpp"
 
 const float math::pi = 3.14159265359;
 const float math::c = 299792458;

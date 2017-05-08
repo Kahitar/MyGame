@@ -1,11 +1,9 @@
 #ifndef SETTINGSMENU_HPP
 #define SETTINGSMENU_HPP
 
-#include "Gamestate.hpp"
-#include "Button.hpp"
-#include "UIElement.hpp"
-#include "Slider.hpp"
-#include "SettingsCache.hpp"
+#include "../Engine/Gamestate.hpp"
+#include "../Engine/UIElement.hpp"
+#include "../Engine/SettingsCache.hpp"
 
 class Framework;
 
