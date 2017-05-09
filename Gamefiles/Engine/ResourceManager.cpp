@@ -20,10 +20,10 @@ sf::Texture ResourceManager::getTexture(std::string TexturePath)
 
 int ResourceManager::getAcceleratingForce()
 {
-    return mSettingsCache.getForceToAccelerate();
+    return mSettingsCache.getAcceleratingForce();
 }
 
 void ResourceManager::setAcceleratingForce(int force)
 {
-    mSettingsCache.setForceToAccelerate(force);
+    mSettingsCache.setAcceleratingForce(force);
 }

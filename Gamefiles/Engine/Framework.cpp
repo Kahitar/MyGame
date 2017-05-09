@@ -12,7 +12,7 @@ Framework::Framework(std::string WindowTitle)
     spMainEvent     = std::move(std::unique_ptr<sf::Event>(new sf::Event));
     upClock         = std::move(std::unique_ptr<sf::Clock>(new sf::Clock));
 
-    spRenderWindow->setPosition(sf::Vector2i(50,50));
+    spRenderWindow->setPosition(sf::Vector2i(300,50));
     spRenderWindow->setVerticalSyncEnabled(true);
     spRenderWindow->setFramerateLimit(60);
 

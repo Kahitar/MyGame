@@ -20,8 +20,8 @@ class Slider
         ///////////Setter///////////
         void setPosition(sf::Vector2f pos);
         void setSize(sf::Vector2f Size);
-        void setValue(int multiplicatedValue);
-        void setNumberOfPositions(int newNumber);
+        void setValue(int SliderValue);
+        void setNumberOfPositions(int NumberOfPositions);
         void setSliderText(std::string text);
         void setMinMax(int min, int max);
 
@@ -44,15 +44,17 @@ class Slider
         std::string     mSliderString;
         TextBox         mSliderText;
 
-        float           mBarWidth;
+        float   mBarWidth;
 
-        bool            mMouseOnSlider;
-        bool            mClicked;
+        bool    mMouseOnSlider;
+        bool    mClicked;
 
-        int             mNumberOfPositions;
-        int             mSliderValue;
-        int             mValueMultiplicator;
-        int             mMultiplicatedValue;
+        int     mNumberOfPositions;
+        int     mSliderPosition;
+        int     mSliderValue;
+        double  mStepSize;
+        int     mMin;
+        int     mMax;
 };
 
 #endif // SLIDER_HPP

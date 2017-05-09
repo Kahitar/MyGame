@@ -24,6 +24,7 @@ void FlyShipState::update(Framework &frmwrk)
 
     playerView.setCenter(playership.getPosition());
     frmwrk.setView(playerView);
+    Buttons.getButton("MainMenuButton").setPosition(sf::Vector2f(playerView.getCenter().x - 620,playerView.getCenter().y - 340));
 
     Buttons.update(frmwrk);
 }

@@ -3,10 +3,12 @@
 
 #include <string>
 #include <sstream>
-#include <cmath>
+
+#include "../SpaceFuture/math.hpp"
 
 Slider::Slider(sf::Vector2f pos, sf::Vector2f Size, std::string text)
-    :mMouseOnSlider(false),mClicked(false),mNumberOfPositions(10),mSliderValue(0),mValueMultiplicator(1)
+    :mMouseOnSlider(false),mClicked(false),mNumberOfPositions(10),mSliderPosition(0),
+    mSliderValue(0),mStepSize(1),mMin(0),mMax(10)
 {
     mSliderBar.setFillColor(sf::Color(128, 128, 200));
     mSliderBar.setOutlineThickness(1);
@@ -19,7 +21,7 @@ Slider::Slider(sf::Vector2f pos, sf::Vector2f Size, std::string text)
     setSliderText(text);
     setSize(Size);
     setPosition(pos);
-    setValue(10);
+    // setValue(0);
 }
 
 Slider::~Slider()
@@ -71,7 +73,7 @@ void Slider::ChangeSliderPosition(float MouseX)
     float right = 1;
     float newX = 0;
 
-    float PosWidth = (mSize.x - mBarWidth) / (mNumberOfPositions - 1);
+    float PosWidth = (mSize.x - mBarWidth) / ((mNumberOfPositions - 1.f));
 
     for(int i = 0; i < mNumberOfPositions; i++){
         left = mPos.x + i*PosWidth;
@@ -79,19 +81,21 @@ void Slider::ChangeSliderPosition(float MouseX)
 
         if(MouseX >= left && MouseX < right) {
             newX = left;
-            mSliderValue = i;
+            mSliderPosition = i;
         }
         else if (MouseX < mPos.x){
             newX = mPos.x;
-            mSliderValue = 0;
+            mSliderPosition = 0;
         }
         else if (MouseX > mPos.x + mSize.x - mBarWidth){
             newX = mPos.x + mSize.x - mBarWidth;
-            mSliderValue = mNumberOfPositions - 1;
+            mSliderPosition = mNumberOfPositions - 1;
         }
     }
 
-    mMultiplicatedValue = mSliderValue * mValueMultiplicator;
+    mSliderValue = mMin + mSliderPosition*mStepSize;
+    // std::cout << "MouseX: " << MouseX << std::endl;
+    // std::cout << "mSliderPosition: " << mSliderPosition << std::endl;
     mSliderRect.setPosition(sf::Vector2f(newX, mPos.y));
 }
 
@@ -99,7 +103,7 @@ void Slider::setSliderText(std::string text)
 {
     mSliderString = text;
     std::stringstream ssSliderText;
-    ssSliderText << mSliderString << mMultiplicatedValue;
+    ssSliderText << mSliderString << mSliderValue;
 
     mSliderText.setText(ssSliderText.str());
     mSliderText.setPosition(sf::Vector2f(mPos.x - mSliderText.getGlobalBounds().width - 0.15*mSliderBar.getGlobalBounds().width, mPos.y));
@@ -121,35 +125,40 @@ void Slider::setSize(sf::Vector2f Size)
     mSliderRect.setSize(sf::Vector2f(mBarWidth, mSize.y));
 }
 
-void Slider::setValue(int multiplicatedValue)
+void Slider::setValue(int SliderValue)
 {
-    mMultiplicatedValue = multiplicatedValue;
-    mSliderValue = mMultiplicatedValue / mValueMultiplicator;
+    mSliderValue = SliderValue;
+    mSliderPosition = round((mSliderValue - mMin) / mStepSize);
+    std::cout << "Slider Position: " << mSliderPosition << std::endl;
 
     float PosWidth = mSize.x / (mNumberOfPositions-1);
-    float left = mPos.x + mSliderValue*PosWidth;
-    float right = mPos.x + (mSliderValue+1)*PosWidth;
+    float left = mPos.x + mSliderPosition*PosWidth;
+    float right = mPos.x + (mSliderPosition+1)*PosWidth;
     float middle = (right + left - mBarWidth) / 2;
 
-    float newX = middle +  mBarWidth/2;
+    float newX = middle + mBarWidth/2;
 
     mSliderRect.setPosition(sf::Vector2f(newX, mPos.y));
 }
 
-void Slider::setNumberOfPositions(int newNumber)
+void Slider::setNumberOfPositions(int NumberOfPositions)
 {
-    mNumberOfPositions = newNumber;
+    mNumberOfPositions = NumberOfPositions + 1;
+    setMinMax(mMin,mMax);
 }
 
 // Getter //
 int Slider::getSliderValue()
 {
-    return mMultiplicatedValue;
+    return mSliderValue;
 }
 
 
 void Slider::setMinMax(int min, int max)
 {
-    mValueMultiplicator = round((max - min) / mNumberOfPositions);
-    mMultiplicatedValue = mSliderValue*mValueMultiplicator;
+    mMin = min;
+    mMax = max;
+    mStepSize = ((float)mMax - (float)mMin) / ((float)mNumberOfPositions-(float)1);
+    std::cout << "Step Size: " << mStepSize << std::endl;
+    mSliderValue = mMin + mSliderPosition*mStepSize;
 }

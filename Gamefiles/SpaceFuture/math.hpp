@@ -1,7 +1,6 @@
 #ifndef MATH_HPP
 #define MATH_HPP
 
-
 class math
 {
     public:
