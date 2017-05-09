@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>920</x>
+      <y>88</y>
+      <w>200</w>
+      <h>256</h>
+    </coordinates>
+    <panel_attributes>Raumschiff
+--
+- name : String
+- velocity : float
+- position : float
+- mass : float
+- clock : ObjectTime
+--
++ setName(name : String) : void
++ getName() : String
++ setVelocity(velocity : float) : void
++ getVelovity() : float
++ setMass(mass : float) : void
++ getMass() : float
+
+- calculateNewVelocity(force : float)
+
++ update(Framework &amp;frmwrk) : void
++ handle(Framework &amp;frmwrk) : void
++ render(Framework &amp;frmwrk) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>856</x>
+      <y>520</y>
+      <w>184</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>Spielerschiff
+--
+
+--
+- EvaluatePressedKeys() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>936</x>
+      <y>336</y>
+      <w>104</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;230.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>296</x>
+      <y>520</y>
+      <w>256</w>
+      <h>264</h>
+    </coordinates>
+    <panel_attributes>FlyShipState
+--
+- Schiff : Spielerschiff
+- Erde : Planet
+- scale : scale
+
+- playerView : sf::View
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>544</x>
+      <y>520</y>
+      <w>328</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;390.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>384</x>
+      <y>376</y>
+      <w>144</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>Erde
+--
+- AntriebsLaser : Laser
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>400</x>
+      <y>432</y>
+      <w>24</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>384</x>
+      <y>104</y>
+      <w>200</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>Planet
+--
+- position : int
+- clock : ObjectTime
+
+- 
+--
++ update(Framework &amp;frmwrk) : void
++ handle(Framework &amp;frmwrk) : void
++ render(Framework &amp;frmwrk) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>416</x>
+      <y>232</y>
+      <w>32</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;20.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>616</x>
+      <y>176</y>
+      <w>248</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>ObjectTime
+--
+- time : float
+- nextTimeStep : float
+- GlobalTimeStep : static float 
+--
+- calculateNewTime(int NextVelocity) : void
+- update() : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>576</x>
+      <y>104</y>
+      <w>80</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>776</x>
+      <y>96</y>
+      <w>160</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>180.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>24</x>
+      <y>616</y>
+      <w>224</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>scale
+--
+- length : int
+--
++ render(Framework &amp;frmwrk)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>224</x>
+      <y>576</y>
+      <w>88</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>120</x>
+      <y>176</y>
+      <w>232</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>Gamestate
+--
+
+--
++ update(Framework &amp;frmwrk) : void
++ handle(Framework &amp;frmwrk) : void
++ render(Framework &amp;frmwrk) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>288</x>
+      <y>320</y>
+      <w>64</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;250.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>616</x>
+      <y>104</y>
+      <w>216</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Klassendiagramm Tutorial: 
+http://www.codeadventurer.de/?p=2428
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>576</x>
+      <y>400</y>
+      <w>216</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>Laser
+--
+- fireStatus : bool
+--
++ update(Framework &amp;frmwrk) : void
++ handle(Framework &amp;frmwrk) : void
++ render(Framework &amp;frmwrk) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>520</x>
+      <y>376</y>
+      <w>72</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;40.0</additional_attributes>
+  </element>
+</diagram>

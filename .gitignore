@@ -46,3 +46,8 @@ Network Trash Folder
 Temporary Items
 .apdisk
 doxygen/doxyfile
+*.o
+obj/Slider.o
+*.o
+obj/ResourceManager.o
+Classdiagramms/SpaceFuture.sublime-workspace

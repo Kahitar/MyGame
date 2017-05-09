@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="MyGame" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/MyGame" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="Gamefiles/SpaceFuture" />
+				</Compiler>
+				<Linker>
+					<Add library="sfml-window-s-d" />
+					<Add library="sfml-system-s-d" />
+					<Add library="sfml-graphics-s-d" />
+					<Add library="sfml-audio-s-d" />
+					<Add library="opengl32" />
+					<Add library="freetype" />
+					<Add library="jpeg" />
+					<Add library="winmm" />
+					<Add library="gdi32" />
+					<Add library="openal32" />
+					<Add library="flac" />
+					<Add library="vorbisenc" />
+					<Add library="vorbisfile" />
+					<Add library="vorbis" />
+					<Add library="ogg" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/MyGame" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="Gamefiles/SpaceFuture" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="sfml-window-s" />
+					<Add library="sfml-system-s" />
+					<Add library="sfml-graphics-s" />
+					<Add library="sfml-audio-s" />
+					<Add library="opengl32" />
+					<Add library="freetype" />
+					<Add library="jpeg" />
+					<Add library="winmm" />
+					<Add library="gdi32" />
+					<Add library="openal32" />
+					<Add library="flac" />
+					<Add library="vorbisenc" />
+					<Add library="vorbisfile" />
+					<Add library="vorbis" />
+					<Add library="ogg" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-std=c++11" />
+			<Add option="-fexceptions" />
+			<Add option="-DSFML_STATIC" />
+			<Add directory="E:/OneDrive/c++/SFML-2.4.1/include" />
+			<Add directory="C:/Users/Niklas/OneDrive/c++/SFML-2.4.1/include" />
+			<Add directory="Gamefiles/Engine" />
+			<Add directory="Gamefiles/SpaceFuture" />
+			<Add directory="Gamefiles/Tileworld" />
+		</Compiler>
+		<Linker>
+			<Add directory="E:/OneDrive/c++/SFML-2.4.1/lib" />
+			<Add directory="C:/Users/Niklas/OneDrive/c++/SFML-2.4.1/lib" />
+			<Add directory="Gamefiles/Engine" />
+			<Add directory="Gamefiles/SpaceFuture" />
+			<Add directory="Gamefiles/Tileworld" />
+		</Linker>
+		<Unit filename="Gamefiles/Engine/Button.cpp" />
+		<Unit filename="Gamefiles/Engine/Button.hpp" />
+		<Unit filename="Gamefiles/Engine/Framework.cpp" />
+		<Unit filename="Gamefiles/Engine/Framework.hpp" />
+		<Unit filename="Gamefiles/Engine/Gamestate.hpp" />
+		<Unit filename="Gamefiles/Engine/ResourceCache.cpp" />
+		<Unit filename="Gamefiles/Engine/ResourceCache.hpp" />
+		<Unit filename="Gamefiles/Engine/ResourceManager.cpp" />
+		<Unit filename="Gamefiles/Engine/ResourceManager.hpp" />
+		<Unit filename="Gamefiles/Engine/SettingsCache.cpp" />
+		<Unit filename="Gamefiles/Engine/SettingsCache.hpp" />
+		<Unit filename="Gamefiles/Engine/Slider.cpp" />
+		<Unit filename="Gamefiles/Engine/Slider.hpp" />
+		<Unit filename="Gamefiles/Engine/TextBox.cpp" />
+		<Unit filename="Gamefiles/Engine/TextBox.hpp" />
+		<Unit filename="Gamefiles/Engine/UIElement.cpp" />
+		<Unit filename="Gamefiles/Engine/UIElement.hpp" />
+		<Unit filename="Gamefiles/SpaceFuture/FlyShipState.cpp" />
+		<Unit filename="Gamefiles/SpaceFuture/FlyShipState.hpp" />
+		<Unit filename="Gamefiles/SpaceFuture/MainMenu.cpp" />
+		<Unit filename="Gamefiles/SpaceFuture/MainMenu.hpp" />
+		<Unit filename="Gamefiles/SpaceFuture/NPCShip.cpp" />
+		<Unit filename="Gamefiles/SpaceFuture/NPCShip.hpp" />
+		<Unit filename="Gamefiles/SpaceFuture/ObjectTime.cpp" />
+		<Unit filename="Gamefiles/SpaceFuture/ObjectTime.hpp" />
+		<Unit filename="Gamefiles/SpaceFuture/Playership.cpp" />
+		<Unit filename="Gamefiles/SpaceFuture/Playership.hpp" />
+		<Unit filename="Gamefiles/SpaceFuture/SettingsMenu.cpp" />
+		<Unit filename="Gamefiles/SpaceFuture/SettingsMenu.hpp" />
+		<Unit filename="Gamefiles/SpaceFuture/Spaceship.cpp" />
+		<Unit filename="Gamefiles/SpaceFuture/Spaceship.hpp" />
+		<Unit filename="Gamefiles/SpaceFuture/math.cpp" />
+		<Unit filename="Gamefiles/SpaceFuture/math.hpp" />
+		<Unit filename="Gamefiles/SpaceFuture/planet.cpp" />
+		<Unit filename="Gamefiles/SpaceFuture/planet.hpp" />
+		<Unit filename="main.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

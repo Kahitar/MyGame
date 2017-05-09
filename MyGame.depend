@@ -1,0 +1,182 @@
+# depslib dependency file v1.0
+1493568416 source:c:\users\niklas\onedrive\c++\spacefuture\gamefiles\engine\button.cpp
+	"Button.hpp"
+	"Framework.hpp"
+	"ResourceManager.hpp"
+
+1493568427 c:\users\niklas\onedrive\c++\spacefuture\gamefiles\engine\button.hpp
+	<iostream>
+	<SFML/Graphics.hpp>
+	<memory>
+
+1494253795 c:\users\niklas\onedrive\c++\spacefuture\gamefiles\engine\framework.hpp
+	<iostream>
+	<SFML\Graphics.hpp>
+	<memory>
+	"Gamestate.hpp"
+	"../SpaceFuture/MainMenu.hpp"
+	"../SpaceFuture/SettingsMenu.hpp"
+	"../SpaceFuture/FlyShipState.hpp"
+
+1493573516 c:\users\niklas\onedrive\c++\spacefuture\gamefiles\engine\gamestate.hpp
+	<iostream>
+	<memory>
+
+1494187069 c:\users\niklas\onedrive\c++\spacefuture\gamefiles\spacefuture\mainmenu.hpp
+	"../Engine/Gamestate.hpp"
+	"../Engine/UIElement.hpp"
+
+1493654807 c:\users\niklas\onedrive\c++\spacefuture\gamefiles\engine\uielement.hpp
+	<iostream>
+	<map>
+	<SFML/Graphics.hpp>
+	"Button.hpp"
+	"Slider.hpp"
+	"TextBox.hpp"
+
+1494258308 c:\users\niklas\onedrive\c++\spacefuture\gamefiles\engine\slider.hpp
+	<iostream>
+	<SFML/Graphics.hpp>
+	"TextBox.hpp"
+
+1493654937 c:\users\niklas\onedrive\c++\spacefuture\gamefiles\engine\textbox.hpp
+	<SFML/Graphics.hpp>
+
+1494187067 c:\users\niklas\onedrive\c++\spacefuture\gamefiles\spacefuture\settingsmenu.hpp
+	"../Engine/Gamestate.hpp"
+	"../Engine/UIElement.hpp"
+	"../Engine/SettingsCache.hpp"
+
+1493578530 c:\users\niklas\onedrive\c++\spacefuture\gamefiles\engine\settingscache.hpp
+
+1494187438 c:\users\niklas\onedrive\c++\spacefuture\gamefiles\spacefuture\flyshipstate.hpp
+	<SFML/Graphics.hpp>
+	"../Engine/UIElement.hpp"
+	"../Engine/Gamestate.hpp"
+	"NPCShip.hpp"
+	"Playership.hpp"
+	"planet.hpp"
+
+1494187146 c:\users\niklas\onedrive\c++\spacefuture\gamefiles\spacefuture\npcship.hpp
+	"Spaceship.hpp"
+
+1494187170 c:\users\niklas\onedrive\c++\spacefuture\gamefiles\spacefuture\spaceship.hpp
+	<iostream>
+	<string>
+	<SFML/Graphics.hpp>
+	"../Engine/UIElement.hpp"
+	"ObjectTime.hpp"
+
+1494187069 c:\users\niklas\onedrive\c++\spacefuture\gamefiles\spacefuture\objecttime.hpp
+	<SFML/Graphics.hpp>
+	"../Engine/UIElement.hpp"
+
+1494187186 c:\users\niklas\onedrive\c++\spacefuture\gamefiles\spacefuture\playership.hpp
+	<iostream>
+	<string>
+	<SFML/Graphics.hpp>
+	"../Engine/UIElement.hpp"
+	"Spaceship.hpp"
+	"ObjectTime.hpp"
+
+1493503129 c:\users\niklas\onedrive\c++\spacefuture\gamefiles\spacefuture\planet.hpp
+	<iostream>
+	<SFML/Graphics.hpp>
+	"ObjectTime.hpp"
+
+1493579676 c:\users\niklas\onedrive\c++\spacefuture\gamefiles\engine\resourcemanager.hpp
+	<string>
+	<memory>
+	"ResourceCache.hpp"
+	"SettingsCache.hpp"
+
+1481111743 c:\users\niklas\onedrive\c++\spacefuture\gamefiles\engine\resourcecache.hpp
+	<iostream>
+	<map>
+	<string>
+	"SFML/Graphics.hpp"
+
+1494188248 source:c:\users\niklas\onedrive\c++\spacefuture\gamefiles\engine\framework.cpp
+	"Framework.hpp"
+	"ResourceManager.hpp"
+
+1481303118 source:c:\users\niklas\onedrive\c++\spacefuture\gamefiles\engine\resourcecache.cpp
+	"ResourceCache.hpp"
+
+1493579676 source:c:\users\niklas\onedrive\c++\spacefuture\gamefiles\engine\resourcemanager.cpp
+	"ResourceManager.hpp"
+
+1493654638 source:c:\users\niklas\onedrive\c++\spacefuture\gamefiles\engine\settingscache.cpp
+	"SettingsCache.hpp"
+
+1494259726 source:c:\users\niklas\onedrive\c++\spacefuture\gamefiles\engine\slider.cpp
+	"Slider.hpp"
+	"Framework.hpp"
+	<string>
+	<sstream>
+	<cmath>
+
+1493654937 source:c:\users\niklas\onedrive\c++\spacefuture\gamefiles\engine\textbox.cpp
+	"TextBox.hpp"
+	"Framework.hpp"
+
+1493929361 source:c:\users\niklas\onedrive\c++\spacefuture\gamefiles\engine\uielement.cpp
+	"Framework.hpp"
+	"UIElement.hpp"
+	<algorithm>
+
+1494187069 source:c:\users\niklas\onedrive\c++\spacefuture\gamefiles\spacefuture\flyshipstate.cpp
+	<sstream>
+	"FlyShipState.hpp"
+	"../Engine/Framework.hpp"
+
+1494188208 source:c:\users\niklas\onedrive\c++\spacefuture\gamefiles\spacefuture\mainmenu.cpp
+	"MainMenu.hpp"
+	"../Engine/Framework.hpp"
+	"../Engine/ResourceManager.hpp"
+
+1494187069 source:c:\users\niklas\onedrive\c++\spacefuture\gamefiles\spacefuture\math.cpp
+	<iostream>
+	<cmath>
+	"math.hpp"
+
+1493674694 c:\users\niklas\onedrive\c++\spacefuture\gamefiles\spacefuture\math.hpp
+
+1493558776 source:c:\users\niklas\onedrive\c++\spacefuture\gamefiles\spacefuture\npcship.cpp
+	"NPCShip.hpp"
+
+1494187069 source:c:\users\niklas\onedrive\c++\spacefuture\gamefiles\spacefuture\objecttime.cpp
+	<iostream>
+	<cmath>
+	<string>
+	<sstream>
+	"../Engine/Framework.hpp"
+	"ObjectTime.hpp"
+	"math.hpp"
+
+1494187069 source:c:\users\niklas\onedrive\c++\spacefuture\gamefiles\spacefuture\planet.cpp
+	"../Engine/Framework.hpp"
+	"planet.hpp"
+
+1494187069 source:c:\users\niklas\onedrive\c++\spacefuture\gamefiles\spacefuture\playership.cpp
+	<sstream>
+	<string>
+	"../Engine/Framework.hpp"
+	"Spaceship.hpp"
+	"Playership.hpp"
+
+1494258329 source:c:\users\niklas\onedrive\c++\spacefuture\gamefiles\spacefuture\settingsmenu.cpp
+	<string>
+	<sstream>
+	"../Engine/Framework.hpp"
+	"../Engine/ResourceManager.hpp"
+	"SettingsMenu.hpp"
+
+1494187218 source:c:\users\niklas\onedrive\c++\spacefuture\gamefiles\spacefuture\spaceship.cpp
+	<sstream>
+	<string>
+	"../Engine/Framework.hpp"
+	"../Engine/ResourceManager.hpp"
+	"Spaceship.hpp"
+	"math.hpp"
+
