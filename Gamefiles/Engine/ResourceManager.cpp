@@ -23,7 +23,17 @@ int ResourceManager::getAcceleratingForce()
     return mSettingsCache.getAcceleratingForce();
 }
 
+int ResourceManager::getPlayershipMass()
+{
+	return mSettingsCache.getPlayershipMass();
+}
+
 void ResourceManager::setAcceleratingForce(int force)
 {
     mSettingsCache.setAcceleratingForce(force);
+}
+
+void ResourceManager::setPlayershipMass(int mass)
+{
+	mSettingsCache.setPlayershipMass(mass);
 }

@@ -31,13 +31,14 @@ void UIElement::addButton(sf::Vector2f pos, sf::Vector2f Size, std::string Name,
     }
 }
 
-void UIElement::addSlider(sf::Vector2f pos, sf::Vector2f Size, std::string Name, std::string Text)
+void UIElement::addSlider(sf::Vector2f pos, sf::Vector2f Size, std::string Name, 
+                          std::string Text, std::string unit)
 {
     //check if Elementname doesn't already exists
     if(Sliders.find(Name) == Sliders.end()){
     //add Slider if element doesn't already exist
         //Load the Slider
-        std::shared_ptr<Slider> newSlider(new Slider(pos,Size,Text));
+        std::shared_ptr<Slider> newSlider(new Slider(pos,Size,Text,unit));
 
         //Insert it into the map
         Sliders.insert(make_pair(Name, newSlider));

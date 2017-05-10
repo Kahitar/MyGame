@@ -1,0 +1,18 @@
+{
+	"cmd": ["mingw32-make", "&&", "start", "cmd.exe", "/k", "&&", "cd", "E:\\OneDrive\\c++\\SpaceFuture", "&&", "SpaceFuture.exe"],
+	"selector": "source.c++",
+    "shell": true,
+
+	"variants":
+    [
+        {
+            "name": "Run",
+            "cmd": "start cmd.exe /k && e: && cd E:\\OneDrive\\c++\\SpaceFuture && SpaceFuture.exe ",
+        },
+
+        {
+            "name": "Clean",
+            "shell_cmd": "mingw32-make clean",
+        }
+    ],
+}

@@ -38,7 +38,6 @@ void Playership::handle(Framework &frmwrk)
     if(frmwrk.spMainEvent->type == sf::Event::MouseButtonPressed && frmwrk.spMainEvent->mouseButton.button == sf::Mouse::Left)
     {
         if(Buttons.getButton("PosResetButton").getMouseOnButton()){
-//            mClock.reset();
             setPosition(sf::Vector2f(500,300));
             setVelocity(0);
             mAcceleratingInDirection = 0;

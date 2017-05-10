@@ -6,8 +6,8 @@
 
 #include "../SpaceFuture/math.hpp"
 
-Slider::Slider(sf::Vector2f pos, sf::Vector2f Size, std::string text)
-    :mMouseOnSlider(false),mClicked(false),mNumberOfPositions(10),mSliderPosition(0),
+Slider::Slider(sf::Vector2f pos, sf::Vector2f Size, std::string text, std::string unit)
+    :mMouseOnSlider(false),mClicked(false),mNumberOfPositions(100),mSliderPosition(0),
     mSliderValue(0),mStepSize(1),mMin(0),mMax(10)
 {
     // Rectangle to move on
@@ -20,7 +20,7 @@ Slider::Slider(sf::Vector2f pos, sf::Vector2f Size, std::string text)
     mSliderRect.setOutlineThickness(1);
     mSliderRect.setOutlineColor(sf::Color::Black);
 
-    setSliderText(text);
+    setSliderText(text, unit);
     setSize(Size);
     setPosition(pos);
 }
@@ -34,6 +34,8 @@ void Slider::update(Framework &frmwrk)
 {
     if(mClicked)
         ChangeSliderPosition(frmwrk.getTransformedMousePosition().x);
+
+    setSliderText(mSliderString, mSliderUnit);
 }
 
 void Slider::handle(Framework &frmwrk)
@@ -58,7 +60,6 @@ void Slider::handle(Framework &frmwrk)
 
 void Slider::render(Framework &frmwrk)
 {
-    setSliderText(mSliderString);
     mSliderText.render(frmwrk);
 
     frmwrk.spRenderWindow->draw(mSliderBar);
@@ -96,24 +97,6 @@ void Slider::ChangeSliderPosition(float MouseX)
     mSliderRect.setPosition(sf::Vector2f(newX, mPos.y));
 }
 
-void Slider::setSliderText(std::string text)
-{
-    mSliderString = text;
-    std::stringstream ssSliderText;
-
-    // Calculate the maximum size of the Textbox
-    ssSliderText << mSliderString << mMax;
-    mSliderText.setText(ssSliderText.str());
-    int maxTextBoxSize = mSliderText.getGlobalBounds().width;
-    ssSliderText.str("");
-
-    // Set the actual slider Text
-    ssSliderText << mSliderString << mSliderValue;
-    mSliderText.setText(ssSliderText.str());
-
-    mSliderText.setText(ssSliderText.str());
-    mSliderText.setPosition(sf::Vector2f(mPos.x - maxTextBoxSize - 20, mPos.y));
-}
 
 ///////////Setter///////////
 void Slider::setPosition(sf::Vector2f pos)
@@ -163,6 +146,29 @@ int Slider::getSliderValue()
     return mSliderValue;
 }
 
+void Slider::setSliderText(std::string text, std::string unit)
+{
+    mSliderString = text;
+    mSliderUnit = unit;
+    std::stringstream ssSliderText;
+
+    // Calculate the maximum size of the Textbox
+    ssSliderText << mSliderString << mMax << " " << unit;
+    mSliderText.setText(ssSliderText.str());
+    int maxTextBoxSize = mSliderText.getGlobalBounds().width;
+    ssSliderText.str("");
+
+    // Set the actual slider Text
+    ssSliderText << mSliderString << mSliderValue << " " << unit;
+    mSliderText.setText(ssSliderText.str());
+    mSliderText.setPosition(sf::Vector2f(mPos.x - maxTextBoxSize - 20, mPos.y));
+}
+
+void Slider::setUnitText(std::string unit)
+{
+    mSliderUnit = unit;
+    setSliderText(mSliderString, mSliderUnit);
+}
 
 void Slider::setMinMax(int min, int max)
 {

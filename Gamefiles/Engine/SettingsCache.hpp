@@ -8,13 +8,17 @@ class SettingsCache
         ~SettingsCache();
 
         //// GETTER ////
-        float getAcceleratingForce() {return mForceToAccelerate;};
+        int getAcceleratingForce() {return mForceToAccelerate;};
+        int getPlayershipMass()	   {return mPlayershipMass;};
+
 
         //// SETTER ////
         void setAcceleratingForce(float force) {mForceToAccelerate = force;};
+		void setPlayershipMass(int mass)	   {mPlayershipMass = mass;};
 
     private:
-        float mForceToAccelerate;
+        int mForceToAccelerate;
+        int mPlayershipMass;
 
 };
 
