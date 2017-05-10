@@ -28,9 +28,8 @@ class Slider
         ///////////Getter///////////
         sf::Vector2f getPosition()  {return mPos;};
         sf::Vector2f getSize()      {return mSize;};
-        int getSliderValue();
-
         bool getMouseOnSlider()     {return mMouseOnSlider;};
+        int getSliderValue();
 
     private:
         void ChangeSliderPosition(float newX);
@@ -44,7 +43,7 @@ class Slider
         std::string     mSliderString;
         TextBox         mSliderText;
 
-        float   mBarWidth;
+        float   mRectWidth;
 
         bool    mMouseOnSlider;
         bool    mClicked;

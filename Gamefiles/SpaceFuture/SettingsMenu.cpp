@@ -9,8 +9,8 @@ SettingsMenu::SettingsMenu()
     uielements.addButton(sf::Vector2f(500,500),sf::Vector2f(200,50),"BackButton","Back");
 
     uielements.addSlider(sf::Vector2f(500,300),sf::Vector2f(600,50),"ForceSlider","Accelerating Force: ");
-    uielements.getSlider("ForceSlider").setNumberOfPositions(100000);
-    uielements.getSlider("ForceSlider").setMinMax(1000,2000000); //setMinMax must be BEFORE setValue on Sliders. Otherwise the Value gets changed
+    uielements.getSlider("ForceSlider").setNumberOfPositions(9);
+    uielements.getSlider("ForceSlider").setMinMax(100,500); //setMinMax must be BEFORE setValue on Sliders. Otherwise the Value gets changed
     if(ResourceManager::getAcceleratingForce())
         uielements.getSlider("ForceSlider").setValue(ResourceManager::getAcceleratingForce());
     else

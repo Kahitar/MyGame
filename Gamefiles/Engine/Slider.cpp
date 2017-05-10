@@ -10,10 +10,12 @@ Slider::Slider(sf::Vector2f pos, sf::Vector2f Size, std::string text)
     :mMouseOnSlider(false),mClicked(false),mNumberOfPositions(10),mSliderPosition(0),
     mSliderValue(0),mStepSize(1),mMin(0),mMax(10)
 {
+    // Rectangle to move on
     mSliderBar.setFillColor(sf::Color(128, 128, 200));
     mSliderBar.setOutlineThickness(1);
     mSliderBar.setOutlineColor(sf::Color::Black);
 
+    // Movable Rectangle
     mSliderRect.setFillColor(sf::Color::Blue);
     mSliderRect.setOutlineThickness(1);
     mSliderRect.setOutlineColor(sf::Color::Black);
@@ -31,20 +33,17 @@ Slider::~Slider()
 
 void Slider::update(Framework &frmwrk)
 {
-    if(mClicked){
+    if(mClicked)
         ChangeSliderPosition(frmwrk.getTransformedMousePosition().x);
-    }
 }
 
 void Slider::handle(Framework &frmwrk)
 {
-    std::shared_ptr<sf::Event> event = frmwrk.spMainEvent;
-
     sf::Vector2f MouseWorldPos = frmwrk.getTransformedMousePosition();
 
-    if(MouseWorldPos.x > mPos.x
+    if(MouseWorldPos.x > mPos.x - mRectWidth
         && MouseWorldPos.y > mPos.y
-        && MouseWorldPos.x < mPos.x + mSize.x
+        && MouseWorldPos.x < mPos.x + mSize.x + mRectWidth
         && MouseWorldPos.y < mPos.y + mSize.y)
     {
         mMouseOnSlider = true;
@@ -52,9 +51,9 @@ void Slider::handle(Framework &frmwrk)
         mMouseOnSlider = false;
     }
 
-    if(event->type == sf::Event::MouseButtonPressed && mMouseOnSlider)
+    if(frmwrk.spMainEvent->type == sf::Event::MouseButtonPressed && mMouseOnSlider)
         mClicked = true;
-    else if(event->type == sf::Event::MouseButtonReleased)
+    else if(frmwrk.spMainEvent->type == sf::Event::MouseButtonReleased)
         mClicked = false;
 }
 
@@ -73,29 +72,30 @@ void Slider::ChangeSliderPosition(float MouseX)
     float right = 1;
     float newX = 0;
 
-    float PosWidth = (mSize.x - mBarWidth) / ((mNumberOfPositions - 1.f));
+    float PosWidth = mSize.x / (mNumberOfPositions - 1);
 
+    // Checking if Mouse is somewhere in the slider space
     for(int i = 0; i < mNumberOfPositions; i++){
         left = mPos.x + i*PosWidth;
         right = mPos.x + (i+1)*PosWidth;
 
-        if(MouseX >= left && MouseX < right) {
-            newX = left;
+        if(MouseX >= left - PosWidth/2 && MouseX < right-PosWidth/2) {
+            newX = left - mRectWidth/2;
             mSliderPosition = i;
         }
-        else if (MouseX < mPos.x){
-            newX = mPos.x;
-            mSliderPosition = 0;
-        }
-        else if (MouseX > mPos.x + mSize.x - mBarWidth){
-            newX = mPos.x + mSize.x - mBarWidth;
-            mSliderPosition = mNumberOfPositions - 1;
-        }
+    }
+    // Checking wether the Mouse isn't anywhere in the slider space
+    if (MouseX < mPos.x){
+        newX = mPos.x - mRectWidth/2;
+        mSliderPosition = 0;
+    }else if (MouseX >= mPos.x + mSize.x - PosWidth/2){
+        newX = mPos.x + mSize.x - mRectWidth/2;
+        mSliderPosition = mNumberOfPositions - 1;
     }
 
     mSliderValue = mMin + mSliderPosition*mStepSize;
     // std::cout << "MouseX: " << MouseX << std::endl;
-    // std::cout << "mSliderPosition: " << mSliderPosition << std::endl;
+    std::cout << "mSliderPosition: " << mSliderPosition << std::endl;
     mSliderRect.setPosition(sf::Vector2f(newX, mPos.y));
 }
 
@@ -120,9 +120,9 @@ void Slider::setPosition(sf::Vector2f pos)
 void Slider::setSize(sf::Vector2f Size)
 {
     mSize = Size;
-    mBarWidth = mSize.x * 0.05;
+    mRectWidth = mSize.x * 0.05;
     mSliderBar.setSize(sf::Vector2f(mSize.x, mSize.y * 0.2));
-    mSliderRect.setSize(sf::Vector2f(mBarWidth, mSize.y));
+    mSliderRect.setSize(sf::Vector2f(mRectWidth, mSize.y));
 }
 
 void Slider::setValue(int SliderValue)
@@ -134,16 +134,16 @@ void Slider::setValue(int SliderValue)
     float PosWidth = mSize.x / (mNumberOfPositions-1);
     float left = mPos.x + mSliderPosition*PosWidth;
     float right = mPos.x + (mSliderPosition+1)*PosWidth;
-    float middle = (right + left - mBarWidth) / 2;
+    float middle = (right + left - mRectWidth) / 2;
 
-    float newX = middle + mBarWidth/2;
+    float newX = middle + mRectWidth/2;
 
     mSliderRect.setPosition(sf::Vector2f(newX, mPos.y));
 }
 
 void Slider::setNumberOfPositions(int NumberOfPositions)
 {
-    mNumberOfPositions = NumberOfPositions + 1;
+    mNumberOfPositions = NumberOfPositions;
     setMinMax(mMin,mMax);
 }
 
@@ -158,7 +158,7 @@ void Slider::setMinMax(int min, int max)
 {
     mMin = min;
     mMax = max;
-    mStepSize = ((float)mMax - (float)mMin) / ((float)mNumberOfPositions-(float)1);
+    mStepSize = ((float)mMax - (float)mMin) / ((float)mNumberOfPositions-1);
     std::cout << "Step Size: " << mStepSize << std::endl;
     mSliderValue = mMin + mSliderPosition*mStepSize;
 }

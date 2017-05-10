@@ -12,10 +12,13 @@
 	"buffers":
 	[
 		{
+			"contents": "#ifndef SLIDER_HPP\n#define SLIDER_HPP\n\n#include <iostream>\n#include <SFML/Graphics.hpp>\n#include \"TextBox.hpp\"\n\nclass Framework;\n\nclass Slider\n{\n    public:\n        Slider(sf::Vector2f pos = sf::Vector2f(0, 0), sf::Vector2f Size = sf::Vector2f(200, 50), std::string text = \"This is a Slider\");\n        ~Slider();\n    \n        void update(Framework &frmwrk);\n        void handle(Framework &frmwrk);\n        void render(Framework &frmwrk);\n\n        ///////////Setter///////////\n        void setPosition(sf::Vector2f pos);\n        void setSize(sf::Vector2f Size);\n        void setValue(int SliderValue);\n        void setNumberOfPositions(int NumberOfPositions);\n        void setSliderText(std::string text);\n        void setMinMax(int min, int max);\n\n        ///////////Getter///////////\n        sf::Vector2f getPosition()  {return mPos;};\n        sf::Vector2f getSize()      {return mSize;};\n        bool getMouseOnSlider()     {return mMouseOnSlider;};\n        int getSliderValue();\n\n    private:\n        void ChangeSliderPosition(float newX);\n\n        sf::Vector2f    mPos;\n        sf::Vector2f    mSize;\n\n        sf::RectangleShape  mSliderRect;\n        sf::RectangleShape  mSliderBar;\n\n        std::string     mSliderString;\n        TextBox         mSliderText;\n\n        float   mBarWidth;\n\n        bool    mMouseOnSlider;\n        bool    mClicked;\n\n        int     mNumberOfPositions;\n        int     mSliderPosition;\n        int     mSliderValue;\n        double  mStepSize;\n        int     mMin;\n        int     mMax;\n};\n\n#endif // SLIDER_HPP\n",
 			"file": "Gamefiles/Engine/Slider.hpp",
+			"file_size": 1602,
+			"file_write_time": 131388378786059938,
 			"settings":
 			{
-				"buffer_size": 1544,
+				"buffer_size": 1547,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -74,38 +77,12 @@
 			}
 		},
 		{
-			"contents": "6.4. Vodafone - 30€ \t\t... 10.3.\n18.4. Rundfunk - 52,50€\t\t\t\t\t17,50 € / Monat\n11.4. Strom - 42€\t\t\t... 13.3.\n\n--> 124.50\n\n2650",
+			"contents": "6.4. Vodafone - 30€ \t\t... 10.3.\n18.4. Rundfunk - 52,50€\t\t\t\t\t17,50 € / Monat\n11.4. Strom - 42€\t\t\t... 13.3.\n\n--> 89.50\n\n2650",
 			"settings":
 			{
-				"buffer_size": 123,
+				"buffer_size": 122,
 				"line_ending": "Windows",
 				"name": "6.4. Vodafone - 30€ \t\t... 10.3."
-			}
-		},
-		{
-			"contents": "[\n    {\n        \"keys\": [\"alt+c\"], \"command\": \"super_calculator\"\n    }\n]\n",
-			"file": "/C/Users/Niklas/AppData/Roaming/Sublime Text 3/Packages/Super Calculator/Default (Windows).sublime-keymap",
-			"file_size": -1,
-			"file_write_time": -1,
-			"settings":
-			{
-				"buffer_size": 73,
-				"line_ending": "Windows",
-				"read_only": true,
-				"scratch": true
-			}
-		},
-		{
-			"contents": "{\n    // Round results to the specified decimals\n    \"round_decimals\": 2\n}\n",
-			"file": "/C/Users/Niklas/AppData/Roaming/Sublime Text 3/Packages/Super Calculator/Super Calculator.sublime-settings",
-			"file_size": -1,
-			"file_write_time": -1,
-			"settings":
-			{
-				"buffer_size": 75,
-				"line_ending": "Windows",
-				"read_only": true,
-				"scratch": true
 			}
 		}
 	],
@@ -129,7 +106,7 @@
 			],
 			[
 				"Packages/User/c++ make.sublime-build",
-				"Clean"
+				""
 			]
 		],
 		[
@@ -205,7 +182,7 @@
 			]
 		]
 	],
-	"build_varint": "Clean",
+	"build_varint": "",
 	"command_palette":
 	{
 		"height": 392.0,
@@ -248,6 +225,8 @@
 	],
 	"file_history":
 	[
+		"/C/Users/Niklas/AppData/Roaming/Sublime Text 3/Packages/Super Calculator/Default (Windows).sublime-keymap",
+		"/C/Users/Niklas/AppData/Roaming/Sublime Text 3/Packages/Super Calculator/Super Calculator.sublime-settings",
 		"/E/OneDrive/c++/SpaceFuture/Gamefiles/Engine/ResourceManager.cpp",
 		"/E/OneDrive/c++/SpaceFuture/Gamefiles/Engine/SettingsCache.hpp",
 		"/E/OneDrive/c++/SpaceFuture/Gamefiles/Engine/SettingsCache.cpp",
@@ -413,7 +392,7 @@
 	"groups":
 	[
 		{
-			"selected": 9,
+			"selected": 7,
 			"sheets":
 			[
 				{
@@ -422,15 +401,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1544,
+						"buffer_size": 1547,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								433,
-								433
+								317,
+								317
 							]
 						],
 						"settings":
@@ -440,10 +419,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1044.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -479,7 +458,7 @@
 						"translation.y": 3489.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -509,7 +488,7 @@
 						"translation.y": 87.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
@@ -537,7 +516,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -567,7 +546,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
@@ -603,7 +582,7 @@
 						"translation.y": 2262.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
@@ -638,77 +617,21 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 123,
+						"buffer_size": 122,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								123,
-								123
+								116,
+								116
 							]
 						],
 						"settings":
 						{
 							"auto_name": "6.4. Vodafone - 30€ \t\t... 10.3.",
 							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "/C/Users/Niklas/AppData/Roaming/Sublime Text 3/Packages/Super Calculator/Default (Windows).sublime-keymap",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 73,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								73,
-								73
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "/C/Users/Niklas/AppData/Roaming/Sublime Text 3/Packages/Super Calculator/Super Calculator.sublime-settings",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 75,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								75,
-								75
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,

@@ -51,3 +51,6 @@ obj/Slider.o
 *.o
 obj/ResourceManager.o
 Classdiagramms/SpaceFuture.sublime-workspace
+*.sublime-workspace
+*.o
+obj/SettingsMenu.o
