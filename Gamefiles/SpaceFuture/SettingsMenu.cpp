@@ -9,12 +9,12 @@ SettingsMenu::SettingsMenu()
     uielements.addButton(sf::Vector2f(500,500),sf::Vector2f(200,50),"BackButton","Back");
 
     uielements.addSlider(sf::Vector2f(500,300),sf::Vector2f(600,50),"ForceSlider","Accelerating Force: ");
-    uielements.getSlider("ForceSlider").setNumberOfPositions(9);
-    uielements.getSlider("ForceSlider").setMinMax(100,500);
+    uielements.getSlider("ForceSlider").setNumberOfPositions(5000);
+    uielements.getSlider("ForceSlider").setMinMax(0,500000);
     if(ResourceManager::getAcceleratingForce())
         uielements.getSlider("ForceSlider").setValue(ResourceManager::getAcceleratingForce());
     else
-        uielements.getSlider("ForceSlider").setValue(150);
+        uielements.getSlider("ForceSlider").setValue(500);
 }
 
 SettingsMenu::~SettingsMenu()

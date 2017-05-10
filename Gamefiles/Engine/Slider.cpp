@@ -100,10 +100,19 @@ void Slider::setSliderText(std::string text)
 {
     mSliderString = text;
     std::stringstream ssSliderText;
+
+    // Calculate the maximum size of the Textbox
+    ssSliderText << mSliderString << mMax;
+    mSliderText.setText(ssSliderText.str());
+    int maxTextBoxSize = mSliderText.getGlobalBounds().width;
+    ssSliderText.str("");
+
+    // Set the actual slider Text
     ssSliderText << mSliderString << mSliderValue;
+    mSliderText.setText(ssSliderText.str());
 
     mSliderText.setText(ssSliderText.str());
-    mSliderText.setPosition(sf::Vector2f(mPos.x - mSliderText.getGlobalBounds().width - 0.15*mSliderBar.getGlobalBounds().width, mPos.y));
+    mSliderText.setPosition(sf::Vector2f(mPos.x - maxTextBoxSize - 20, mPos.y));
 }
 
 ///////////Setter///////////

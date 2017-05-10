@@ -51,7 +51,7 @@ class Slider
         int     mNumberOfPositions;
         int     mSliderPosition;
         int     mSliderValue;
-        double  mStepSize;
+        float   mStepSize;
         int     mMin;
         int     mMax;
 };
