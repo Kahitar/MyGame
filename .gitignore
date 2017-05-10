@@ -54,3 +54,4 @@ Classdiagramms/SpaceFuture.sublime-workspace
 *.sublime-workspace
 *.o
 obj/SettingsMenu.o
+*.o

@@ -23,7 +23,6 @@ Slider::Slider(sf::Vector2f pos, sf::Vector2f Size, std::string text)
     setSliderText(text);
     setSize(Size);
     setPosition(pos);
-    // setValue(0);
 }
 
 Slider::~Slider()
@@ -94,8 +93,6 @@ void Slider::ChangeSliderPosition(float MouseX)
     }
 
     mSliderValue = mMin + mSliderPosition*mStepSize;
-    // std::cout << "MouseX: " << MouseX << std::endl;
-    std::cout << "mSliderPosition: " << mSliderPosition << std::endl;
     mSliderRect.setPosition(sf::Vector2f(newX, mPos.y));
 }
 
@@ -127,16 +124,20 @@ void Slider::setSize(sf::Vector2f Size)
 
 void Slider::setValue(int SliderValue)
 {
+    if(SliderValue < mMin){
+        SliderValue = mMin;
+        std::cout << "The Slider Value set was to low and was changed to the minimum value!" << std::endl;
+    }
+    else if(SliderValue > mMax){
+        SliderValue = mMax;
+        std::cout << "The Slider Value set was to high and was changed to the maximum value!" << std::endl;
+    }
     mSliderValue = SliderValue;
     mSliderPosition = round((mSliderValue - mMin) / mStepSize);
-    std::cout << "Slider Position: " << mSliderPosition << std::endl;
 
-    float PosWidth = mSize.x / (mNumberOfPositions-1);
+    float PosWidth = mSize.x / (mNumberOfPositions - 1);
     float left = mPos.x + mSliderPosition*PosWidth;
-    float right = mPos.x + (mSliderPosition+1)*PosWidth;
-    float middle = (right + left - mRectWidth) / 2;
-
-    float newX = middle + mRectWidth/2;
+    float newX = left - mRectWidth/2;
 
     mSliderRect.setPosition(sf::Vector2f(newX, mPos.y));
 }
@@ -159,6 +160,12 @@ void Slider::setMinMax(int min, int max)
     mMin = min;
     mMax = max;
     mStepSize = ((float)mMax - (float)mMin) / ((float)mNumberOfPositions-1);
-    std::cout << "Step Size: " << mStepSize << std::endl;
-    mSliderValue = mMin + mSliderPosition*mStepSize;
+
+    // refresh the position of the sliderRect
+    if(mSliderValue < mMin)
+        setValue(mMin);
+    else if(mSliderValue > mMax)
+        setValue(mMax);
+    else
+        setValue(mSliderValue);
 }

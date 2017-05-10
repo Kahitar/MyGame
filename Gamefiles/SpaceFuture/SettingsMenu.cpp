@@ -10,11 +10,11 @@ SettingsMenu::SettingsMenu()
 
     uielements.addSlider(sf::Vector2f(500,300),sf::Vector2f(600,50),"ForceSlider","Accelerating Force: ");
     uielements.getSlider("ForceSlider").setNumberOfPositions(9);
-    uielements.getSlider("ForceSlider").setMinMax(100,500); //setMinMax must be BEFORE setValue on Sliders. Otherwise the Value gets changed
+    uielements.getSlider("ForceSlider").setMinMax(100,500);
     if(ResourceManager::getAcceleratingForce())
         uielements.getSlider("ForceSlider").setValue(ResourceManager::getAcceleratingForce());
     else
-        uielements.getSlider("ForceSlider").setValue(5000);
+        uielements.getSlider("ForceSlider").setValue(150);
 }
 
 SettingsMenu::~SettingsMenu()
