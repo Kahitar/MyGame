@@ -30,6 +30,7 @@ void MainMenu::handle(Framework &frmwrk)
 {
     Buttons.handle(frmwrk);
 
+    // Switch States with keyboard
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::S))
         frmwrk.ChangeState(Framework::gameStates::SETTINGS);
     else if(sf::Keyboard::isKeyPressed(sf::Keyboard::N))

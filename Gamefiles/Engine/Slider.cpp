@@ -93,7 +93,11 @@ void Slider::ChangeSliderPosition(float MouseX)
         mSliderPosition = mNumberOfPositions - 1;
     }
 
-    mSliderValue = mMin + mSliderPosition*mStepSize;
+    if(mSliderPosition == mNumberOfPositions - 1)
+        mSliderValue = mMax;
+    else
+        mSliderValue = mMin + mSliderPosition*mStepSize;
+    
     mSliderRect.setPosition(sf::Vector2f(newX, mPos.y));
 }
 
