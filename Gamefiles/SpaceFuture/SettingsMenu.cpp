@@ -10,7 +10,7 @@ SettingsMenu::SettingsMenu()
 
     uielements.addSlider(sf::Vector2f(500,300),sf::Vector2f(600,50),"ForceSlider","Accelerating Force: ","N");
     uielements.getSlider("ForceSlider").setNumberOfPositions(5000);
-    uielements.getSlider("ForceSlider").setMinMax(0,500000);
+    uielements.getSlider("ForceSlider").setMinMax(1,500000);
     if(ResourceManager::getAcceleratingForce())
         uielements.getSlider("ForceSlider").setValue(ResourceManager::getAcceleratingForce());
     else
@@ -23,7 +23,7 @@ SettingsMenu::SettingsMenu()
     else
         uielements.getSlider("MassSlider").setValue(10);
 
-    uielements.addTextBox("AccelerationTextbox","Resulting Acceleration: ",sf::Vector2f(200,400));
+    uielements.addTextBox("AccelerationTextbox","Resulting Acceleration: ", sf::Vector2f(200,400));
 }
 
 SettingsMenu::~SettingsMenu()
@@ -33,6 +33,14 @@ SettingsMenu::~SettingsMenu()
 
 void SettingsMenu::update(Framework &frmwrk)
 {
+    float Acceleration = (float)ResourceManager::getAcceleratingForce() / (float)ResourceManager::getPlayershipMass();
+    std::stringstream ssAcceleration;
+    ssAcceleration << Acceleration;
+    std::string newText = "Resulting Acceleration: ";
+    newText.append(ssAcceleration.str());
+    newText.append(" m/s/s");
+    uielements.getTextBox("AccelerationTextbox").setText(newText);
+
     uielements.update(frmwrk);
     ResourceManager::setAcceleratingForce(uielements.getSlider("ForceSlider").getSliderValue());
     ResourceManager::setPlayershipMass(uielements.getSlider("MassSlider").getSliderValue());
