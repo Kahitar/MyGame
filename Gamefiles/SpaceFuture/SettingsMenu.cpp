@@ -22,6 +22,8 @@ SettingsMenu::SettingsMenu()
         uielements.getSlider("MassSlider").setValue(ResourceManager::getPlayershipMass());
     else
         uielements.getSlider("MassSlider").setValue(10);
+
+    uielements.addTextBox("AccelerationTextbox","Resulting Acceleration: ",sf::Vector2f(200,400));
 }
 
 SettingsMenu::~SettingsMenu()
@@ -39,6 +41,9 @@ void SettingsMenu::update(Framework &frmwrk)
 void SettingsMenu::handle(Framework &frmwrk)
 {
     uielements.handle(frmwrk);
+
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::B))
+        frmwrk.ChangeState(Framework::gameStates::MAINMENU);
 
     if(frmwrk.spMainEvent->type == sf::Event::MouseButtonPressed
        && frmwrk.spMainEvent->mouseButton.button == sf::Mouse::Left)

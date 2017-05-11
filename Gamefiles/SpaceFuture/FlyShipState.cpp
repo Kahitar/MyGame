@@ -36,6 +36,9 @@ void FlyShipState::handle(Framework &frmwrk)
     NPCShip.handle(frmwrk);
     playership.handle(frmwrk);
 
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::M))
+        frmwrk.ChangeState(Framework::gameStates::MAINMENU);
+
     // handle buttons
     if(frmwrk.spMainEvent->type == sf::Event::MouseButtonPressed && frmwrk.spMainEvent->mouseButton.button == sf::Mouse::Left)
     {

@@ -30,6 +30,13 @@ void MainMenu::handle(Framework &frmwrk)
 {
     Buttons.handle(frmwrk);
 
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+        frmwrk.ChangeState(Framework::gameStates::SETTINGS);
+    else if(sf::Keyboard::isKeyPressed(sf::Keyboard::N))
+        frmwrk.ChangeState(Framework::gameStates::FLYSHIP);
+    else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+        frmwrk.quit();
+
     // handle buttons
     if(frmwrk.spMainEvent->type == sf::Event::MouseButtonPressed && frmwrk.spMainEvent->mouseButton.button == sf::Mouse::Left)
     {
