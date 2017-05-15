@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"string",
+				"string"
+			],
+			[
+				"mSlider",
+				"mSliderValue"
+			],
+			[
+				"mNu",
+				"mNumberOfPositions-1"
+			],
+			[
+				"Accelerati",
+				"AccelerationString"
+			],
+			[
+				"Res",
+				"ResourceManager"
+			],
+			[
 				"For",
 				"ForceSlider"
 			]
@@ -12,9 +32,29 @@
 	"buffers":
 	[
 	],
-	"build_system": "Packages/User/c++ makefile.sublime-build",
+	"build_system": "Packages/User/c++ make.sublime-build",
 	"build_system_choices":
 	[
+		[
+			[
+				[
+					"Packages/User/c++ make.sublime-build",
+					""
+				],
+				[
+					"Packages/User/c++ make.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/c++ make.sublime-build",
+					"Clean"
+				]
+			],
+			[
+				"Packages/User/c++ make.sublime-build",
+				""
+			]
+		],
 		[
 			[
 				[
@@ -76,7 +116,7 @@
 				"Build With: c++ console"
 			]
 		],
-		"width": 400.0
+		"width": 392.0
 	},
 	"console":
 	{
@@ -103,20 +143,33 @@
 	],
 	"file_history":
 	[
-		"/C/Users/Niklas/AppData/Roaming/Sublime Text 3/Packages/User/c++ makefile.sublime-build",
-		"/C/Users/Niklas/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/SettingsMenu.cpp",
+		"/C/Users/Niklas/OneDrive/c++/Softwaretechnik/main.java",
+		"/C/Users/Niklas/OneDrive/c++/Softwaretechnik/Canine.java",
+		"/C/Users/Niklas/OneDrive/c++/Softwaretechnik/Feline.java",
+		"/C/Users/Niklas/OneDrive/c++/Softwaretechnik/animal.java",
+		"/C/Users/Niklas/OneDrive/c++/SpaceFuture/Gamefiles/Engine/TextBox.cpp",
+		"/C/Users/Niklas/OneDrive/c++/SpaceFuture/Gamefiles/Engine/Framework.cpp",
+		"/C/Users/Niklas/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/Spaceship.cpp",
+		"/C/Users/Niklas/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/FlyShipState.cpp",
+		"/C/Users/Niklas/OneDrive/c++/SpaceFuture/ToDo.todo",
+		"/C/Users/Niklas/OneDrive/c++/SpaceFuture/Gamefiles/Engine/Framework.hpp",
+		"/C/Users/Niklas/AppData/Roaming/Sublime Text 3/Packages/User/c++ make.sublime-build",
 		"/C/Users/Niklas/OneDrive/c++/SpaceFuture/main.cpp",
 		"/C/Users/Niklas/OneDrive/c++/SpaceFuture/Gamefiles/Engine/Slider.hpp",
 		"/C/Users/Niklas/OneDrive/c++/SpaceFuture/Gamefiles/Engine/Slider.cpp",
+		"/C/Users/Niklas/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/SettingsMenu.cpp",
+		"/C/Users/Niklas/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/SettingsMenu.hpp",
+		"/C/Users/Niklas/OneDrive/c++/SpaceFuture/Gamefiles/Engine/UIElement.cpp",
+		"/C/Users/Niklas/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/Playership.cpp",
+		"/C/Users/Niklas/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/MainMenu.cpp",
+		"/C/Users/Niklas/OneDrive/c++/SpaceFuture/.gitignore",
+		"/C/Users/Niklas/AppData/Roaming/Sublime Text 3/Packages/User/c++ makefile.sublime-build",
 		"/C/Users/Niklas/OneDrive/c++/SpaceFuture/Makefile",
-		"/C/Users/Niklas/OneDrive/c++/SpaceFuture/ToDo.todo",
-		"/C/Users/Niklas/OneDrive/c++/SpaceFuture/Gamefiles/Engine/Framework.cpp",
 		"/C/Users/Niklas/OneDrive/c++/SpaceFuture/Gamefiles/Engine/Version.txt",
 		"/C/Users/Niklas/OneDrive/c++/Engine/V_0.1.01.2/Engine/Version.txt",
 		"/C/Users/Niklas/OneDrive/c++/Engine/v_0.1.111/Engine/Version.txt",
 		"/C/Users/Niklas/OneDrive/c++/SpaceFuture/Gamefiles/Engine/SettingsCache.cpp",
 		"/C/Users/Niklas/OneDrive/c++/SpaceFuture/Gamefiles/Engine/ResourceManager.hpp",
-		"/C/Users/Niklas/OneDrive/c++/SpaceFuture/.gitignore",
 		"/C/Users/Niklas/OneDrive/c++/Tests/makefiletest_SpaceFuture_WORKS/main.cpp",
 		"/C/Users/Niklas/OneDrive/c++/Tests/makefiletest_SpaceFuture_WORKS/Makefile",
 		"/C/Users/Niklas/OneDrive/c++/MyGame/cb/ToDo.todo",
@@ -152,7 +205,6 @@
 		"/E/OneDrive/c++/Tests/makefiletest/main.cpp",
 		"/E/OneDrive/c++/Tests/makefiletest/Message.h",
 		"/E/OneDrive/c++/Tests/makefiletest/Message.cpp",
-		"/C/Users/Niklas/AppData/Roaming/Sublime Text 3/Packages/User/c++ make.sublime-build",
 		"/C/Users/Niklas/AppData/Roaming/Sublime Text 3/Packages/User/Package Control.sublime-settings",
 		"/C/Users/Niklas/AppData/Roaming/Sublime Text 3/Packages/User/c++ stackoverflow.sublime-build",
 		"/C/Users/Niklas/AppData/Roaming/Sublime Text 3/Packages/User/c++easy.sublime-build",
@@ -197,6 +249,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"}",
+			"public",
+			".o",
+			"*.o",
+			"if(sf",
+			"\\",
 			"(double)",
 			"mStepSize",
 			"val",
@@ -293,7 +351,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 105.0
+		"height": 215.0
 	},
 	"output.find_results":
 	{
@@ -303,7 +361,7 @@
 	{
 		"height": 50.0
 	},
-	"pinned_build_system": "Packages/User/c++ makefile.sublime-build",
+	"pinned_build_system": "Packages/Java/JavaC.sublime-build",
 	"project": "SpaceFuture.sublime-project",
 	"replace":
 	{
@@ -317,8 +375,56 @@
 		"selected_items":
 		[
 			[
+				"fly",
+				"Gamefiles\\SpaceFuture\\FlyShipState.cpp"
+			],
+			[
+				"space",
+				"Gamefiles\\SpaceFuture\\Spaceship.cpp"
+			],
+			[
+				"fram",
+				"Gamefiles\\Engine\\Framework.hpp"
+			],
+			[
+				"slic",
+				"Gamefiles\\Engine\\Slider.cpp"
+			],
+			[
 				"slid",
 				"Gamefiles\\Engine\\Slider.hpp"
+			],
+			[
+				"setmenh",
+				"Gamefiles\\SpaceFuture\\SettingsMenu.hpp"
+			],
+			[
+				"set",
+				"Gamefiles\\SpaceFuture\\SettingsMenu.cpp"
+			],
+			[
+				"mainme",
+				"Gamefiles\\SpaceFuture\\MainMenu.cpp"
+			],
+			[
+				"player",
+				"Gamefiles\\SpaceFuture\\Playership.cpp"
+			],
+			[
+				"flysh",
+				"Gamefiles\\SpaceFuture\\FlyShipState.cpp"
+			],
+			[
+				"uiele",
+				"Gamefiles\\Engine\\UIElement.cpp"
+			],
+			[
+				"slidcp",
+				"Gamefiles\\Engine\\Slider.cpp"
+			],
+			[
+				"main",
+				"main.cpp"
 			],
 			[
 				"slider",
@@ -327,10 +433,6 @@
 			[
 				"slider.c",
 				"Gamefiles\\Engine\\Slider.cpp"
-			],
-			[
-				"set",
-				"Gamefiles\\SpaceFuture\\SettingsMenu.cpp"
 			],
 			[
 				"frame",

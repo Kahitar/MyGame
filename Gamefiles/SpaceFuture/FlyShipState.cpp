@@ -3,8 +3,8 @@
 #include "../Engine/Framework.hpp"
 
 FlyShipState::FlyShipState()
-    :NPCShip("assets\\textures\\star_trek_enterprise_botship.png", sf::Vector2f(500,500)),
-     playership("assets\\textures\\star_trek_xi_enterprise_v1.png", sf::Vector2f(500,300))
+    :playership("assets\\textures\\star_trek_xi_enterprise_v1.png", sf::Vector2f(500,300))//,
+     //NPCShip("assets\\textures\\star_trek_enterprise_botship.png", sf::Vector2f(500,500))
 {
     Buttons.addButton(sf::Vector2f(540,50),sf::Vector2f(200,50),"MainMenuButton","Main menu");
 
@@ -19,10 +19,10 @@ FlyShipState::~FlyShipState()
 
 void FlyShipState::update(Framework &frmwrk)
 {
-    NPCShip.update(frmwrk);
+    //NPCShip.update(frmwrk);
     playership.update(frmwrk);
 
-    playerView.setCenter(playership.getPosition());
+    playerView.setCenter(playership.getGamePosition());
     frmwrk.setView(playerView);
     Buttons.getButton("MainMenuButton").setPosition(sf::Vector2f(playerView.getCenter().x - 620,playerView.getCenter().y - 340));
 
@@ -33,7 +33,7 @@ void FlyShipState::handle(Framework &frmwrk)
 {
     Buttons.handle(frmwrk);
 
-    NPCShip.handle(frmwrk);
+    //NPCShip.handle(frmwrk);
     playership.handle(frmwrk);
 
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::M))
@@ -51,7 +51,7 @@ void FlyShipState::handle(Framework &frmwrk)
 void FlyShipState::render(Framework &frmwrk)
 {
     earth.render(frmwrk);
-    NPCShip.render(frmwrk);
+    //NPCShip.render(frmwrk);
     playership.render(frmwrk);
     Buttons.render(frmwrk);
 }

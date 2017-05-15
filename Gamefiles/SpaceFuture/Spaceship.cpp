@@ -9,7 +9,7 @@
 Spaceship::Spaceship(std::string texturePath, sf::Vector2f position)
     :mName("Of course I still love you"),mVelocity(0),mMass(ResourceManager::getPlayershipMass()),
      mRelativisticMass(mMass),mForce(ResourceManager::getAcceleratingForce()),
-     mAcceleratingInDirection(0),mPosition(sf::Vector2f(0,0))
+     mAcceleratingInDirection(0),mGamePosition(position),mSpacePosition(position)
 {
     //TODO: Load these from the ResourceManager
     ShipImage.loadFromFile(texturePath);
@@ -34,7 +34,9 @@ Spaceship::Spaceship(std::string texturePath, sf::Vector2f position)
     mPositionText.setCharacterSize(24);
     mPositionText.setStyle(sf::Text::Bold);
 
-    uielements.addTextBox("ShipMass", "Relativistic Mass: ");
+    uielements.addTextBox("ShipMassTextbox", "Relativistic Mass: ");
+    //uielements.addTextBox("VelocityText", "v = ");
+    //uielements.addTextBox("PositionText", "x = ");
 }
 
 Spaceship::~Spaceship()
@@ -46,11 +48,9 @@ void Spaceship::update(Framework &frmwrk)
 {
     CalculateNewVelocity(mAcceleratingInDirection*mForce);
     CalculateRelativisticMass();
-
-    ShipSprite.move(mVelocity*frmwrk.getFrameTime(),0);
-    mPosition = ShipSprite.getPosition();
-
-    mClock.setPosition(sf::Vector2f(mPosition.x,mPosition.y - 100));
+    moveShip(frmwrk);
+    
+    mClock.setPosition(sf::Vector2f(mGamePosition.x,mGamePosition.y - 100));
     mClock.update(frmwrk, mVelocity);
     WriteStateVariables();
 
@@ -58,10 +58,32 @@ void Spaceship::update(Framework &frmwrk)
     ssMass << "Relativistic Mass: " << mRelativisticMass;
     std::string sMass = ssMass.str();
 
-    uielements.getTextBox("ShipMass").setText(sMass);
-    uielements.getTextBox("ShipMass").setPosition(sf::Vector2f(mPosition.x,mPosition.y-140));
+    uielements.getTextBox("ShipMassTextbox").setText(sMass);
+    uielements.getTextBox("ShipMassTextbox").setPosition(sf::Vector2f(mGamePosition.x,mGamePosition.y-140));
 
     uielements.update(frmwrk);
+}
+
+void Spaceship::moveShip(Framework &frmwrk)
+{
+    int dx = mVelocity*frmwrk.getFrameTime();
+    mSpacePosition = sf::Vector2f(mSpacePosition.x + dx,mSpacePosition.y);
+
+    // TODO: Use boundaries calculated on runtime depending on the relative
+    // position to other objects in space
+    if(mSpacePosition.x < 50000 && mSpacePosition.x > -50000){
+        mGamePosition = mSpacePosition;
+    } else if (mSpacePosition.x >= 50000) {
+        mGamePosition.x = 50000;
+    } else {
+        mGamePosition.x = -50000;
+    }
+    ShipSprite.setPosition(mGamePosition);
+
+
+    std::cout << "x(ship_space) = " << mSpacePosition.x << std::endl;
+    std::cout << "x(ship_game) = " << mGamePosition.x << std::endl;
+
 }
 
 void Spaceship::handle(Framework &frmwrk)
@@ -89,19 +111,20 @@ void Spaceship::CalculateNewVelocity(double force)
 void Spaceship::WriteStateVariables()
 {
     //TODO: Do this with the TextBox class
-    // Velocity as function of c
-    float mVAsPercentegeOfC = math::round(mVelocity / math::c,4);
 
-    mVelocityText.setPosition(mPosition.x,mPosition.y-70);
+    // Velocity as function of c
+    float mVAsPercentegeOfC = math::round(mVelocity / math::c, 4);
+
+    mVelocityText.setPosition(mGamePosition.x,mGamePosition.y - 70);
     std::stringstream ssVelocity;
     ssVelocity << "v = " << mVAsPercentegeOfC << " * c ";
     std::string sVelocity = ssVelocity.str();
     mVelocityText.setString(sVelocity);
 
     // Position from origin
-    mPositionText.setPosition(mPosition.x,mPosition.y - 40);
+    mPositionText.setPosition(mGamePosition.x,mGamePosition.y - 40);
     std::stringstream ssPosition;
-    ssPosition << "d = " << math::round(math::CalculateDistanceInLightMinutes(mPosition.x),5) << " lm ";
+    ssPosition << "d = " << math::round(math::CalculateDistanceInLightMinutes(mSpacePosition.x),5) << " lm ";
     std::string sPosition = ssPosition.str();
     mPositionText.setString(sPosition);
 }
@@ -109,4 +132,20 @@ void Spaceship::WriteStateVariables()
 void Spaceship::CalculateRelativisticMass()
 {
     mRelativisticMass = mMass * math::CalculateDilationFactor(mVelocity);
+}
+
+// Setter //
+
+void Spaceship::setPosition(sf::Vector2f position)
+{
+    mSpacePosition = position;
+
+    if(mSpacePosition.x < 50000 && mSpacePosition.x > -50000){
+        mGamePosition = mSpacePosition;
+    } else if (mSpacePosition.x >= 50000) {
+        mGamePosition.x = 50000;
+    } else {
+        mGamePosition.x = -50000;
+    }
+    ShipSprite.setPosition(mGamePosition);
 }

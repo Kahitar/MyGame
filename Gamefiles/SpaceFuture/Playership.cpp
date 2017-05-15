@@ -26,8 +26,8 @@ void Playership::update(Framework &frmwrk)
     Spaceship::update(frmwrk);
 
     Buttons.update(frmwrk);
-    Buttons.getButton("VelocityResetButton").setPosition(sf::Vector2f(mPosition.x-70,mPosition.y-70));
-    Buttons.getButton("PosResetButton").setPosition(sf::Vector2f(mPosition.x-70,mPosition.y-40));
+    Buttons.getButton("VelocityResetButton").setPosition(sf::Vector2f(mGamePosition.x-70,mGamePosition.y-70));
+    Buttons.getButton("PosResetButton").setPosition(sf::Vector2f(mGamePosition.x-70,mGamePosition.y-40));
 }
 
 void Playership::handle(Framework &frmwrk)

@@ -20,10 +20,10 @@ class FlyShipState : public Gamestate
         void render(Framework &frmwrk);
 
     private:
-        NPCShip    NPCShip;
+        //TODO: Use Polymorphism with (smart) pointers of type Spaceship
+        //NPCShip    NPCShip;
         Playership playership;
         planet     earth;
-//        scale       xscale;
 
         UIElement Buttons;
 
