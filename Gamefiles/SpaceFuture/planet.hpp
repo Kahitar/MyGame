@@ -4,10 +4,11 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include "ObjectTime.hpp"
+#include "GameObject.hpp"
 
 class Framework;
 
-class planet
+class planet : public GameObject
 {
     public:
         planet();
@@ -18,6 +19,7 @@ class planet
 
         // Getter //
         std::string getName() {return mName;};
+        sf::Vector2f getPosition();
 
         void update(Framework &frmwrk);
         void handle(Framework &frmwrk);

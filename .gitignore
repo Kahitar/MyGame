@@ -49,3 +49,5 @@ doxygen/doxyfile
 obj/*.o
 Classdiagramms/SpaceFuture.sublime-workspace
 SpaceFuture.sublime-workspace
+*.uxf
+*.uxf

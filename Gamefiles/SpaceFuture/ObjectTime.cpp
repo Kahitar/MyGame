@@ -14,14 +14,6 @@ ObjectTime::ObjectTime()
     ClockTextBox.getTextBox("ClockText").setFillColor(sf::Color::Transparent);
     ClockTextBox.getTextBox("ClockText").setBorderThickness(0);
 
-//    font.loadFromFile("assets\\fonts\\PAPYRUS.TTF");
-//    mClockText.setFont(font);
-//    mClockText.setString("Hallo Welt");
-
-//    mClockText.setFillColor(sf::Color::Red);
-//    mClockText.setCharacterSize(24);
-//    mClockText.setStyle(sf::Text::Bold | sf::Text::Underlined);
-
     mGlobalTimeStep = Framework::getFrameTime();
 }
 
@@ -38,7 +30,6 @@ void ObjectTime::reset(int newTime)
 void ObjectTime::update(Framework &frmwrk, float velocity)
 {
     updateTime(velocity);
-//    mClockText.setPosition(mPosition.x,mPosition.y);
     ClockTextBox.getTextBox("ClockText").setPosition(sf::Vector2f(mPosition.x,mPosition.y));
 
     float mTimeRounded = math::round(mTime,1);
@@ -47,7 +38,6 @@ void ObjectTime::update(Framework &frmwrk, float velocity)
     ssTime << "t = " << mTimeRounded << " s";
     std::string sTime = ssTime.str();
 
-//    mClockText.setString(sTime);
     ClockTextBox.getTextBox("ClockText").setText(sTime);
 
     mGlobalTimeStep = Framework::getFrameTime();
@@ -55,7 +45,6 @@ void ObjectTime::update(Framework &frmwrk, float velocity)
 
 void ObjectTime::render(Framework &frmwrk)
 {
-//    frmwrk.spRenderWindow->draw(mClockText);
     ClockTextBox.getTextBox("ClockText").render(frmwrk);
 }
 

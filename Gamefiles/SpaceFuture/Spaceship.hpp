@@ -5,11 +5,12 @@
 #include <string>
 #include <SFML/Graphics.hpp>
 #include "../Engine/UIElement.hpp"
+#include "GameObject.hpp"
 #include "ObjectTime.hpp"
 
 class Framework;
 
-class Spaceship
+class Spaceship : public GameObject
 {
     public:
         Spaceship(std::string texturePath, sf::Vector2f position);
@@ -27,6 +28,7 @@ class Spaceship
         float getMass()       {return mMass;};
         sf::Vector2f getSpacePosition()  {return mSpacePosition;};
         sf::Vector2f getGamePosition()   {return mGamePosition;};
+        sf::Vector2f getPosition()       {return mGamePosition;};
 
         void update(Framework &frmwrk);
         void handle(Framework &frmwrk);

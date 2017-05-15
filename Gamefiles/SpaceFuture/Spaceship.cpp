@@ -5,6 +5,7 @@
 #include "../Engine/ResourceManager.hpp"
 #include "Spaceship.hpp"
 #include "math.hpp"
+#include "Variables.hpp"
 
 Spaceship::Spaceship(std::string texturePath, sf::Vector2f position)
     :mName("Of course I still love you"),mVelocity(0),mMass(ResourceManager::getPlayershipMass()),
@@ -66,12 +67,12 @@ void Spaceship::update(Framework &frmwrk)
 
 void Spaceship::moveShip(Framework &frmwrk)
 {
-    int dx = mVelocity*frmwrk.getFrameTime();
+    float dx = mVelocity*frmwrk.getFrameTime();
     mSpacePosition = sf::Vector2f(mSpacePosition.x + dx,mSpacePosition.y);
 
     // TODO: Use boundaries calculated on runtime depending on the relative
     // position to other objects in space
-    if(mSpacePosition.x < 50000 && mSpacePosition.x > -50000){
+    if(mSpacePosition.x < 50000 && mSpacePosition.x > -50000) {
         mGamePosition = mSpacePosition;
     } else if (mSpacePosition.x >= 50000) {
         mGamePosition.x = 50000;
@@ -79,11 +80,6 @@ void Spaceship::moveShip(Framework &frmwrk)
         mGamePosition.x = -50000;
     }
     ShipSprite.setPosition(mGamePosition);
-
-
-    std::cout << "x(ship_space) = " << mSpacePosition.x << std::endl;
-    std::cout << "x(ship_game) = " << mGamePosition.x << std::endl;
-
 }
 
 void Spaceship::handle(Framework &frmwrk)
@@ -113,18 +109,43 @@ void Spaceship::WriteStateVariables()
     //TODO: Do this with the TextBox class
 
     // Velocity as function of c
-    float mVAsPercentegeOfC = math::round(mVelocity / math::c, 4);
+    float mVAsPercentageOfC = math::round(mVelocity / math::c, 3);
 
     mVelocityText.setPosition(mGamePosition.x,mGamePosition.y - 70);
     std::stringstream ssVelocity;
-    ssVelocity << "v = " << mVAsPercentegeOfC << " * c ";
+
+    if(mVAsPercentageOfC > 0.001) {
+        ssVelocity << "v = " << mVAsPercentageOfC << " * c ";
+    } else {
+        ssVelocity << "v = " << round(mVelocity) << " m/s "; 
+    }
     std::string sVelocity = ssVelocity.str();
-    mVelocityText.setString(sVelocity);
+    mVelocityText.setString(sVelocity);   
 
     // Position from origin
+    float mPositionInLightminutes = math::round(math::CalculateDistanceInLightMinutes(mSpacePosition.x),5);
+
     mPositionText.setPosition(mGamePosition.x,mGamePosition.y - 40);
     std::stringstream ssPosition;
-    ssPosition << "d = " << math::round(math::CalculateDistanceInLightMinutes(mSpacePosition.x),5) << " lm ";
+
+    if(mPositionInLightminutes < 0.001) {
+        ssPosition << "d = " 
+                   << round(mSpacePosition.x / 1000) 
+                   << " km ";
+    } else if (mPositionInLightminutes < 60) {
+        ssPosition << "d = " 
+                   << math::round(math::CalculateDistanceInLightMinutes(mSpacePosition.x),4) 
+                   << " lm ";
+    } else if (mPositionInLightminutes < 24*60) {
+        ssPosition << "d = " 
+                   << math::round(math::CalculateDistanceInLightMinutes(mSpacePosition.x)/24,2) 
+                   << " ld ";
+    } else if (mPositionInLightminutes < 365.25*24*60) {
+        ssPosition << "d = " 
+                   << math::round(math::CalculateDistanceInLightMinutes(mSpacePosition.x)/24/365.25,2) 
+                   << " ly ";
+    }
+    
     std::string sPosition = ssPosition.str();
     mPositionText.setString(sPosition);
 }

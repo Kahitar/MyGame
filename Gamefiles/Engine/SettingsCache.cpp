@@ -1,7 +1,8 @@
 #include "SettingsCache.hpp"
+#include "..\SpaceFuture\Variables.hpp"
 
 SettingsCache::SettingsCache()
-	:mForceToAccelerate(0),mPlayershipMass(10)
+	:mForceToAccelerate(Variables::defaultAccelerationForce),mPlayershipMass(10)
 {
     //ctor
 }

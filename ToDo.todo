@@ -1,16 +1,6 @@
 SpaceFuture:
  ☐ integrate scale
    ✔ only position at first. @done (17-04-29 22:59)
- ☐ fix the flickering sprite problem
-   this appears to happen at high velocities OR at a long distance from origin
-   The reason is, that the Framtime changes from one frame to another but the dx to move the sprites is always
-   calculated with the frametime of the last frame. The higher the velocity, the higher the "uncertainty".
-
-   One way to solve this would be to not letting the ship fly the exact number of pixels where 1 pxl = 1 meter
-     Solution #1: make 1 pxl =/= 1 meter (e.g. 1pxl = 0.01 meter)
-       The Problem might still be there
-     Solution #2: Don't move the ship at all when nothing else is in the view
-       I would still have to keep track of the position of the ship to know when it meets another object (e.g. when it meets another planet or ship)
  ☐ Make a UI-class with a view and buttons which should always be in player sight
 
 Engine:
@@ -18,9 +8,6 @@ Engine:
    ☐ Make it possible to change the color of the slider text (value)
    ☐ add support for decimal slider values
 
- ☐ Make the Size of the Window global
-   Do I want to scale everything accordingly or just reduce the window size?
-   Maybe in a config file!
  ☐ Why does MainMenu switch to the default view?
     When i come from another gamestate (e.g. Playstate) and the window was resized, MainMenu doesn't use the view which was set in framework
     Only after I resized the window again it switches to that view
@@ -40,7 +27,7 @@ Engine:
          I just set it manually. Need to change that.
 
 
- Cancled (maybe later):
+ Canceled (maybe later):
  ✘ Make spRenderWindow and spMainEvent private in Framework @cancelled (17-05-11 13:09)
  ✘ Textbox: Split lines for long passages of Text @cancelled (17-05-02 13:15)
      Can do this with \n in the text 
@@ -52,6 +39,17 @@ Engine:
        Currently this is implemented via the TextBox-class on its own
 
  Archive:
+ ✔ Make the Size of the Window global @done (17-05-15 13:05)
+   Do I want to scale everything accordingly or just reduce the window size?
+   Maybe in a config file!
+ ✔ fix the flickering sprite problem @done (17-05-15 13:03)
+   this appears to happen at high velocities OR at a long distance from origin
+
+   One way to solve this would be to not letting the ship fly the exact number of pixels where 1 pxl = 1 meter
+     Solution #1: make 1 pxl =/= 1 meter (e.g. 1pxl = 0.01 meter)
+       The Problem might still be there
+     ✔ Solution #2: Don't move the ship at all when nothing else is in the view @done (17-05-15 13:04)
+       Implemented this solution but at a fixed range from origin
   ✔ Slider @done (17-05-04 21:25)
    ✔ Bugfix: When starting on the left, I can't click the slider rectangle @done (17-05-04 21:51)
      because it isn't in the slider hitbox?

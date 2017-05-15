@@ -40,7 +40,6 @@ private:
     void render();
 
     void CalculateFrameTime();
-    //void CalculateScale(); //Not implemented yet (TODO?)
 
     std::unique_ptr<Gamestate>   CurrentState;
     std::unique_ptr<sf::Clock>   upClock;

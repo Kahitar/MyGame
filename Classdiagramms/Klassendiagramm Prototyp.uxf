@@ -1,43 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.2">
-  <zoom_level>8</zoom_level>
+  <zoom_level>9</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>920</x>
-      <y>88</y>
-      <w>200</w>
-      <h>256</h>
+      <x>981</x>
+      <y>108</y>
+      <w>225</w>
+      <h>288</h>
     </coordinates>
     <panel_attributes>Raumschiff
 --
-- name : String
-- velocity : float
-- position : float
-- mass : float
-- clock : ObjectTime
---
-+ setName(name : String) : void
-+ getName() : String
-+ setVelocity(velocity : float) : void
-+ getVelovity() : float
-+ setMass(mass : float) : void
-+ getMass() : float
-
-- calculateNewVelocity(force : float)
-
-+ update(Framework &amp;frmwrk) : void
-+ handle(Framework &amp;frmwrk) : void
-+ render(Framework &amp;frmwrk) : void</panel_attributes>
+- mGamePosition
+- mSpacePosition
+--</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>856</x>
-      <y>520</y>
-      <w>184</w>
-      <h>88</h>
+      <x>909</x>
+      <y>594</y>
+      <w>207</w>
+      <h>99</h>
     </coordinates>
     <panel_attributes>Spielerschiff
 --
@@ -49,10 +34,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>936</x>
-      <y>336</y>
-      <w>104</w>
-      <h>200</h>
+      <x>999</x>
+      <y>387</y>
+      <w>117</w>
+      <h>225</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>110.0;10.0;10.0;230.0</additional_attributes>
@@ -60,10 +45,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>296</x>
-      <y>520</y>
-      <w>256</w>
-      <h>264</h>
+      <x>279</x>
+      <y>630</y>
+      <w>288</w>
+      <h>297</h>
     </coordinates>
     <panel_attributes>FlyShipState
 --
@@ -79,21 +64,21 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>544</x>
-      <y>520</y>
-      <w>328</w>
-      <h>24</h>
+      <x>558</x>
+      <y>594</y>
+      <w>369</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;390.0;10.0</additional_attributes>
+    <additional_attributes>10.0;50.0;390.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>384</x>
-      <y>376</y>
-      <w>144</w>
-      <h>64</h>
+      <x>378</x>
+      <y>432</y>
+      <w>162</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>Erde
 --
@@ -105,21 +90,21 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>400</x>
-      <y>432</y>
-      <w>24</w>
-      <h>104</h>
+      <x>396</x>
+      <y>495</y>
+      <w>27</w>
+      <h>153</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>384</x>
-      <y>104</y>
-      <w>200</w>
-      <h>136</h>
+      <x>378</x>
+      <y>126</y>
+      <w>225</w>
+      <h>153</h>
     </coordinates>
     <panel_attributes>Planet
 --
@@ -136,10 +121,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>416</x>
-      <y>232</y>
-      <w>32</w>
-      <h>160</h>
+      <x>414</x>
+      <y>270</y>
+      <w>36</w>
+      <h>180</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;20.0;180.0</additional_attributes>
@@ -147,10 +132,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>616</x>
-      <y>176</y>
-      <w>248</w>
-      <h>168</h>
+      <x>639</x>
+      <y>207</y>
+      <w>279</w>
+      <h>189</h>
     </coordinates>
     <panel_attributes>ObjectTime
 --
@@ -166,10 +151,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>576</x>
-      <y>104</y>
-      <w>80</w>
-      <h>88</h>
+      <x>594</x>
+      <y>126</y>
+      <w>90</w>
+      <h>99</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;80.0;90.0</additional_attributes>
@@ -177,10 +162,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>776</x>
-      <y>96</y>
-      <w>160</w>
-      <h>96</h>
+      <x>819</x>
+      <y>117</y>
+      <w>180</w>
+      <h>108</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>180.0;10.0;10.0;100.0</additional_attributes>
@@ -188,10 +173,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>24</x>
-      <y>616</y>
-      <w>224</w>
-      <h>112</h>
+      <x>0</x>
+      <y>738</y>
+      <w>252</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>scale
 --
@@ -203,21 +188,21 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>224</x>
-      <y>576</y>
-      <w>88</w>
-      <h>56</h>
+      <x>225</x>
+      <y>693</y>
+      <w>72</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>90.0;10.0;10.0;50.0</additional_attributes>
+    <additional_attributes>60.0;10.0;10.0;50.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>120</x>
-      <y>176</y>
-      <w>232</w>
-      <h>152</h>
+      <x>9</x>
+      <y>297</y>
+      <w>261</w>
+      <h>171</h>
     </coordinates>
     <panel_attributes>Gamestate
 --
@@ -231,21 +216,21 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>288</x>
-      <y>320</y>
-      <w>64</w>
-      <h>216</h>
+      <x>198</x>
+      <y>459</y>
+      <w>144</w>
+      <h>189</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;60.0;250.0</additional_attributes>
+    <additional_attributes>10.0;10.0;140.0;190.0</additional_attributes>
   </element>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>616</x>
-      <y>104</y>
-      <w>216</w>
-      <h>40</h>
+      <x>639</x>
+      <y>126</y>
+      <w>243</w>
+      <h>45</h>
     </coordinates>
     <panel_attributes>Klassendiagramm Tutorial: 
 http://www.codeadventurer.de/?p=2428
@@ -255,10 +240,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>576</x>
-      <y>400</y>
-      <w>216</w>
-      <h>96</h>
+      <x>594</x>
+      <y>459</y>
+      <w>243</w>
+      <h>108</h>
     </coordinates>
     <panel_attributes>Laser
 --
@@ -272,10 +257,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>520</x>
-      <y>376</y>
-      <w>72</w>
-      <h>48</h>
+      <x>531</x>
+      <y>432</y>
+      <w>81</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;70.0;40.0</additional_attributes>

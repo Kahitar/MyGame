@@ -33,11 +33,9 @@ class ObjectTime
         void CalculateTimeInHours();
 
         float mTime; // time in seconds
-        sf::Vector3f mTimeInHours; // time in yy/mm hh:mm:ss
+        //sf::Vector3f mTimeInHours; // time in yy/mm hh:mm:ss (TODO)
         float mNextTimeStep;
 
-//        sf::Font font;
-//        sf::Text mClockText;
         UIElement ClockTextBox;
 
         float mGlobalTimeStep;

@@ -1,5 +1,6 @@
 #include "Framework.hpp"
 #include "ResourceManager.hpp"
+#include "..\SpaceFuture\Variables.hpp"
 
 using namespace std;
 
@@ -8,7 +9,8 @@ float Framework::mFrameTime;
 Framework::Framework(std::string WindowTitle)
     :mRunning(true)
 {
-    spRenderWindow  = std::move(std::unique_ptr<sf::RenderWindow>(new sf::RenderWindow(sf::VideoMode(1280,720,32),WindowTitle)));
+    spRenderWindow  = std::move(std::unique_ptr<sf::RenderWindow>
+        (new sf::RenderWindow(sf::VideoMode(Variables::WINDOW_WIDTH,Variables::WINDOW_HEIGHT,32),WindowTitle)));
     spMainEvent     = std::move(std::unique_ptr<sf::Event>(new sf::Event));
     upClock         = std::move(std::unique_ptr<sf::Clock>(new sf::Clock));
 
