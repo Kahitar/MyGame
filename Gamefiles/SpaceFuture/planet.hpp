@@ -8,11 +8,11 @@
 
 class Framework;
 
-class planet : public GameObject
+class Planet : public GameObject
 {
     public:
-        planet();
-        ~planet();
+        Planet();
+        ~Planet();
 
         // Setter //
         void setName(std::string name) {mName = name;};

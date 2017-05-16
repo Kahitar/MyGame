@@ -14,7 +14,7 @@ class Spaceship : public GameObject
 {
     public:
         Spaceship(std::string texturePath, sf::Vector2f position);
-        ~Spaceship();
+        virtual ~Spaceship();
 
         // Setter //
         void setName(std::string name)      {mName = name;};

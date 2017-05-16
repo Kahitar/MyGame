@@ -5,9 +5,11 @@
 #include "../Engine/UIElement.hpp"
 #include "../Engine/Gamestate.hpp"
 
+#include "GameObject.hpp"
 #include "NPCShip.hpp"
 #include "Playership.hpp"
-#include "planet.hpp"
+#include "Planet.hpp"
+#include "Camera.hpp"
 
 class FlyShipState : public Gamestate
 {
@@ -20,14 +22,10 @@ class FlyShipState : public Gamestate
         void render(Framework &frmwrk);
 
     private:
-        //TODO: Use Polymorphism with (smart) pointers of type Spaceship
-        //NPCShip    NPCShip;
-        Playership playership;
-        planet     earth;
-
-        UIElement Buttons;
-
-        sf::View    playerView;
+        //TODO: Use Polymorphism with (smart) pointers of type GameObject
+        GameObject  *playership;
+        Planet      earth;
+        Camera      camera;
 };
 
 #endif // FLYSHIPSTATE_HPP

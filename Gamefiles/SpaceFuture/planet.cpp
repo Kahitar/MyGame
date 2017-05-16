@@ -1,8 +1,8 @@
 #include "../Engine/Framework.hpp"
-#include "planet.hpp"
+#include "Planet.hpp"
 #include "Variables.hpp"
 
-planet::planet()
+Planet::Planet()
     :mName("Planet XY")
 {
     float TextureWidth = 1661;  // pxls
@@ -22,29 +22,29 @@ planet::planet()
     mPlanetSprite.setScale(textureScale,textureScale);
 }
 
-planet::~planet()
+Planet::~Planet()
 {
     //dtor
 }
 
-void planet::update(Framework &frmwrk)
+void Planet::update(Framework &frmwrk)
 {
 
 }
 
-void planet::handle(Framework &frmwrk)
+void Planet::handle(Framework &frmwrk)
 {
 
 }
 
-void planet::render(Framework &frmwrk)
+void Planet::render(Framework &frmwrk)
 {
     frmwrk.spRenderWindow->draw(mPlanetSprite);
 }
 
 // Getter and Setter //
 
-sf::Vector2f planet::getPosition()
+sf::Vector2f Planet::getPosition()
 {
     return mPlanetSprite.getPosition();
 }

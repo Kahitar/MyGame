@@ -10,7 +10,7 @@ class Framework;
 class GameObject
 {
 public:
-	//virtual		~GameObject();
+	virtual		 ~GameObject() {};
     virtual void update(Framework &frmwrk) = 0;
     virtual void handle(Framework &frmwrk) = 0;
     virtual void render(Framework &frmwrk) = 0;
