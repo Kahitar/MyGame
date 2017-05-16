@@ -19,7 +19,7 @@ class Planet : public GameObject
 
         // Getter //
         std::string getName() {return mName;};
-        sf::Vector2f getPosition();
+        sf::Vector2f getCenter();
 
         void update(Framework &frmwrk);
         void handle(Framework &frmwrk);

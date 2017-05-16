@@ -44,7 +44,9 @@ void Planet::render(Framework &frmwrk)
 
 // Getter and Setter //
 
-sf::Vector2f Planet::getPosition()
+sf::Vector2f Planet::getCenter()
 {
-    return mPlanetSprite.getPosition();
+    float x = mPlanetSprite.getGlobalBounds().left + mPlanetSprite.getGlobalBounds().width/2;
+    float y = mPlanetSprite.getGlobalBounds().top + mPlanetSprite.getGlobalBounds().height/2;
+    return sf::Vector2f(x, y);
 }

@@ -15,7 +15,7 @@ public:
     virtual void handle(Framework &frmwrk) = 0;
     virtual void render(Framework &frmwrk) = 0;
 
-    virtual sf::Vector2f getPosition() = 0;
+    virtual sf::Vector2f getCenter() = 0;
 
     sf::Vector2f CalculateDistance(GameObject &otherObject);
 };

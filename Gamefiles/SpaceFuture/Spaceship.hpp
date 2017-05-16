@@ -28,7 +28,7 @@ class Spaceship : public GameObject
         float getMass()       {return mMass;};
         sf::Vector2f getSpacePosition()  {return mSpacePosition;};
         sf::Vector2f getGamePosition()   {return mGamePosition;};
-        sf::Vector2f getPosition()       {return mGamePosition;};
+        sf::Vector2f getCenter();
 
         void update(Framework &frmwrk);
         void handle(Framework &frmwrk);

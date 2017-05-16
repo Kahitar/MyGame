@@ -22,9 +22,10 @@ class FlyShipState : public Gamestate
         void render(Framework &frmwrk);
 
     private:
-        //TODO: Use Polymorphism with (smart) pointers of type GameObject
+        //TODO: Do this with smart pointers!
         GameObject  *playership;
-        Planet      earth;
+        GameObject  *earth;
+
         Camera      camera;
 };
 

@@ -18,6 +18,7 @@ Spaceship::Spaceship(std::string texturePath, sf::Vector2f position)
     ShipTexture.loadFromImage(ShipImage);
     ShipSprite.setTexture(ShipTexture);
     ShipSprite.setPosition(position);
+    // TODO: set the Center of the Sprite on mGamePosition (instead of the topleft corner)
     ShipSprite.setScale(0.3,0.3);
 
     font.loadFromFile("assets\\fonts\\PAPYRUS.TTF");
@@ -36,8 +37,6 @@ Spaceship::Spaceship(std::string texturePath, sf::Vector2f position)
     mPositionText.setStyle(sf::Text::Bold);
 
     uielements.addTextBox("ShipMassTextbox", "Relativistic Mass: ");
-    //uielements.addTextBox("VelocityText", "v = ");
-    //uielements.addTextBox("PositionText", "x = ");
 }
 
 Spaceship::~Spaceship()
@@ -155,7 +154,7 @@ void Spaceship::CalculateRelativisticMass()
     mRelativisticMass = mMass * math::CalculateDilationFactor(mVelocity);
 }
 
-// Setter //
+// Setter and Getter //
 
 void Spaceship::setPosition(sf::Vector2f position)
 {
@@ -169,4 +168,12 @@ void Spaceship::setPosition(sf::Vector2f position)
         mGamePosition.x = -50000;
     }
     ShipSprite.setPosition(mGamePosition);
+}
+
+sf::Vector2f Spaceship::getCenter()
+{
+    float x = ShipSprite.getGlobalBounds().left + ShipSprite.getGlobalBounds().width/2;
+    float y = ShipSprite.getGlobalBounds().top + ShipSprite.getGlobalBounds().height/2;
+
+    return sf::Vector2f(x,y);
 }

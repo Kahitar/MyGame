@@ -7,7 +7,7 @@
 Camera::Camera()
 {
 	mView.reset(sf::FloatRect(0,0,Variables::WINDOW_WIDTH,Variables::WINDOW_HEIGHT));
-
+	// mView.zoom(3);
 	Buttons.addButton(sf::Vector2f(540,50),sf::Vector2f(200,50),"MainMenuButton","Main menu");
 }
 
