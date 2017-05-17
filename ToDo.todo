@@ -3,6 +3,8 @@ SpaceFuture:
    ✔ only position at first. @done (17-04-29 22:59)
 
 Engine:
+ ☐ Make the text and sprite of button work with scales (instead of e.g. setCharacterSize)
+
  ☐ update Slider:
    ☐ Make it possible to change the color of the slider text (value)
    ☐ add support for decimal slider values

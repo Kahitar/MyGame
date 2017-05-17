@@ -26,7 +26,7 @@ public:
 private:
 	sf::View mView;
 	sf::Vector2f mPosition;
-	sf::Vector2f mZoom;
+	sf::Vector3f mZoom; // x = current, y = goal, z = step
 
 	UIManager Buttons;
 
