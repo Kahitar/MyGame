@@ -2,7 +2,7 @@
 #define CAMERA_HPP
 
 #include <SFML/Graphics.hpp>
-#include "..\Engine\UIElement.hpp"
+#include "..\Engine\UIManager.hpp"
 
 class Framework;
 class GameObject;
@@ -28,7 +28,7 @@ private:
 	sf::Vector2f mPosition;
 	sf::Vector2f mZoom;
 
-	UIElement Buttons;
+	UIManager Buttons;
 
 	GameObject *mTrackedObject;
 };

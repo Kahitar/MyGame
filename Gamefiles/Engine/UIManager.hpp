@@ -10,11 +10,11 @@
 
 class Framework;
 
-class UIElement
+class UIManager
 {
     public:
-        UIElement();
-        ~UIElement();
+        UIManager();
+        ~UIManager();
 
         void addButton (sf::Vector2f pos, sf::Vector2f Size, std::string Name, std::string Text);
         void addSlider (sf::Vector2f pos, sf::Vector2f Size, std::string Name, 

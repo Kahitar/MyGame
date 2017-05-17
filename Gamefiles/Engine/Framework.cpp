@@ -29,7 +29,6 @@ Framework::~Framework()
 
 void Framework::run()
 {
-
     while(mRunning)
     {
         update(mFrameTime);

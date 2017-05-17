@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 #include <SFML/Graphics.hpp>
-#include "../Engine/UIElement.hpp"
+#include "../Engine/UIManager.hpp"
 #include "GameObject.hpp"
 #include "ObjectTime.hpp"
 
@@ -61,7 +61,7 @@ class Spaceship : public GameObject
         sf::Texture ShipTexture;
         sf::Sprite ShipSprite;
 
-        UIElement uielements;
+        UIManager uielements;
 };
 
 #endif // SPACESHIP_HPP

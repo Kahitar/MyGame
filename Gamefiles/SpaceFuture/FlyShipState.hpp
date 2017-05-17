@@ -2,7 +2,7 @@
 #define FLYSHIPSTATE_HPP
 
 #include <SFML/Graphics.hpp>
-#include "../Engine/UIElement.hpp"
+#include "../Engine/UIManager.hpp"
 #include "../Engine/Gamestate.hpp"
 
 #include "GameObject.hpp"

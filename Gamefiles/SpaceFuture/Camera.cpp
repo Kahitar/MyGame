@@ -19,7 +19,7 @@ Camera::~Camera()
 bool Camera::isInView(GameObject &Object)
 {
 	// check if Object is in camera view
-	return mView.getViewport().contains(Object.getPosition());
+	return mView.getViewport().contains(Object.getCenter());
 }
 
 void Camera::track(GameObject *Object)
@@ -36,7 +36,7 @@ GameObject& Camera::getTrackedObject()
 void Camera::update(Framework &frmwrk)
 {
 	// update the position of the camera
-	mView.setCenter(mTrackedObject->getPosition());
+	mView.setCenter(mTrackedObject->getCenter());
 	frmwrk.setView(mView);
 
 	Buttons.getButton("MainMenuButton").setPosition(sf::Vector2f(mView.getCenter().x - 620,mView.getCenter().y - 340));

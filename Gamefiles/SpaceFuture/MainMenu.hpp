@@ -2,7 +2,7 @@
 #define MAINMENU_HPP
 
 #include "../Engine/Gamestate.hpp"
-#include "../Engine/UIElement.hpp"
+#include "../Engine/UIManager.hpp"
 
 class Framework;
 
@@ -17,7 +17,7 @@ public:
     void render(Framework &frmwrk);
 
 private:
-    UIElement Buttons;
+    UIManager Buttons;
 
     std::unique_ptr<sf::Texture> upBackTexture;
     std::unique_ptr<sf::Sprite>  upBackSprite;

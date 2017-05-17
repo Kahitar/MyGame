@@ -1,18 +1,18 @@
 #include "Framework.hpp"
-#include "UIElement.hpp"
+#include "UIManager.hpp"
 #include <algorithm>
 
-UIElement::UIElement()
+UIManager::UIManager()
 {
     //ctor
 }
 
-UIElement::~UIElement()
+UIManager::~UIManager()
 {
     //dtor
 }
 
-void UIElement::addButton(sf::Vector2f pos, sf::Vector2f Size, std::string Name, std::string Text)
+void UIManager::addButton(sf::Vector2f pos, sf::Vector2f Size, std::string Name, std::string Text)
 {
     //check if Elementname doesn't already exists
     if(Buttons.find(Name) == Buttons.end()){
@@ -31,7 +31,7 @@ void UIElement::addButton(sf::Vector2f pos, sf::Vector2f Size, std::string Name,
     }
 }
 
-void UIElement::addSlider(sf::Vector2f pos, sf::Vector2f Size, std::string Name, 
+void UIManager::addSlider(sf::Vector2f pos, sf::Vector2f Size, std::string Name, 
                           std::string Text, std::string unit)
 {
     //check if Elementname doesn't already exists
@@ -51,7 +51,7 @@ void UIElement::addSlider(sf::Vector2f pos, sf::Vector2f Size, std::string Name,
     }
 }
 
-void UIElement::addTextBox(std::string Name, std::string text, sf::Vector2f position, std::string FontPath,
+void UIManager::addTextBox(std::string Name, std::string text, sf::Vector2f position, std::string FontPath,
                            int borderThickness, sf::Color fillColor, sf::Color outlineColor)
 {
     //check if Elementname doesn't already exists
@@ -71,7 +71,7 @@ void UIElement::addTextBox(std::string Name, std::string text, sf::Vector2f posi
     }
 }
 
-Button& UIElement::getButton(std::string ButtonName)
+Button& UIManager::getButton(std::string ButtonName)
 {
     //lookup the Button name and see if its in the map
     if(Buttons.find(ButtonName) == Buttons.end()){
@@ -88,7 +88,7 @@ Button& UIElement::getButton(std::string ButtonName)
     }
 }
 
-Slider& UIElement::getSlider(std::string SliderName)
+Slider& UIManager::getSlider(std::string SliderName)
 {
     //lookup the Slider name and see if its in the map
     if(Sliders.find(SliderName) == Sliders.end()){
@@ -105,7 +105,7 @@ Slider& UIElement::getSlider(std::string SliderName)
     }
 }
 
-TextBox& UIElement::getTextBox(std::string TextBoxName)
+TextBox& UIManager::getTextBox(std::string TextBoxName)
 {
     //lookup the Textbox name and see if its in the map
     if(TextBoxes.find(TextBoxName) == TextBoxes.end()){
@@ -122,7 +122,7 @@ TextBox& UIElement::getTextBox(std::string TextBoxName)
     }
 }
 
-void UIElement::update(Framework &frmwrk)
+void UIManager::update(Framework &frmwrk)
 {
     for(auto it : Buttons)
     {
@@ -140,7 +140,7 @@ void UIElement::update(Framework &frmwrk)
     }
 }
 
-void UIElement::handle(Framework &frmwrk)
+void UIManager::handle(Framework &frmwrk)
 {
     for(auto it : Buttons)
     {
@@ -158,7 +158,7 @@ void UIElement::handle(Framework &frmwrk)
     }
 }
 
-void UIElement::render(Framework &frmwrk)
+void UIManager::render(Framework &frmwrk)
 {
     for(auto it : Buttons)
     {

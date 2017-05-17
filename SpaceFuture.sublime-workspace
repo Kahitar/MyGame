@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"mZoom",
+				"mZoomStruct"
+			],
+			[
+				"WI",
+				"WINDOW_HEIGHT"
+			],
+			[
+				"WINDO",
+				"WINDOW_WIDTH"
+			],
+			[
 				"x",
 				"x"
 			],
@@ -27,7 +39,7 @@
 			"file": "Gamefiles/SpaceFuture/Camera.cpp",
 			"settings":
 			{
-				"buffer_size": 1632,
+				"buffer_size": 3126,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -36,61 +48,7 @@
 			"file": "Gamefiles/SpaceFuture/Camera.hpp",
 			"settings":
 			{
-				"buffer_size": 579,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "Gamefiles/SpaceFuture/FlyShipState.cpp",
-			"settings":
-			{
-				"buffer_size": 994,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "Gamefiles/SpaceFuture/Planet.cpp",
-			"settings":
-			{
-				"buffer_size": 1293,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "Gamefiles/SpaceFuture/Planet.hpp",
-			"settings":
-			{
-				"buffer_size": 712,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "Gamefiles/SpaceFuture/Spaceship.cpp",
-			"settings":
-			{
-				"buffer_size": 5726,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "Gamefiles/SpaceFuture/Spaceship.hpp",
-			"settings":
-			{
-				"buffer_size": 1866,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "Gamefiles/SpaceFuture/FlyShipState.hpp",
-			"settings":
-			{
-				"buffer_size": 673,
+				"buffer_size": 649,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -195,8 +153,8 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 173.0,
-		"last_filter": "build",
+		"height": 392.0,
+		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -229,47 +187,56 @@
 	"expanded_folders":
 	[
 		"/E/OneDrive/c++/SpaceFuture",
+		"/E/OneDrive/c++/SpaceFuture/bin",
 		"/E/OneDrive/c++/SpaceFuture/Gamefiles",
 		"/E/OneDrive/c++/SpaceFuture/Gamefiles/Engine",
 		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture"
 	],
 	"file_history":
 	[
-		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/Spaceship.cpp",
+		"/C/Users/Niklas/AppData/Roaming/Sublime Text 3/Packages/User/c++ make.sublime-build",
+		"/E/OneDrive/c++/SpaceFuture/ToDo.todo",
+		"/E/OneDrive/c++/SpaceFuture/Gamefiles/Engine/UIManager.hpp",
+		"/E/OneDrive/c++/SpaceFuture/Gamefiles/Engine/Button.hpp",
+		"/E/OneDrive/c++/SpaceFuture/Gamefiles/Engine/UIElement.cpp",
+		"/E/OneDrive/c++/SpaceFuture/Gamefiles/Engine/UIElement.hpp",
+		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/FlyShipState.cpp",
+		"/E/OneDrive/c++/SpaceFuture/Gamefiles/Engine/Framework.cpp",
+		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/Camera.hpp",
+		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/FlyShipState.hpp",
+		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/MainMenu.hpp",
+		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/ObjectTime.hpp",
+		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/Playership.hpp",
+		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/SettingsMenu.hpp",
 		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/Spaceship.hpp",
+		"/E/OneDrive/c++/SpaceFuture/Gamefiles/Engine/Button.cpp",
+		"/E/OneDrive/c++/SpaceFuture/MyGame.cbp",
+		"/E/OneDrive/c++/SpaceFuture/MyGame.depend",
+		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/Planet.cpp",
+		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/Planet.hpp",
+		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/Spaceship.cpp",
+		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/Playership.cpp",
+		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/MainMenu.cpp",
 		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/GameObject.cpp",
 		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/GameObject.hpp",
-		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/Planet.cpp",
-		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/FlyShipState.cpp",
-		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/FlyShipState.hpp",
-		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/Playership.hpp",
-		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/Playership.cpp",
-		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/Planet.hpp",
 		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/planet.cpp",
 		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/planet.hpp",
-		"/E/OneDrive/c++/SpaceFuture/MyGame.depend",
 		"/E/OneDrive/c++/SpaceFuture/Gamefiles/Engine/ResourceManager.hpp",
 		"/E/OneDrive/c++/SpaceFuture/Gamefiles/Engine/ResourceManager.cpp",
 		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/SettingsMenu.cpp",
 		"/E/OneDrive/c++/SpaceFuture/Gamefiles/Engine/SettingsCache.hpp",
 		"/E/OneDrive/c++/SpaceFuture/Gamefiles/Engine/SettingsCache.cpp",
-		"/E/OneDrive/c++/SpaceFuture/ToDo.todo",
 		"/E/OneDrive/c++/SpaceFuture/Gamefiles/Engine/Slider.cpp",
 		"/E/OneDrive/c++/SpaceFuture/Gamefiles/Engine/Slider.hpp",
-		"/E/OneDrive/c++/SpaceFuture/Gamefiles/Engine/UIElement.hpp",
-		"/E/OneDrive/c++/SpaceFuture/Gamefiles/Engine/UIElement.cpp",
 		"/E/OneDrive/c++/SpaceFuture/Gamefiles/Engine/TextBox.cpp",
 		"/E/OneDrive/c++/SpaceFuture/Gamefiles/Engine/TextBox.hpp",
 		"/E/OneDrive/c++/SpaceFuture/main.cpp",
-		"/C/Users/Niklas/AppData/Roaming/Sublime Text 3/Packages/User/c++ make.sublime-build",
 		"/E/OneDrive/Auslandssemester/ToDo.todo",
 		"/C/Users/Niklas/AppData/Roaming/Sublime Text 3/Packages/Super Calculator/Default (Windows).sublime-keymap",
 		"/C/Users/Niklas/AppData/Roaming/Sublime Text 3/Packages/Super Calculator/Super Calculator.sublime-settings",
 		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/math.hpp",
 		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/math.cpp",
 		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/ObjectTime.cpp",
-		"/E/OneDrive/c++/SpaceFuture/Gamefiles/Engine/Framework.cpp",
-		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/MainMenu.cpp",
 		"/E/Program Files/Sublime Text 3/Packages/YAML.sublime-package",
 		"/E/OneDrive/c++/SpaceFuture/Makefile",
 		"/C/Users/Niklas/AppData/Roaming/.minecraft/options.txt",
@@ -360,9 +327,15 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": false,
+		"case_sensitive": true,
 		"find_history":
 		[
+			"truct",
+			"UIElement",
+			"zoomDelta",
+			"mZoom.x",
+			"mZoom",
+			"Size",
 			"mShipSprite",
 			"mPlanetSprite",
 			"std::cout <<",
@@ -440,17 +413,18 @@
 		"regex": false,
 		"replace_history":
 		[
+			"UIManager"
 		],
 		"reverse": false,
 		"show_context": true,
 		"use_buffer2": true,
-		"whole_word": false,
+		"whole_word": true,
 		"wrap": true
 	},
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -459,15 +433,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1632,
+						"buffer_size": 3126,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								378,
-								378
+								1297,
+								1297
 							]
 						],
 						"settings":
@@ -476,10 +450,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1134.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -488,15 +462,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 579,
+						"buffer_size": 649,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								352,
-								352
+								568,
+								568
 							]
 						],
 						"settings":
@@ -505,190 +479,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 162.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "Gamefiles/SpaceFuture/FlyShipState.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 994,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								596,
-								596
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "Gamefiles/SpaceFuture/Planet.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1293,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1073,
-								1260
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 891.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "Gamefiles/SpaceFuture/Planet.hpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 712,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								587,
-								587
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 243.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "Gamefiles/SpaceFuture/Spaceship.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5726,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2492,
-								2492
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1620.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "Gamefiles/SpaceFuture/Spaceship.hpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1866,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1712,
-								1712
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1053.0,
+						"translation.y": 405.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "Gamefiles/SpaceFuture/FlyShipState.hpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 673,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								551,
-								551
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 243.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -727,7 +521,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 293.0
+		"height": 121.0
 	},
 	"output.find_results":
 	{
@@ -746,6 +540,14 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"butt",
+				"Gamefiles\\Engine\\Button.cpp"
+			],
+			[
+				"mainm",
+				"Gamefiles\\SpaceFuture\\MainMenu.cpp"
+			],
 			[
 				"space",
 				"Gamefiles\\SpaceFuture\\Spaceship.cpp"

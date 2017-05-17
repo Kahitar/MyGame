@@ -21,7 +21,7 @@ class Button
         ///////////Setter///////////
         void setText(std::string text);
         void setPosition(sf::Vector2f pos);
-        void setSize(sf::Vector2f Size);
+        void setSize(sf::Vector2f size);
         void setColor(sf::Color color);
 
         ///////////Getter///////////

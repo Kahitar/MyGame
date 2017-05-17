@@ -95,8 +95,8 @@
 		<Unit filename="Gamefiles/Engine/Slider.hpp" />
 		<Unit filename="Gamefiles/Engine/TextBox.cpp" />
 		<Unit filename="Gamefiles/Engine/TextBox.hpp" />
-		<Unit filename="Gamefiles/Engine/UIElement.cpp" />
-		<Unit filename="Gamefiles/Engine/UIElement.hpp" />
+		<Unit filename="Gamefiles/Engine/UIManager.cpp" />
+		<Unit filename="Gamefiles/Engine/UIManager.hpp" />
 		<Unit filename="Gamefiles/SpaceFuture/FlyShipState.cpp" />
 		<Unit filename="Gamefiles/SpaceFuture/FlyShipState.hpp" />
 		<Unit filename="Gamefiles/SpaceFuture/MainMenu.cpp" />

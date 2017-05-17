@@ -1,7 +1,6 @@
 SpaceFuture:
  ☐ integrate scale
    ✔ only position at first. @done (17-04-29 22:59)
- ☐ Make a UI-class with a view and buttons which should always be in player sight
 
 Engine:
  ☐ update Slider:
@@ -14,6 +13,9 @@ Engine:
  ☐ Load all Textures from the ResourceManager
  ☐ Think about creating a consistent way for UIElements to know where/how big their neighbour Elements are
      e.g. make it possible to add a Button on a position RELATIVE to another button 
+ ☐ Make UIObject as suberclass for all UIElements
+    ☐ make only 1 map with polymorphism in UIManager
+    ☐ make only 1 function for get<Element> and set<Element> respectively
 
  Bugs:
 
@@ -35,10 +37,11 @@ Engine:
      This should automatically generate a texture and load it into a sprite, so that I don't have to do that manually all the time
      Don't do this. That's not worth it nor is it practical!
  ✘ add the possibility to add a text to the slider (e.g. name of the slider) @cancelled (17-05-04 21:49)
-   ✘ Find out how to integrate UIElements into Slider altough Slider is an UIElement itself @cancelled (17-05-04 21:49)
+   ✘ Find out how to integrate UIElements into Slider altough Slider is an UIManager itself @cancelled (17-05-04 21:49)
        Currently this is implemented via the TextBox-class on its own
 
  Archive:
+ ✔ Make a Camera-class with a view and buttons which should always be in player sight @done (17-05-17 13:51)
  ✔ Make the Size of the Window global @done (17-05-15 13:05)
    Do I want to scale everything accordingly or just reduce the window size?
    Maybe in a config file!
@@ -68,9 +71,9 @@ Engine:
  ✔ outsorce constants to extra file (e.g. pi, c, ...) @done (17-05-04 14:46)
  ✔ set playerView on ship @done (17-05-04 14:46)
  ✔ integrate a multiplicator into Slider or make min/max functions @done (17-05-02 13:13)
- ✔ UIElement: Check if the elements alerady exist when adding one @done (17-05-01 16:23)
+ ✔ UIManager: Check if the elements alerady exist when adding one @done (17-05-01 16:23)
    What to do if it does?
- ✔ Add a class for texts or add texts to UIElement @done (17-05-01 13:35)
+ ✔ Add a class for texts or add texts to UIManager @done (17-05-01 13:35)
    e.g. a description or headline (like "Number of KIs:")
  ✔ Replace all Buttons with ButtonManager-Buttons @done (17-04-07 20:27)
  ✔ Include Sliders in the ButtonManager @done (17-04-07 20:27)

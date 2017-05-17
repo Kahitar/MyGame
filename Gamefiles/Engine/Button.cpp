@@ -51,20 +51,20 @@ void Button::setPosition(sf::Vector2f pos)
     upSpriteHovered->setPosition(mPos);
 
     mText.setOrigin(mText.getGlobalBounds().width/2, mText.getGlobalBounds().height/2);
-    mText.setPosition(mPos.x + upSpriteNotHovered->getGlobalBounds().width/2, mPos.y + upSpriteNotHovered->getGlobalBounds().height/2);
+    mText.setPosition(mPos.x + mSize.x/2, mPos.y + mSize.y/2);
 }
 
-void Button::setSize(sf::Vector2f Size)
+void Button::setSize(sf::Vector2f size)
 {
-    mSize = Size;
+    mSize = size;
 
-    float scaleX = Size.x / TextureWidth;
-    float scaleY = Size.y / TextureHeight;
+    float scaleX = size.x / TextureWidth;
+    float scaleY = size.y / TextureHeight;
 
     upSpriteNotHovered->setScale(scaleX, scaleY);
     upSpriteHovered->setScale(scaleX, scaleY);
 
-    mText.setCharacterSize(Size.y*0.5);
+    mText.setCharacterSize(size.y*0.5);
 
     mText.setPosition(mPos.x + upSpriteNotHovered->getGlobalBounds().width*1.4, mPos.y + upSpriteNotHovered->getGlobalBounds().height/2);
 }

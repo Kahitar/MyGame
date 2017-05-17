@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 #include <SFML/Graphics.hpp>
-#include "../Engine/UIElement.hpp"
+#include "../Engine/UIManager.hpp"
 #include "Spaceship.hpp"
 #include "ObjectTime.hpp"
 
@@ -21,7 +21,7 @@ class Playership : public Spaceship
     private:
         void EvaluatePressedKeys(Framework &frmwrk);
 
-        UIElement Buttons;
+        UIManager Buttons;
 };
 
 #endif // PLAYERSHIP_HPP
