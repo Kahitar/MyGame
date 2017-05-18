@@ -126,7 +126,7 @@ void UIManager::update(Framework &frmwrk)
 {
     for(auto it : Buttons)
     {
-        it.second->update();
+        it.second->update(frmwrk);
     }
 
     for(auto it : Sliders)

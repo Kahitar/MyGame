@@ -56,7 +56,7 @@ void SettingsMenu::handle(Framework &frmwrk)
     if(frmwrk.spMainEvent->type == sf::Event::MouseButtonPressed
        && frmwrk.spMainEvent->mouseButton.button == sf::Mouse::Left)
     {
-        if (uielements.getButton("BackButton").getMouseOnButton()){
+        if (uielements.getButton("BackButton").getMouseOnObject()){
             frmwrk.ChangeState(Framework::gameStates::MAINMENU);
         }
     }

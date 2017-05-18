@@ -7,8 +7,7 @@
 #include "../SpaceFuture/math.hpp"
 
 Slider::Slider(sf::Vector2f pos, sf::Vector2f Size, std::string text, std::string unit)
-    :mMouseOnSlider(false),mClicked(false),mNumberOfPositions(100),mSliderPosition(0),
-    mSliderValue(0),mStepSize(1),mMin(0),mMax(10)
+    :mNumberOfPositions(100),mSliderPosition(0),mSliderValue(0),mStepSize(1),mMin(0),mMax(10)
 {
     // Rectangle to move on
     mSliderBar.setFillColor(sf::Color(128, 128, 200));
@@ -47,12 +46,12 @@ void Slider::handle(Framework &frmwrk)
         && MouseWorldPos.x < mPos.x + mSize.x + mRectWidth
         && MouseWorldPos.y < mPos.y + mSize.y)
     {
-        mMouseOnSlider = true;
+        mMouseOnObject = true;
     } else{
-        mMouseOnSlider = false;
+        mMouseOnObject = false;
     }
 
-    if(frmwrk.spMainEvent->type == sf::Event::MouseButtonPressed && mMouseOnSlider)
+    if(frmwrk.spMainEvent->type == sf::Event::MouseButtonPressed && mMouseOnObject)
         mClicked = true;
     else if(frmwrk.spMainEvent->type == sf::Event::MouseButtonReleased)
         mClicked = false;
@@ -103,6 +102,11 @@ void Slider::ChangeSliderPosition(float MouseX)
 
 
 ///////////Setter///////////
+void Slider::setScale(float x, float y)
+{
+    throw "Not implemented!";
+}
+
 void Slider::setPosition(sf::Vector2f pos)
 {
     mPos = pos;

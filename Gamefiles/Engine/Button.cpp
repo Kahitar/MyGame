@@ -3,7 +3,6 @@
 #include "ResourceManager.hpp"
 
 Button::Button(sf::Vector2f pos, sf::Vector2f Size, std::string text)
-    :mMouseOnButton(false),mClicked(false)
 {
     this->setText(text);
 
@@ -69,21 +68,24 @@ void Button::setSize(sf::Vector2f size)
     mText.setPosition(mPos.x + upSpriteNotHovered->getGlobalBounds().width*1.4, mPos.y + upSpriteNotHovered->getGlobalBounds().height/2);
 }
 
+void Button::setScale(float x, float y)
+{
+
+}
+
 void Button::setColor(sf::Color color)
 {
     upSpriteHovered->setColor(color);
     upSpriteNotHovered->setColor(color);
 }
 
-void Button::update()
+void Button::update(Framework &frmwrk)
 {
 
 }
 
 void Button::handle(Framework &frmwrk)
 {
-    std::shared_ptr<sf::Event> event = frmwrk.spMainEvent;
-
     // Dealing with a resized Window
     sf::Vector2f MouseWorldPos = frmwrk.getTransformedMousePosition();
 
@@ -91,22 +93,20 @@ void Button::handle(Framework &frmwrk)
         && MouseWorldPos.y > mPos.y
         && MouseWorldPos.x < mPos.x + mSize.x
         && MouseWorldPos.y < mPos.y + mSize.y)
-        mMouseOnButton = true;
+        mMouseOnObject = true;
     else
-        mMouseOnButton = false;
+        mMouseOnObject = false;
 
-    if(event->type == sf::Event::MouseButtonReleased && mMouseOnButton)
+    if(frmwrk.spMainEvent->type == sf::Event::MouseButtonReleased && mMouseOnObject)
         mClicked = !mClicked;
 }
 
 void Button::render(Framework &frmwrk)
 {
-    std::shared_ptr<sf::RenderWindow> window = frmwrk.spRenderWindow;
-
-    if(mMouseOnButton){
-        window->draw(*upSpriteHovered);
+    if(mMouseOnObject){
+        frmwrk.spRenderWindow->draw(*upSpriteHovered);
     } else {
-        window->draw(*upSpriteNotHovered);
+        frmwrk.spRenderWindow->draw(*upSpriteNotHovered);
     }
-    window->draw(mText);
+    frmwrk.spRenderWindow->draw(mText);
 }

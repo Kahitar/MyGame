@@ -41,11 +41,11 @@ void MainMenu::handle(Framework &frmwrk)
     // handle buttons
     if(frmwrk.spMainEvent->type == sf::Event::MouseButtonPressed && frmwrk.spMainEvent->mouseButton.button == sf::Mouse::Left)
     {
-        if(Buttons.getButton("NewGameButton").getMouseOnButton()){
+        if(Buttons.getButton("NewGameButton").getMouseOnObject()){
             frmwrk.ChangeState(Framework::gameStates::FLYSHIP);
-        } else if (Buttons.getButton("SettingsButton").getMouseOnButton()){
+        } else if (Buttons.getButton("SettingsButton").getMouseOnObject()){
             frmwrk.ChangeState(Framework::gameStates::SETTINGS);
-        } else if (Buttons.getButton("ExitButton").getMouseOnButton()){
+        } else if (Buttons.getButton("ExitButton").getMouseOnObject()){
             frmwrk.quit();
         }
     }

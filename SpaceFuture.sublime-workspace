@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"mZoo",
+				"mZoomSpeed"
+			],
+			[
 				"mZoom",
 				"mZoomStruct"
 			],
@@ -36,20 +40,46 @@
 	"buffers":
 	[
 		{
-			"file": "Gamefiles/SpaceFuture/Camera.cpp",
+			"file": "Gamefiles/Engine/Button.cpp",
 			"settings":
 			{
-				"buffer_size": 3126,
+				"buffer_size": 2946,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "Gamefiles/SpaceFuture/Camera.hpp",
+			"file": "Gamefiles/Engine/Button.hpp",
 			"settings":
 			{
-				"buffer_size": 649,
+				"buffer_size": 1388,
 				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Gamefiles/Engine/UIObject.hpp",
+			"settings":
+			{
+				"buffer_size": 923,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Gamefiles/SpaceFuture/GameObject.cpp",
+			"settings":
+			{
+				"buffer_size": 264,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Gamefiles/SpaceFuture/GameObject.hpp",
+			"settings":
+			{
+				"buffer_size": 467,
 				"line_ending": "Windows"
 			}
 		}
@@ -194,21 +224,28 @@
 	],
 	"file_history":
 	[
-		"/C/Users/Niklas/AppData/Roaming/Sublime Text 3/Packages/User/c++ make.sublime-build",
+		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/Spaceship.hpp",
+		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/GameObject.cpp",
+		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/GameObject.hpp",
+		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/NPCShip.hpp",
+		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/NPCShip.cpp",
+		"/E/OneDrive/c++/SpaceFuture/Gamefiles/Engine/UIObject.cpp",
+		"/E/OneDrive/c++/SpaceFuture/Gamefiles/Engine/Gamestate.hpp",
+		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/Camera.cpp",
+		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/Camera.hpp",
 		"/E/OneDrive/c++/SpaceFuture/ToDo.todo",
+		"/C/Users/Niklas/AppData/Roaming/Sublime Text 3/Packages/User/c++ make.sublime-build",
 		"/E/OneDrive/c++/SpaceFuture/Gamefiles/Engine/UIManager.hpp",
 		"/E/OneDrive/c++/SpaceFuture/Gamefiles/Engine/Button.hpp",
 		"/E/OneDrive/c++/SpaceFuture/Gamefiles/Engine/UIElement.cpp",
 		"/E/OneDrive/c++/SpaceFuture/Gamefiles/Engine/UIElement.hpp",
 		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/FlyShipState.cpp",
 		"/E/OneDrive/c++/SpaceFuture/Gamefiles/Engine/Framework.cpp",
-		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/Camera.hpp",
 		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/FlyShipState.hpp",
 		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/MainMenu.hpp",
 		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/ObjectTime.hpp",
 		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/Playership.hpp",
 		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/SettingsMenu.hpp",
-		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/Spaceship.hpp",
 		"/E/OneDrive/c++/SpaceFuture/Gamefiles/Engine/Button.cpp",
 		"/E/OneDrive/c++/SpaceFuture/MyGame.cbp",
 		"/E/OneDrive/c++/SpaceFuture/MyGame.depend",
@@ -217,8 +254,6 @@
 		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/Spaceship.cpp",
 		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/Playership.cpp",
 		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/MainMenu.cpp",
-		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/GameObject.cpp",
-		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/GameObject.hpp",
 		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/planet.cpp",
 		"/E/OneDrive/c++/SpaceFuture/Gamefiles/SpaceFuture/planet.hpp",
 		"/E/OneDrive/c++/SpaceFuture/Gamefiles/Engine/ResourceManager.hpp",
@@ -330,6 +365,9 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"void",
+			"Button",
+			"BUTTON_HPP",
 			"truct",
 			"UIElement",
 			"zoomDelta",
@@ -424,65 +462,153 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "Gamefiles/SpaceFuture/Camera.cpp",
+					"file": "Gamefiles/Engine/Button.cpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3126,
+						"buffer_size": 2946,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1297,
-								1297
+								2022,
+								2022
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/C++/C++.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1134.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Gamefiles/Engine/Button.hpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1388,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								161,
+								161
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 81.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Gamefiles/Engine/UIObject.hpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 923,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								156,
+								156
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 324.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "Gamefiles/SpaceFuture/Camera.hpp",
+					"buffer": 3,
+					"file": "Gamefiles/SpaceFuture/GameObject.cpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 649,
+						"buffer_size": 264,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								568,
-								568
+								228,
+								228
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/C++/C++.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 405.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "Gamefiles/SpaceFuture/GameObject.hpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 467,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 81.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
@@ -521,7 +647,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 121.0
+		"height": 337.0
 	},
 	"output.find_results":
 	{
@@ -540,6 +666,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"came",
+				"Gamefiles\\SpaceFuture\\Camera.cpp"
+			],
 			[
 				"butt",
 				"Gamefiles\\Engine\\Button.cpp"
@@ -599,10 +729,6 @@
 			[
 				"playe",
 				"Gamefiles\\SpaceFuture\\Playership.hpp"
-			],
-			[
-				"came",
-				"Gamefiles\\SpaceFuture\\Camera.hpp"
 			],
 			[
 				"ca",

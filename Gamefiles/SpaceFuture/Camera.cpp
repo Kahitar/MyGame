@@ -80,7 +80,7 @@ void Camera::handle(Framework &frmwrk)
     if(frmwrk.spMainEvent->type == sf::Event::MouseButtonPressed && 
        frmwrk.spMainEvent->mouseButton.button == sf::Mouse::Left)
     {
-        if(Buttons.getButton("MainMenuButton").getMouseOnButton()){
+        if(Buttons.getButton("MainMenuButton").getMouseOnObject()){
             frmwrk.ChangeState(Framework::gameStates::MAINMENU);
         }
     }

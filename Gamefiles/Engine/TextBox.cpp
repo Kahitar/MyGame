@@ -2,7 +2,7 @@
 #include "Framework.hpp"
 
 TextBox::TextBox(std::string text, sf::Vector2f position, std::string FontPath,
-        int borderThickness, sf::Color fillColor, sf::Color outlineColor)
+                 int borderThickness, sf::Color fillColor, sf::Color outlineColor)
 {
     setFont(FontPath);
     setText(text);
@@ -18,11 +18,21 @@ TextBox::~TextBox()
 }
 
 // Setter //
+void TextBox::setScale(float x, float y)
+{
+    throw "Not implemented";
+}
+
+void TextBox::setSize(sf::Vector2f size)
+{
+    mText.setCharacterSize(size.x);
+}
+
 void TextBox::setText(std::string text)
 {
     mText.setString(text);
     mBorder.setSize(sf::Vector2f(mText.getGlobalBounds().width + 10,mText.getGlobalBounds().height + 5));
-    this->setPosition(mPosition);
+    this->setPosition(mPos);
 }
 
 void TextBox::setFont(std::string fontPath)
@@ -35,7 +45,7 @@ void TextBox::setPosition(sf::Vector2f position)
 {
     mBorder.setPosition(sf::Vector2f(position.x - 5,position.y));
     mText.setPosition(position);
-    mPosition = position;
+    mPos = position;
 }
 
 void TextBox::setBorderThickness(int borderThickness)

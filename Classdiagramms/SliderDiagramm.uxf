@@ -39,7 +39,7 @@ ChangeSliderPosition(frmwrk.getTransformedMousePosition().x);</panel_attributes>
     </coordinates>
     <panel_attributes>handle(frmwrk)
 --
-mMouseOnSlider = true/false
+mMouseOnObject = true/false
 mClicked = true/false</panel_attributes>
     <additional_attributes/>
   </element>

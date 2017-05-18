@@ -97,24 +97,32 @@
 		<Unit filename="Gamefiles/Engine/TextBox.hpp" />
 		<Unit filename="Gamefiles/Engine/UIManager.cpp" />
 		<Unit filename="Gamefiles/Engine/UIManager.hpp" />
+		<Unit filename="Gamefiles/Engine/UIObject.cpp" />
+		<Unit filename="Gamefiles/Engine/UIObject.hpp" />
+		<Unit filename="Gamefiles/SpaceFuture/Camera.cpp" />
+		<Unit filename="Gamefiles/SpaceFuture/Camera.hpp" />
 		<Unit filename="Gamefiles/SpaceFuture/FlyShipState.cpp" />
 		<Unit filename="Gamefiles/SpaceFuture/FlyShipState.hpp" />
+		<Unit filename="Gamefiles/SpaceFuture/GameObject.cpp" />
+		<Unit filename="Gamefiles/SpaceFuture/GameObject.hpp" />
 		<Unit filename="Gamefiles/SpaceFuture/MainMenu.cpp" />
 		<Unit filename="Gamefiles/SpaceFuture/MainMenu.hpp" />
 		<Unit filename="Gamefiles/SpaceFuture/NPCShip.cpp" />
 		<Unit filename="Gamefiles/SpaceFuture/NPCShip.hpp" />
 		<Unit filename="Gamefiles/SpaceFuture/ObjectTime.cpp" />
 		<Unit filename="Gamefiles/SpaceFuture/ObjectTime.hpp" />
+		<Unit filename="Gamefiles/SpaceFuture/Planet.cpp" />
+		<Unit filename="Gamefiles/SpaceFuture/Planet.hpp" />
 		<Unit filename="Gamefiles/SpaceFuture/Playership.cpp" />
 		<Unit filename="Gamefiles/SpaceFuture/Playership.hpp" />
 		<Unit filename="Gamefiles/SpaceFuture/SettingsMenu.cpp" />
 		<Unit filename="Gamefiles/SpaceFuture/SettingsMenu.hpp" />
 		<Unit filename="Gamefiles/SpaceFuture/Spaceship.cpp" />
 		<Unit filename="Gamefiles/SpaceFuture/Spaceship.hpp" />
+		<Unit filename="Gamefiles/SpaceFuture/Variables.cpp" />
+		<Unit filename="Gamefiles/SpaceFuture/Variables.hpp" />
 		<Unit filename="Gamefiles/SpaceFuture/math.cpp" />
 		<Unit filename="Gamefiles/SpaceFuture/math.hpp" />
-		<Unit filename="Gamefiles/SpaceFuture/planet.cpp" />
-		<Unit filename="Gamefiles/SpaceFuture/planet.hpp" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
