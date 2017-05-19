@@ -41,7 +41,7 @@ Spaceship::Spaceship(std::string texturePath, sf::Vector2f position)
 
 Spaceship::~Spaceship()
 {
-    //dtor
+    uielements.deleteTextBox("ShipMassTextbox");
 }
 
 void Spaceship::update(Framework &frmwrk)

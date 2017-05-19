@@ -22,7 +22,7 @@ void FlyShipState::update(Framework &frmwrk)
 {
     playership->update(frmwrk);
     
-    camera.update(frmwrk); // <--- ERROR! (Segfault, works now... TODO?)
+    camera.update(frmwrk); // <--- ERROR! (Segfault... works now tho... TODO?)
 }
 
 void FlyShipState::handle(Framework &frmwrk)

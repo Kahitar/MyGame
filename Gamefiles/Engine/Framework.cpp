@@ -6,25 +6,32 @@ using namespace std;
 
 float Framework::mFrameTime;
 
+void closeSettingsMenu(SettingsMenu *set)
+{
+    set->close();
+}
+
 Framework::Framework(std::string WindowTitle)
     :mRunning(true)
 {
-    spRenderWindow  = std::move(std::unique_ptr<sf::RenderWindow>
-        (new sf::RenderWindow(sf::VideoMode(Variables::WINDOW_WIDTH,Variables::WINDOW_HEIGHT,32),WindowTitle)));
-    spMainEvent     = std::move(std::unique_ptr<sf::Event>(new sf::Event));
-    upClock         = std::move(std::unique_ptr<sf::Clock>(new sf::Clock));
+    sf::VideoMode newVideoMode(Variables::WINDOW_WIDTH,Variables::WINDOW_HEIGHT,32);
+    spRenderWindow = std::move(std::unique_ptr<sf::RenderWindow>(new sf::RenderWindow(newVideoMode,
+                                                                                      WindowTitle)));
+    spMainEvent    = std::move(std::unique_ptr<sf::Event>(new sf::Event));
+    upClock        = std::move(std::unique_ptr<sf::Clock>(new sf::Clock));
 
     spRenderWindow->setPosition(sf::Vector2i(300,50));
     spRenderWindow->setVerticalSyncEnabled(true);
     spRenderWindow->setFramerateLimit(60);
 
     // Set Gamestate to MAINMENU, in case it is not changed in main
-    CurrentState = std::move(std::unique_ptr<MainMenu>(new MainMenu));
+    CurrentState = new MainMenu;
+    // CurrentState = std::move(std::unique_ptr<MainMenu>(new MainMenu));
 }
 
 Framework::~Framework()
 {
-    
+    delete CurrentState;
 }
 
 void Framework::run()
@@ -47,13 +54,19 @@ void Framework::ChangeState(gameStates newstate)
     switch(newstate)
     {
     case gameStates::FLYSHIP:
-        CurrentState = std::move(std::unique_ptr<FlyShipState>(new FlyShipState));
+        delete CurrentState;
+        CurrentState = new FlyShipState;
+        // CurrentState = std::move(std::unique_ptr<FlyShipState>(new FlyShipState));
     break;
     case gameStates::MAINMENU:
-        CurrentState = std::move(std::unique_ptr<MainMenu>(new MainMenu));
+        delete CurrentState;
+        CurrentState = new MainMenu;
+        // CurrentState = std::move(std::unique_ptr<MainMenu>(new MainMenu));
     break;
     case gameStates::SETTINGS:
-        CurrentState = std::move(std::unique_ptr<SettingsMenu>(new SettingsMenu));
+        delete CurrentState;
+        CurrentState = new SettingsMenu;
+        // CurrentState = std::move(std::unique_ptr<SettingsMenu>(new SettingsMenu));
     break;
     }
 }

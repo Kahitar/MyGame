@@ -1,14 +1,48 @@
+Heute:  @started(17-05-19 10:18)
+  ☐ UIObjects Zoomable
+    ☐ Button
+      Textbug beheben
+    ☐ Slider
+    ☐ Textbox
+  ☐  Camera drag&drop
+  ✔ How can I anker an UIObject to the camera view when the UIObject is not a member of the camera class? @done (17-05-19 14:51)
+   Camera needs to change: Position, Scale
+
+   Camera needs to have acces to that object without having it in it's UIManager
+     I can do this with pointers like in track(GameObject*)
+   OR
+   add it to the UIManager of Camera from outside (e.g. from Flyshipstate)
+     
+   Solution #1: Make UIManager static.
+     For the Camera to have acces to all UIObjects that need to be scaled this is most realistic
+       Otherwise it would be a hazzle to transfer the UIObject through all classes to camera
+       E.G.: Spaceship -> FlyShipState -> Camera
+
+   Solution #2: Add a memberfunction to camera to anker an Object to it
+     Objects need to be passed through different classes
+     E.G.: Spaceship -> FlyShipState -> Camera
+
+   ✔ Doing Solution #1 @done (17-05-19 14:51)
+     ✔ make the UIObjects in UIManager static @done (17-05-19 12:05)
+       Problem: All UIObjects every created are now shown all the time
+       ✔ Need to delete UIObjects that are not used anymore in the destructors @done (17-05-19 14:51)
+         ✔ Make sure deleting shared_ptr Objects out of the map doesn't lead to a memory leak @done (17-05-19 14:59)
+
+
 SpaceFuture:
  ☐ integrate scale
    ✔ only position at first. @done (17-04-29 22:59)
 
 Engine:
  ☐ Make the text and sprite of button work with scales (instead of e.g. setCharacterSize)
-
+ ☐ Camera: Remove the stuttering from the camera zoom
+   Multiplication with abs(y-x) might be causing this when you change y with the mousewheel
  ☐ update Slider:
    ☐ Make it possible to change the color of the slider text (value)
    ☐ add support for decimal slider values
-
+   ☐ zoomable
+ ☐ Find out how to use custom deleter to make Framework::CurrentState a std::unique_ptr again 
+   (instead of normal pointer)
  ☐ Why does MainMenu switch to the default view?
     When i come from another gamestate (e.g. Playstate) and the window was resized, MainMenu doesn't use the view which was set in framework
     Only after I resized the window again it switches to that view

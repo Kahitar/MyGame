@@ -14,7 +14,7 @@ Camera::Camera()
 
 Camera::~Camera()
 {
-	// dtor
+	Buttons.deleteButton("MainMenuButton");
 }
 
 bool Camera::isInView(GameObject &Object)
@@ -42,7 +42,8 @@ void Camera::update(Framework &frmwrk)
 	else
 		mZoomSpeed = 1;
 
-	if(mZoom.x < mZoom.y - std::abs(mZoom.z) || mZoom.x > mZoom.y + std::abs(mZoom.z))
+	// zoom the view if the actual position x is not within the target position x +/- abs(z)*zoomspeed
+	if(mZoom.x < mZoom.y - std::abs(mZoom.z)*mZoomSpeed || mZoom.x > mZoom.y + std::abs(mZoom.z)*mZoomSpeed)
 		mZoom.x += mZoom.z*mZoomSpeed;
 	else
 		mZoom.x = mZoom.y;
@@ -53,8 +54,15 @@ void Camera::update(Framework &frmwrk)
 	frmwrk.setView(mView);
 
 	Buttons.getButton("MainMenuButton").setSize(sf::Vector2f(mZoom.x*200,mZoom.x*50));
+	// Buttons.getButton("MainMenuButton").setScale(mZoom.x,mZoom.x);
 	Buttons.getButton("MainMenuButton")
 	       .setPosition(sf::Vector2f(mView.getCenter().x - mZoom.x*620,mView.getCenter().y - mZoom.x*340));
+
+	// Buttons.getButton("VelocityResetButton").setSize(sf::Vector2f(mZoom.x*200,mZoom.x*50));
+	Buttons.getButton("VelocityResetButton").setScale(mZoom.x,mZoom.x);
+	Buttons.getButton("VelocityResetButton")
+	       .setPosition(sf::Vector2f(mView.getCenter().x - mZoom.x*300,mView.getCenter().y - mZoom.x*100));
+
 	Buttons.update(frmwrk);
 }
 

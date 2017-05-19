@@ -12,6 +12,7 @@ class SettingsMenu : public Gamestate
     public:
          SettingsMenu();
         ~SettingsMenu();
+        void close();
 
         void update(Framework &frmwrk);
         void handle(Framework &frmwrk);

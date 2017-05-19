@@ -64,13 +64,21 @@ void Button::setSize(sf::Vector2f size)
     upSpriteHovered->setScale(scaleX, scaleY);
 
     mText.setCharacterSize(size.y*0.5);
+    // mText.setScale(scaleX, scaleY);
 
-    mText.setPosition(mPos.x + upSpriteNotHovered->getGlobalBounds().width*1.4, mPos.y + upSpriteNotHovered->getGlobalBounds().height/2);
+    mText.setPosition(mPos.x + upSpriteNotHovered->getGlobalBounds().width*1.4, 
+                      mPos.y + upSpriteNotHovered->getGlobalBounds().height/2);
 }
 
 void Button::setScale(float x, float y)
 {
+    mSize = sf::Vector2f(x*mSize.x,y*mSize.y);
 
+    upSpriteHovered->setScale(x, y);
+    upSpriteNotHovered->setScale(x, y);
+    mText.setScale(x, y);
+    // mText.setPosition(mPos.x + upSpriteNotHovered->getGlobalBounds().width*1.4, 
+    //                   mPos.y + upSpriteNotHovered->getGlobalBounds().height/2);
 }
 
 void Button::setColor(sf::Color color)

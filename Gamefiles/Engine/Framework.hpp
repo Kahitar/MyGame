@@ -41,7 +41,8 @@ private:
 
     void CalculateFrameTime();
 
-    std::unique_ptr<Gamestate>   CurrentState;
+    Gamestate *CurrentState;
+    // std::unique_ptr<Gamestate>   CurrentState;
     std::unique_ptr<sf::Clock>   upClock;
 
     static float   mFrameTime;

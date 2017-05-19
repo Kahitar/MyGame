@@ -19,7 +19,7 @@ ObjectTime::ObjectTime()
 
 ObjectTime::~ObjectTime()
 {
-    //dtor
+    ClockTextBox.deleteTextBox("ClockText");
 }
 
 void ObjectTime::reset(int newTime)

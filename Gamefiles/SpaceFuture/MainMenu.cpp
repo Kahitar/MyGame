@@ -17,6 +17,9 @@ MainMenu::MainMenu()
 
 MainMenu::~MainMenu()
 {
+    Buttons.deleteButton("NewGameButton");
+    Buttons.deleteButton("SettingsButton");
+    Buttons.deleteButton("ExitButton");
 }
 
 void MainMenu::update(Framework &frmwrk)
@@ -24,6 +27,8 @@ void MainMenu::update(Framework &frmwrk)
 
     frmwrk.setViewToWindowSize();
     Buttons.update(frmwrk);
+
+    Buttons.getButton("NewGameButton").setScale(1,1);
 }
 
 void MainMenu::handle(Framework &frmwrk)

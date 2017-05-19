@@ -2,6 +2,10 @@
 #include "UIManager.hpp"
 #include <algorithm>
 
+std::map<std::string, std::shared_ptr<Button>>  UIManager::Buttons;
+std::map<std::string, std::shared_ptr<Slider>>  UIManager::Sliders;
+std::map<std::string, std::shared_ptr<TextBox>> UIManager::TextBoxes;
+
 UIManager::UIManager()
 {
     //ctor
@@ -25,9 +29,10 @@ void UIManager::addButton(sf::Vector2f pos, sf::Vector2f Size, std::string Name,
     }
     else{
     //"error" if it already exists
-        std::cout << "ERROR: A Button with the name \"";
-        std::cout << Name;
-        std::cout << "\" already exists!";
+        std::cout << "ERROR: A Button with the name \""
+                  << Name
+                  << "\" already exists!"
+                  << std::endl;
     }
 }
 
@@ -45,9 +50,10 @@ void UIManager::addSlider(sf::Vector2f pos, sf::Vector2f Size, std::string Name,
     }
     else{
     //"error" if it already exists
-        std::cout << "ERROR: A Slider with the name \"";
-        std::cout << Name;
-        std::cout << "\" already exists!";
+        std::cout << "ERROR: A Slider with the name \""
+                  << Name
+                  << "\" already exists!"
+                  << std::endl;
     }
 }
 
@@ -65,11 +71,28 @@ void UIManager::addTextBox(std::string Name, std::string text, sf::Vector2f posi
     }
     else{
     //"error" if it already exists
-        std::cout << "ERROR: A Textbox with the name \"";
-        std::cout << Name;
-        std::cout << "\" already exists!";
+        std::cout << "ERROR: A Textbox with the name \""
+                  << Name
+                  << "\" already exists!"
+                  << std::endl;
     }
 }
+
+void UIManager::deleteButton (std::string ButtonName)
+{
+    Buttons.erase(ButtonName);
+}
+
+void UIManager::deleteSlider (std::string SliderName)
+{
+    Sliders.erase(SliderName);
+}
+
+void UIManager::deleteTextBox(std::string TextBoxName)
+{
+    TextBoxes.erase(TextBoxName);
+}
+
 
 Button& UIManager::getButton(std::string ButtonName)
 {

@@ -28,7 +28,15 @@ SettingsMenu::SettingsMenu()
 
 SettingsMenu::~SettingsMenu()
 {
-    //dtor
+    this->close();
+}
+
+void SettingsMenu::close()
+{
+    uielements.deleteButton("BackButton");
+    uielements.deleteSlider("ForceSlider");
+    uielements.deleteSlider("MassSlider");
+    uielements.deleteTextBox("AccelerationTextbox");
 }
 
 void SettingsMenu::update(Framework &frmwrk)

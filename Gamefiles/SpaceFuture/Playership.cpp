@@ -18,7 +18,8 @@ Playership::Playership(std::string texturePath, sf::Vector2f position)
 
 Playership::~Playership()
 {
-    //dtor
+    Buttons.deleteButton("VelocityResetButton");
+    Buttons.deleteButton("PosResetButton");
 }
 
 void Playership::update(Framework &frmwrk)
