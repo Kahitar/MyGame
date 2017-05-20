@@ -4,12 +4,14 @@
 #include <SFML/Graphics.hpp>
 #include "../Engine/UIManager.hpp"
 
+#include <sstream>
+
 class Framework;
 
 class ObjectTime
 {
     public:
-        ObjectTime();
+        ObjectTime(std::string name);
         ~ObjectTime();
 
         // Setter //
@@ -35,12 +37,14 @@ class ObjectTime
         float mTime; // time in seconds
         //sf::Vector3f mTimeInHours; // time in yy/mm hh:mm:ss (TODO)
         float mNextTimeStep;
-
-        UIManager ClockTextBox;
-
         float mGlobalTimeStep;
 
         sf::Vector2f mPosition;
+
+        static int mClockNr;
+        std::stringstream ClockName;
+
+        UIManager uielements;
 };
 
 #endif // OBJECTTIME_HPP

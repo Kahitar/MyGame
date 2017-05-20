@@ -39,7 +39,7 @@ void Playership::handle(Framework &frmwrk)
     if(frmwrk.spMainEvent->type == sf::Event::MouseButtonPressed && frmwrk.spMainEvent->mouseButton.button == sf::Mouse::Left)
     {
         if(Buttons.getButton("PosResetButton").getMouseOnObject()){
-            setPosition(sf::Vector2f(500,300));
+            setPosition(sf::Vector2f(0,300));
             setVelocity(0);
             mAcceleratingInDirection = 0;
         }else if(Buttons.getButton("VelocityResetButton").getMouseOnObject()){
@@ -53,7 +53,6 @@ void Playership::handle(Framework &frmwrk)
 
 void Playership::render(Framework &frmwrk)
 {
-    Buttons.render(frmwrk);
     Spaceship::render(frmwrk);
 }
 

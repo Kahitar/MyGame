@@ -10,7 +10,7 @@
 Spaceship::Spaceship(std::string texturePath, sf::Vector2f position)
     :mName("Of course I still love you"),mVelocity(0),mMass(ResourceManager::getPlayershipMass()),
      mRelativisticMass(mMass),mForce(ResourceManager::getAcceleratingForce()),
-     mAcceleratingInDirection(0),mGamePosition(position),mSpacePosition(position)
+     mAcceleratingInDirection(0),mGamePosition(position),mSpacePosition(position),mClock("Spaceship")
 {
     //TODO: Load these from the ResourceManager
     ShipImage.loadFromFile(texturePath);
@@ -88,12 +88,9 @@ void Spaceship::handle(Framework &frmwrk)
 
 void Spaceship::render(Framework &frmwrk)
 {
-    mClock.render(frmwrk);
     frmwrk.spRenderWindow->draw(mVelocityText);
     frmwrk.spRenderWindow->draw(mPositionText);
     frmwrk.spRenderWindow->draw(ShipSprite);
-
-    uielements.render(frmwrk);
 }
 
 void Spaceship::CalculateNewVelocity(double force)

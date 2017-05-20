@@ -7,19 +7,24 @@
 #include "ObjectTime.hpp"
 #include "math.hpp"
 
-ObjectTime::ObjectTime()
+int ObjectTime::mClockNr = 0;
+
+ObjectTime::ObjectTime(std::string name)
     :mTime(0),mNextTimeStep(0),mPosition(0,0)
 {
-    ClockTextBox.addTextBox("ClockText");
-    ClockTextBox.getTextBox("ClockText").setFillColor(sf::Color::Transparent);
-    ClockTextBox.getTextBox("ClockText").setBorderThickness(0);
+    mClockNr++;
+    ClockName << name << "_" << mClockNr;
+    uielements.addTextBox(ClockName.str());
+    uielements.getTextBox(ClockName.str()).setFillColor(sf::Color::Transparent);
+    uielements.getTextBox(ClockName.str()).setBorderThickness(0);
 
     mGlobalTimeStep = Framework::getFrameTime();
 }
 
 ObjectTime::~ObjectTime()
 {
-    ClockTextBox.deleteTextBox("ClockText");
+    uielements.deleteTextBox(ClockName.str());
+    mClockNr--;
 }
 
 void ObjectTime::reset(int newTime)
@@ -30,7 +35,7 @@ void ObjectTime::reset(int newTime)
 void ObjectTime::update(Framework &frmwrk, float velocity)
 {
     updateTime(velocity);
-    ClockTextBox.getTextBox("ClockText").setPosition(sf::Vector2f(mPosition.x,mPosition.y));
+    uielements.getTextBox(ClockName.str()).setPosition(sf::Vector2f(mPosition.x,mPosition.y));
 
     float mTimeRounded = math::round(mTime,1);
 
@@ -38,14 +43,14 @@ void ObjectTime::update(Framework &frmwrk, float velocity)
     ssTime << "t = " << mTimeRounded << " s";
     std::string sTime = ssTime.str();
 
-    ClockTextBox.getTextBox("ClockText").setText(sTime);
+    uielements.getTextBox(ClockName.str()).setText(sTime);
 
     mGlobalTimeStep = Framework::getFrameTime();
 }
 
 void ObjectTime::render(Framework &frmwrk)
 {
-    ClockTextBox.getTextBox("ClockText").render(frmwrk);
+    
 }
 
 void ObjectTime::updateTime(float velocity)

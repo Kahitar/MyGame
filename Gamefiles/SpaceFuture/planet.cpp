@@ -3,7 +3,7 @@
 #include "Variables.hpp"
 
 Planet::Planet()
-    :mName("Planet XY")
+    :mName("Planet XY"),mClock("PlanetClock")
 {
     float TextureWidth = 1661;  // pxls
     int PlanetRadius = 6371000; // m
@@ -29,7 +29,8 @@ Planet::~Planet()
 
 void Planet::update(Framework &frmwrk)
 {
-
+    mClock.setPosition(sf::Vector2f(200,0));
+    mClock.update(frmwrk, 0.f);
 }
 
 void Planet::handle(Framework &frmwrk)

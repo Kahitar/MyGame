@@ -24,11 +24,13 @@ public:
 	void render(Framework &frmwrk);
 
 private:
+	void updateUI(Framework &frmwrk);
+
 	sf::View mView;
 	sf::Vector2f mPosition;
 	sf::Vector3f mZoom; // x = current, y = goal, z = step
 
-	UIManager Buttons;
+	UIManager uielements;
 
 	GameObject *mTrackedObject;
 };

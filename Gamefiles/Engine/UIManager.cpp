@@ -48,7 +48,7 @@ void UIManager::addSlider(sf::Vector2f pos, sf::Vector2f Size, std::string Name,
         //Insert it into the map
         Sliders.insert(make_pair(Name, newSlider));
     }
-    else{
+    else {
     //"error" if it already exists
         std::cout << "ERROR: A Slider with the name \""
                   << Name
@@ -64,12 +64,13 @@ void UIManager::addTextBox(std::string Name, std::string text, sf::Vector2f posi
     if(TextBoxes.find(Name) == TextBoxes.end()){
     //add TextBoxes if it doesn't already exist
         //Load the TextBox
-        std::shared_ptr<TextBox> newTextBox(new TextBox(text, position, FontPath, borderThickness, fillColor, outlineColor));
+        std::shared_ptr<TextBox> newTextBox(new TextBox(text, position, FontPath, borderThickness, 
+                                                        fillColor, outlineColor));
 
         //Insert it into the map
         TextBoxes.insert(make_pair(Name, newTextBox));
     }
-    else{
+    else {
     //"error" if it already exists
         std::cout << "ERROR: A Textbox with the name \""
                   << Name
@@ -140,7 +141,7 @@ TextBox& UIManager::getTextBox(std::string TextBoxName)
         return *TextBoxes.end()->second;
     }else {
         auto it = TextBoxes.find(TextBoxName);
-
+        
         return *it->second;
     }
 }

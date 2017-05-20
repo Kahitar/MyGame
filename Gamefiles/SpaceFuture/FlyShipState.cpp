@@ -21,13 +21,15 @@ FlyShipState::~FlyShipState()
 void FlyShipState::update(Framework &frmwrk)
 {
     playership->update(frmwrk);
+    earth->update(frmwrk);
     
-    camera.update(frmwrk); // <--- ERROR! (Segfault... works now tho... TODO?)
+    camera.update(frmwrk);
 }
 
 void FlyShipState::handle(Framework &frmwrk)
 {
     playership->handle(frmwrk);
+    earth->handle(frmwrk);
     camera.handle(frmwrk);
 
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::M))

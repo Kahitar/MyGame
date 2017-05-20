@@ -1,37 +1,14 @@
-Heute:  @started(17-05-19 10:18)
+Heute:  @started(20-05-17 11:30)
   ☐ UIObjects Zoomable
     ☐ Button
-      Textbug beheben
+      ☐ Textbug beheben
     ☐ Slider
     ☐ Textbox
   ☐  Camera drag&drop
-  ✔ How can I anker an UIObject to the camera view when the UIObject is not a member of the camera class? @done (17-05-19 14:51)
-   Camera needs to change: Position, Scale
-
-   Camera needs to have acces to that object without having it in it's UIManager
-     I can do this with pointers like in track(GameObject*)
-   OR
-   add it to the UIManager of Camera from outside (e.g. from Flyshipstate)
-     
-   Solution #1: Make UIManager static.
-     For the Camera to have acces to all UIObjects that need to be scaled this is most realistic
-       Otherwise it would be a hazzle to transfer the UIObject through all classes to camera
-       E.G.: Spaceship -> FlyShipState -> Camera
-
-   Solution #2: Add a memberfunction to camera to anker an Object to it
-     Objects need to be passed through different classes
-     E.G.: Spaceship -> FlyShipState -> Camera
-
-   ✔ Doing Solution #1 @done (17-05-19 14:51)
-     ✔ make the UIObjects in UIManager static @done (17-05-19 12:05)
-       Problem: All UIObjects every created are now shown all the time
-       ✔ Need to delete UIObjects that are not used anymore in the destructors @done (17-05-19 14:51)
-         ✔ Make sure deleting shared_ptr Objects out of the map doesn't lead to a memory leak @done (17-05-19 14:59)
 
 
 SpaceFuture:
- ☐ integrate scale
-   ✔ only position at first. @done (17-04-29 22:59)
+  ☐ 
 
 Engine:
  ☐ Make the text and sprite of button work with scales (instead of e.g. setCharacterSize)
@@ -77,44 +54,75 @@ Engine:
        Currently this is implemented via the TextBox-class on its own
 
  Archive:
- ✔ Make a Camera-class with a view and buttons which should always be in player sight @done (17-05-17 13:51)
- ✔ Make the Size of the Window global @done (17-05-15 13:05)
-   Do I want to scale everything accordingly or just reduce the window size?
-   Maybe in a config file!
- ✔ fix the flickering sprite problem @done (17-05-15 13:03)
-   this appears to happen at high velocities OR at a long distance from origin
+✔ Why can't I make UIManager::TextBoxes a static member? @done (20-05-17 11:30)
+   When I try the Textbox from planet gets rendered even if I don't call its render function in Planet::render 
 
-   One way to solve this would be to not letting the ship fly the exact number of pixels where 1 pxl = 1 meter
-     Solution #1: make 1 pxl =/= 1 meter (e.g. 1pxl = 0.01 meter)
-       The Problem might still be there
-     ✔ Solution #2: Don't move the ship at all when nothing else is in the view @done (17-05-15 13:04)
-       Implemented this solution but at a fixed range from origin
-  ✔ Slider @done (17-05-04 21:25)
-   ✔ Bugfix: When starting on the left, I can't click the slider rectangle @done (17-05-04 21:51)
-     because it isn't in the slider hitbox?
-     Also: use the same mechanic to place the slider rectangle for changing the position and loading the slider (constructor)
-   ✔ make mMinMax() work correctly @done (17-05-10 21:24)
-     at the moment min has to be 0 or it won't be correct.
-   ✔ add the possibility to add a text to the slider (e.g. name of the slider) @done (17-05-04 21:52)
-     ✔ (less preferred) Add Textbox to the slider class @done (17-05-04 15:24)
-       Textbox works, but thats not the pretty solution
-         ✔ Make it possible to set the text for this @done (17-05-04 21:48)
- ✔ Decide wether "MainMenu" and "SettingsMenu" belong to the engine or the game @done (17-05-04 21:49)
-   I outsorced them in the game folder.
-   ✔ velocity and accelerating are nan when first loading flyshipstate @done (17-05-04 14:47)
-     the problem was, that the SliderMultiplicator in the Slider-class was not initialized
-       .-> undefined behaviour
- ✔ outsorce constants to extra file (e.g. pi, c, ...) @done (17-05-04 14:46)
- ✔ set playerView on ship @done (17-05-04 14:46)
- ✔ integrate a multiplicator into Slider or make min/max functions @done (17-05-02 13:13)
- ✔ UIManager: Check if the elements alerady exist when adding one @done (17-05-01 16:23)
-   What to do if it does?
- ✔ Add a class for texts or add texts to UIManager @done (17-05-01 13:35)
-   e.g. a description or headline (like "Number of KIs:")
- ✔ Replace all Buttons with ButtonManager-Buttons @done (17-04-07 20:27)
- ✔ Include Sliders in the ButtonManager @done (17-04-07 20:27)
-   and maybe renaim it UIelement
- ✔ Fix Views in general @done (17-04-14 18:22)
-     Understand how it works...
-     Views need to be set by every state itself. It's nonsense to control them all from Framework because every state has different requirements for them.
- ✔ Integrate the transformation from global to local of the mouse into framework class and change i t everywhere to call the framework function @done (17-04-14 17:05)
+   The Problem here is: I can render UIObjects in UIManager on two ways:.
+     .- call UIManager::render() : This will render every UIObject currently registered in ANY UIManager instance
+     .- call UIManager::get<UIObject>(UIObjectName).render(frmwrk): This will only render the one object I specified
+✘ integrate scale @cancelled (20-05-17 11:31)
+   I don't need a scale in the finished game. So don't do this
+     ✔ only position at first. @done (17-04-29 22:59)
+✔ How can I anker an UIObject to the camera view when the UIObject is not a member of the camera class? @done (17-05-19 14:51)
+   Camera needs to change: Position, Scale
+
+   Camera needs to have acces to that object without having it in it's UIManager
+     I can do this with pointers like in track(GameObject*)
+   OR
+   add it to the UIManager of Camera from outside (e.g. from Flyshipstate)
+     
+   Solution #1: Make UIManager static.
+     For the Camera to have acces to all UIObjects that need to be scaled this is most realistic
+       Otherwise it would be a hazzle to transfer the UIObject through all classes to camera
+       E.G.: Spaceship -> FlyShipState -> Camera
+
+   Solution #2: Add a memberfunction to camera to anker an Object to it
+     Objects need to be passed through different classes
+     E.G.: Spaceship -> FlyShipState -> Camera
+
+   ✔ Doing Solution #1 @done (17-05-19 14:51)
+     ✔ make the UIObjects in UIManager static @done (17-05-19 12:05)
+       Problem: All UIObjects every created are now shown all the time
+       ✔ Need to delete UIObjects that are not used anymore in the destructors @done (17-05-19 14:51)
+         ✔ Make sure deleting shared_ptr Objects out of the map doesn't lead to a memory leak @done (17-05-19 14:59)
+✔ Make a Camera-class with a view and buttons which should always be in player sight @done (17-05-17 13:51)
+✔ Make the Size of the Window global @done (17-05-15 13:05)
+ Do I want to scale everything accordingly or just reduce the window size?
+ Maybe in a config file!
+✔ fix the flickering sprite problem @done (17-05-15 13:03)
+ this appears to happen at high velocities OR at a long distance from origin
+
+ One way to solve this would be to not letting the ship fly the exact number of pixels where 1 pxl = 1 meter
+   Solution #1: make 1 pxl =/= 1 meter (e.g. 1pxl = 0.01 meter)
+     The Problem might still be there
+   ✔ Solution #2: Don't move the ship at all when nothing else is in the view @done (17-05-15 13:04)
+     Implemented this solution but at a fixed range from origin
+✔ Slider @done (17-05-04 21:25)
+ ✔ Bugfix: When starting on the left, I can't click the slider rectangle @done (17-05-04 21:51)
+   because it isn't in the slider hitbox?
+   Also: use the same mechanic to place the slider rectangle for changing the position and loading the slider (constructor)
+ ✔ make mMinMax() work correctly @done (17-05-10 21:24)
+   at the moment min has to be 0 or it won't be correct.
+ ✔ add the possibility to add a text to the slider (e.g. name of the slider) @done (17-05-04 21:52)
+   ✔ (less preferred) Add Textbox to the slider class @done (17-05-04 15:24)
+     Textbox works, but thats not the pretty solution
+       ✔ Make it possible to set the text for this @done (17-05-04 21:48)
+✔ Decide wether "MainMenu" and "SettingsMenu" belong to the engine or the game @done (17-05-04 21:49)
+ I outsorced them in the game folder.
+✔ velocity and accelerating are nan when first loading flyshipstate @done (17-05-04 14:47)
+ the problem was, that the SliderMultiplicator in the Slider-class was not initialized
+   .-> undefined behaviour
+✔ outsorce constants to extra file (e.g. pi, c, ...) @done (17-05-04 14:46)
+✔ set playerView on ship @done (17-05-04 14:46)
+✔ integrate a multiplicator into Slider or make min/max functions @done (17-05-02 13:13)
+✔ UIManager: Check if the elements alerady exist when adding one @done (17-05-01 16:23)
+ What to do if it does?
+✔ Add a class for texts or add texts to UIManager @done (17-05-01 13:35)
+ e.g. a description or headline (like "Number of KIs:")
+✔ Replace all Buttons with ButtonManager-Buttons @done (17-04-07 20:27)
+✔ Include Sliders in the ButtonManager @done (17-04-07 20:27)
+ and maybe renaim it UIelement
+✔ Fix Views in general @done (17-04-14 18:22)
+   Understand how it works...
+   Views need to be set by every state itself. It's nonsense to control them all from Framework because every state has different requirements for them.
+✔ Integrate the transformation from global to local of the mouse into framework class and change i t everywhere to call the framework function @done (17-04-14 17:05)

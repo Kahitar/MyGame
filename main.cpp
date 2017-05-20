@@ -2,6 +2,8 @@
 
 int main()
 {
+	std::cout << "----------------------------------------------------------------------------------------" 
+			  << std::endl;
 	Framework frmwrk("Space Future");
 
 	frmwrk.run();
